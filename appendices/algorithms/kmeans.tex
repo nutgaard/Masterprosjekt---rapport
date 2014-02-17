@@ -1,0 +1,12 @@
+\begin{algorithm}
+	\caption{Basic K-means algorithm}\label{alg:kmeans}
+	\begin{algorithmic}[1]
+		%\Procedure{K-means}{K}
+			\State Select $K$ points as inital centroids.
+			\Repeat
+				\State Form $K$ clusters by assigning each point to its closest centroid.
+				\State Recompute the centroid of each cluster
+			\Until Centroids do not change
+		%\EndProcedure
+	\end{algorithmic}
+\end{algorithm}

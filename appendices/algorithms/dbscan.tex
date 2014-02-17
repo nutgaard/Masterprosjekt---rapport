@@ -1,0 +1,10 @@
+\begin{algorithm}
+	\caption{DBSCAN algorithms}\label{alg:dbscan}
+	\begin{algorithmic}[1]
+		\State Label all the point as core, border, or noise points.
+		\State Eliminate noise points.
+		\State Put an edge between all core points that are within $Eps$ of each other.
+		\State Make each group of connected core points into a separate cluster.
+		\State Assign each border point to one of the clusters of its associated core points.
+	\end{algorithmic}
+\end{algorithm}
