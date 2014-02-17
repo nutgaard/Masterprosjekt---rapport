@@ -1,3 +1,5 @@
-Masterprosjekt
+##Masterprosjekt
 ===================
-[This is the imba link](http://www.google.com)
+####How-to Markdown
+* [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
+* [Markdown Basics](https://help.github.com/articles/markdown-basics)
