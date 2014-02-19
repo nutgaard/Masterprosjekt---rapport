@@ -20,3 +20,6 @@
 | Sullivan 		| Robotics and Science Literacy: Thinking Skills, Science Process Skills and Systems Understanding 									| [Link](http://onlinelibrary.wiley.com/doi/10.1002/tea.20238/pdf) |
 | Owens et al. 		| Therapy and the Social Use of Language Programme: An Evaluation of Two Social Skills Interventions for Children with High Functioning Autism and Asperger Syndrome 	| [Link](http://download.springer.com/static/pdf/364/art%253A10.1007%252Fs10803-008-0590-6.pdf?auth66=1392976450_aab9ed908b970179b7adf2117b42bfa2&ext=.pdf) |
 | Mitnik et al. 	| An autonomous educational mobile robot mediator 															| [Link](http://download.springer.com/static/pdf/224/art%253A10.1007%252Fs10514-008-9101-z.pdf?auth66=1392976519_eeccc3c7af687e53ed259405d32d0e5c&ext=.pdf) |
+| Alimisis		| Robotics in Education & Education in RObotics: Shifting Focus from Technology to Pedagogy										| [Link](http://www.ksi.mff.cuni.cz/rie2012/proceedings/2012RiE-00.pdf) |
+| Sullivan et al. 	| Robotics and Discovery Learning: Pedogical Beliefs, Teacher Practice, and Techonology Integration									| [Link](http://www.academia.edu/1269923/Robotics_and_discovery_learning_Pedagogical_beliefs_teacher_practice_and_technology_integration) |
+
