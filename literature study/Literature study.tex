@@ -1,17 +1,10 @@
 \documentclass[12pt]{report}
 
 \usepackage[latin1]{inputenc}
-\usepackage[Glenn]{fncychap}
 \usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage{mathtools}
-\usepackage[toc,page]{appendix}
-%\usepackage{cite}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-\usepackage{ifthen}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -61,25 +54,13 @@
 \include{intro/front}
 \setcounter{page}{0}
 \pagenumbering{roman}
-%\include{intro/abstract}
-%\include{intro/preface}
-\pagenumbering{gobble}
-%\tableofcontents
-%\newpage
-%\listoftables
-%\newpage
-%\listoffigures
-%\newpage
-%\listofalgorithms
-\newpage
-\setcounter{page}{0}
-\pagenumbering{arabic}
 
-\include{abstract}
-\include{introduction}
-
-
-\include{conclusion}
+\input{intro/abstract}
+\input{introduction}
+\input{method}
+\input{result}
+\input{discussion}
+\input{conclusion}
 
 
 \clearpage
