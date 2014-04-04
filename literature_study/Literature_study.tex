@@ -6,7 +6,7 @@
 \usepackage{float}
 \usepackage{mathtools}
 \usepackage{longtable}
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -46,6 +46,9 @@
 		\includegraphics[width=#2]{#1}
 	}
 }
+\newcommand{\tcite}[1]{
+	\citeauthor{#1} \citeyearpar{#1}
+}
 
 
 %%Force correct display style for math environments
@@ -65,6 +68,7 @@
 \input{discussion}
 \input{conclusion}
 
+\nocite{*}
 
 \clearpage
 \bibliographystyle{plainnat}
