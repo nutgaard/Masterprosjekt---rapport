@@ -156,3 +156,19 @@ Estimate the angles
 	\draw (A) -- (C);                                            
   \tikzMarkAngle{(A)}{(B)}{(C)}   
 \end{tikzpicture}  
+
+%parallelogram
+\begin{tikzpicture}[scale=4,line width=1pt]                                    
+  \coordinate (A) at (0,0);                                                    
+  \coordinate (B) at (2,0);                                                    
+  \coordinate (C) at ($(B)+(150:1)$);                                                
+	\coordinate (D) at ($(A)+(150:1)$);                                                
+  \draw (A) -- (B) -- (C) -- (D) -- cycle;                                            
+	
+  \tikzMarkAngle{(A)}{(B)}{(D)}   
+	
+	\tikzMarkAngle{(B)}{(A)}{(C)}
+	
+	\tikzMarkAngle{(C)}{(B)}{(D)}           
+	\draw[shift={(D)}] (-30:0.15cm) arc (-30:0:0.15cm);      
+\end{tikzpicture}  
