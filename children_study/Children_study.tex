@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage[numbers]{natbib}
+
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
+\,\operatorname{min}}\;}
+
+%Figures aliases
+%Usage: \image{path}{width}{caption}{label}
+%Try to allways use \image and let latex fix positioning of figures.
+%By passing 'null' as width the latex will use the figures default size
+%Do however but the command at the wanted position within the text, 
+%if we at a later stage want to fix the positioning of all images it could be done by rewriting this alias.
+\newcommand{\image}[4]{
+	\ifthenelse{\equal{false}{true}}{%true - true => latex fixes positioning, mismatch => forced positioning by float
+		\begin{figure}[ht]
+			\centering
+			\insertImage{#1}{#2}
+			\caption{#3}
+			\label{#4}
+		\end{figure}
+	}{
+		\imageHere{#1}{#2}{#3}{#4}
+	}	
+}
+\newcommand{\imageHere}[4]{
+	\begin{figure}[H]
+		\centering
+		\insertImage{#1}{#2}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+}
+%Helper function, do not use
+\newcommand{\insertImage}[2]{
+	\ifthenelse{\equal{#2}{null}}{
+		\includegraphics{#1}
+	}{
+		\includegraphics[width=#2]{#1}
+	}
+}
+\newcommand{\tcite}[1]{
+	\citeauthor{#1} \citeyearpar{#1}
+}
+
+
+%%Force correct display style for math environments
+\everymath{\displaystyle}
+
+\begin{document}
+	\section{Hei}
+\end{document}
+
