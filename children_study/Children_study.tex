@@ -6,7 +6,7 @@
 \usepackage{float}
 \usepackage{mathtools}
 \usepackage{longtable}
-\usepackage[numbers]{natbib}
+\usepackage{ifthen}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -55,6 +55,56 @@
 \everymath{\displaystyle}
 
 \begin{document}
-	\section{Hei}
+	\section{The application}
+	The startup screen, see figure~\ref{fig:augmented}, is the first screen you'll see in the application (except for the colored buttons highlighted as \textbf{3}). 
+	In order for you to get familiar with the application we have highlighted the different part of the application screen, 
+	and provided a simple overview in section~\ref{sec:normal}. 
+	\image{imgs/SimpleMainAugmented.png}{\columnwidth}{Initial application screen}{fig:augmented}
+	
+	\subsection{Normal mode}\label{sec:normal}
+	When starting the application for the first time, it will start in what is called \textit{normal mode}.
+	The differences between \textit{normal mode} and \textit{extended mode} will become clear in sections~\ref{sec:extended}, 
+	but for now lets focus on the different parts highlighted in figure~\ref{fig:augmented} and what they do.
+	
+	\bigskip\noindent
+	\begin{description}
+		\item[1] This is the available \textit{codeblocks} for your \textit{program}.
+		\item[2] The \textit{startblock}. This is a special kind of \textit{codeblock}. 
+			It may not be moved or removed, and must always be the first \textit{codeblock} in the \textit{program}.
+		\item[3] The \textit{program}. This part consists of one of more \textit{codeblocks}, and are the part which tells the robot what to do.
+			An explaination of the different codeblocks can be seen in section~\ref{sec:codeblocks}.
+		\item[4] The \texit{Options} menu. 
+		\item[5] The \textit{Run} button. Pressing this button will change the screen into a simulator of your current \textit{program}.
+		\item[6] The \textit{Clear} button. This button will remove all blocks except the \textit{startblock}.
+		\item[7] The \textit{Input mode} button. This button will change the program input method, and is used to get back to programming after a simulation.
+	\end{description}
+	
+	\bigskip\noindent
+	In order to create program you drag the codeblock you want from the available blocks down to the startblock, a small indicator should appear.
+	In order to change the order of your codeblocks, simply drag the codeblock you want to move into the correct position. 
+	If you want to remove a codeblock from your program just drag it back to the list of available blocks at the top.
+	
+	\subsubsection{The different codeblocks}\label{sec:codeblocks}
+	In \textit{normal mode} you have four \textit{codeblocks} available to you: 
+	
+	\begin{center}
+		\begin{tabular}{ll}
+			\textbf{FWD - Forward} & \textbf{BACK - Backward}\\
+			\textbf{TL - Turn Left} & \textbf{TR - Turn Right}\\
+			\label{tab:moves}
+		\end{description}
+	\end{center}
+	
+	\noindent
+	\textbf{FWD} and \textbf{BACK} makes the robot move forward and backward respectively. The input value determines how far the robot will go.
+	\textbf{TL} and \textbf{TR} makes the robot turn either left of right. The input value determines how many degrees it will turn. 
+	
+	\bigskip\noindent
+	In figure~\ref{fig:augmented} you can see an example where all these four \textif{codeblocks} are used. 
+	If you run the program you will end up with a picture as seen in figure~\ref{fig:simpleProg}.
+	\image{imgs/SimpleProg.PNG}{null}{The result from running the program in figure~\ref{fig:augmented}}{fig:simpleProg}
+	
+	\subsection{Extended mode}\label{sec:extended}
+	\subsection{Connecting to the robot}
 \end{document}
 
