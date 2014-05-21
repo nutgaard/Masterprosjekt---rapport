@@ -123,19 +123,29 @@
 	These blocks are related to programs that need \textit{variables}, \textit{procedures} and \textit{loops}. 
 	The usage of these blocks and how they work will be explained in another document.
 	
-	
-	\image{imgs/ExtendedMain.PNG}{\columnwidth}{The main view when extended mode is on.}{fig:extendedMain}
-	\image{imgs/ExtendedTextual.PNG}{\columnwidth}{The textual view when extended mode is on.}{fig:extendedTextual}
+	\image{imgs/ExtendedMain.PNG}{0.7\columnwidth}{The main view when extended mode is on.}{fig:extendedMain}
+	\image{imgs/ExtendedTextual.PNG}{0.7\columnwidth}{The textual view when extended mode is on.}{fig:extendedTextual}
 	\subsection{The simulator}
+	The \textit{simulator view} is to show you the result of your program. 
+	This view shows when you press the \textbf{run} button(numbered 5 in figure~\ref{fig:augmented}). 
+	When the simulation is running you have the ability to stop it by pressing the \textbf{run} button (turned red), 
+	or by pressing the \textbf{change view} button(numbered 7 in figure~\ref{fig:augmented}).
+	\image{imgs/Simulator.PNG}{0.7\columnwidth}{The simulator view.}{fig:simulator}
 	
-	\image{imgs/Simulator.PNG}{\columnwidth}{The simulator view.}{fig:simulator}
 	\subsection{Options}
-	\image{imgs/Options.PNG}{\columnwidth}{The options view.}{fig:options}
-	\subsubsection{Connecting to robot}
-	\image{imgs/ConnectionSelection.PNG}{\columnwidth}{THe list of available robots.}{fig:connectionSelection}
-	\image{imgs/Connected.PNG}{\columnwidth}{The options view when connected to a robot.}{fig:optionsConnected}
+	The \textit{options panel} allows you to change the behaviour of the application at runtime, change the inital setup, and connect to an external robot.
+	The yellow \textit{Connect} button is only visible if the device has bluetooth enabled. 
+	
+	\bigskip\noindent
+	To connect to an external robot; click on the \textit{Connect} button and wait for a list of robots to show up on the screen(figure~\ref{fig:connectionSelection}),
+	click on the desired robot and wait for the connection to happen. If everything works fine the \textit{Connect} button should turn green, this is an indication that
+	the application is in contact with the robot.
+	\image{imgs/Options.PNG}{0.7\columnwidth}{The options view.}{fig:options}
+	\image{imgs/ConnectionSelection.PNG}{0.7\columnwidth}{The list of available robots.}{fig:connectionSelection}
+	\image{imgs/Connected.PNG}{0.7\columnwidth}{The options view when connected to a robot.}{fig:optionsConnected}
 	\subsubsection{OnScreen keyboard}
-	\image{imgs/Keyboard.PNG}{\columnwidth}{The on screen keyboard for numeric input.}{fig:keyboardNumeric}
-	\image{imgs/KeyboardAlpha.PNG}{\columnwidth}{The on screen keyboard for alphanumeric input.}{fig:keyboardAlpha}
+	This is fallback solution, if the native keyboard doesn't work.
+	\image{imgs/Keyboard.PNG}{0.7\columnwidth}{The on screen keyboard for numeric input.}{fig:keyboardNumeric}
+	\image{imgs/KeyboardAlpha.PNG}{0.7\columnwidth}{The on screen keyboard for alphanumeric input.}{fig:keyboardAlpha}
 \end{document}
 
