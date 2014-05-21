@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \usepackage{longtable}
 \usepackage{ifthen}
+\usepackage[margin=0.75in]{geometry}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -55,47 +56,49 @@
 \everymath{\displaystyle}
 
 \begin{document}
-	\section{The application}
-	The startup screen, see figure~\ref{fig:augmented}, is the first screen you'll see in the application (except for the colored buttons highlighted as \textbf{3}). 
-	In order for you to get familiar with the application we have highlighted the different part of the application screen, 
-	and provided a simple overview in section~\ref{sec:normal}. 
-	\image{imgs/SimpleMainAugmented.png}{\columnwidth}{Initial application screen}{fig:augmented}
+	\begin{center}
+		\Huge{TurtleBot}
+	\end{center}
+
+	\section{The TurtleBot application}
+	The \textit{graphics view} seen in figure~\ref{fig:augmented} is the first thing you'll see when the application starts. 
+	In order for you to get familiar with the layout we have highlighted the different components, 
+	and provided a simple description of them below figure~\ref{fig:augmented}. 
+	\image{imgs/SimpleMainAugmented.png}{\columnwidth}{Graphics view}{fig:augmented}
 	
-	\subsection{Views}
-	The application is divided into several different views and panels. 
-	When you first start the application it will start in the \textit{graphics view}(see figure~\ref{fig:augmented}), 
-	this is the view where most of the programming will be done.
-	And where programming is done by dragging \textit{codeblocks} to their correct place.
-	As an alternative to the \textit{graphics view}, there is also a \textit{textual view}(see figure~\ref{fig:extendedTextual}). 
-	The \textit{textual view} provides the same functionality as the \textit{graphics view}, but requires you to write the code yourselves.
-	Changing between \textit{graphics view} and \textit{textual view} can be done by pressing the button numbered \textbf{7} in figure \ref{fig:augmented}.
-	
-	
-		
-	\subsection{Normal mode}\label{sec:normal}
-	When starting the application for the first time, it will start in what is called \textit{normal mode}.
-	The differences between \textit{normal mode} and \textit{extended mode} will become clear in sections~\ref{sec:extended}, 
-	but for now lets focus on the different parts highlighted in figure~\ref{fig:augmented} and what they do.
-	
-	\bigskip\noindent
 	\begin{description}
 		\item[1] This is the available \textit{codeblocks} for your \textit{program}.
 		\item[2] The \textit{startblock}. This is a special kind of \textit{codeblock}. 
 			It may not be moved or removed, and must always be the first \textit{codeblock} in the \textit{program}.
 		\item[3] The \textit{program}. This part consists of one of more \textit{codeblocks}, and are the part which tells the robot what to do.
-			An explaination of the different codeblocks can be seen in section~\ref{sec:codeblocks}.
-		\item[4] The \texit{Options} menu. 
-		\item[5] The \textit{Run} button. Pressing this button will change the screen into a simulator of your current \textit{program}.
+			An explaination of the different codeblocks can be seen in section~\ref{sec:normal} and section~\ref{sec:extended}.
+		\item[4] The \textit{Options} menu. 
+		\item[5] The \textit{Run} button. Pressing this button run the \textit{program}.
 		\item[6] The \textit{Clear} button. This button will remove all blocks except the \textit{startblock}.
-		\item[7] The \textit{Input mode} button. This button will change the program input method, and is used to get back to programming after a simulation.
+		\item[7] The \textit{Input mode} button. This button will change the input view. 
+		If you are working in the \textit{graphics view} it will change to the \textit{textual view}, and vise versa.
 	\end{description}
 	
-	\bigskip\noindent
+	\subsection{Views}
+	The application is divided into several different views and panels. 
+	When you first start the application it will start in the \textit{graphics view}(see figure~\ref{fig:augmented}), 
+	this is the view where most of the programming will be done. Programming in this view is done by dragging \textit{codeblocks} around the screen.
+	As an alternative to the \textit{graphics view}, there is also a \textit{textual view}(see figure~\ref{fig:extendedTextual}). 
+	The \textit{textual view} has the same function and goal as the \textit{graphics view}, but requires you to write the code yourselves in text form.
+	Changing between \textit{graphics view} and \textit{textual view} can be done by pressing the button numbered \textbf{7} in figure \ref{fig:augmented}. 
+	Any \textit{code} or \textit{codeblocks} are then converted to the correct format.
+	
+	\subsubsection{Graphics view}
 	In order to create program you drag the codeblock you want from the available blocks down to the startblock, a small indicator should appear.
 	In order to change the order of your codeblocks, simply drag the codeblock you want to move into the correct position. 
 	If you want to remove a codeblock from your program just drag it back to the list of available blocks at the top.
 	
-	\subsubsection{The different codeblocks}\label{sec:codeblocks}
+	\subsubsection{Textual view}
+	When working in \textit{textual view} you must write the code yourselves. 
+	In figure~\ref{fig:extendedTextual} you see an example of a \textit{program} written with in \textit{extened mode}.
+		
+	\subsection{Normal mode}\label{sec:normal}
+	When starting the application for the first time, it will start in what is called \textit{normal mode} showing the \textit{graphics view}.
 	In \textit{normal mode} you have four \textit{codeblocks} available to you: 
 	
 	\begin{center}
@@ -103,7 +106,7 @@
 			\textbf{FWD - Forward} & \textbf{BACK - Backward}\\
 			\textbf{TL - Turn Left} & \textbf{TR - Turn Right}\\
 			\label{tab:moves}
-		\end{description}
+		\end{tabular}
 	\end{center}
 	
 	\noindent
@@ -111,14 +114,20 @@
 	\textbf{TL} and \textbf{TR} makes the robot turn either left of right. The input value determines how many degrees it will turn. 
 	
 	\bigskip\noindent
-	In figure~\ref{fig:augmented} you can see an example where all these four \textif{codeblocks} are used. 
-	If you run the program you will end up with a picture as seen in figure~\ref{fig:simpleProg}.
+	In figure~\ref{fig:augmented} you can see an example where all these four \textit{codeblocks} are used. 
+	The resulting picture from this \textit{program} can be seen in figure~\ref{fig:simpleProg}.
 	\image{imgs/SimpleProg.PNG}{null}{The result from running the program in figure~\ref{fig:augmented}}{fig:simpleProg}
 	
 	\subsection{Extended mode}\label{sec:extended}
+	If \textit{extended mode} is turn on you will see five new \textit{codeblocks} appear as available (figure~\ref{fig:extendedMain}).
+	These blocks are related to programs that need \textit{variables}, \textit{procedures} and \textit{loops}. 
+	The usage of these blocks and how they work will be explained in another document.
+	
+	
 	\image{imgs/ExtendedMain.PNG}{\columnwidth}{The main view when extended mode is on.}{fig:extendedMain}
 	\image{imgs/ExtendedTextual.PNG}{\columnwidth}{The textual view when extended mode is on.}{fig:extendedTextual}
 	\subsection{The simulator}
+	
 	\image{imgs/Simulator.PNG}{\columnwidth}{The simulator view.}{fig:simulator}
 	\subsection{Options}
 	\image{imgs/Options.PNG}{\columnwidth}{The options view.}{fig:options}
