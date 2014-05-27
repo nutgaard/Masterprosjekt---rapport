@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{exam}
 
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
@@ -7,6 +7,10 @@
 \usepackage{mathtools}
 \usepackage{longtable}
 \usepackage[numbers]{natbib}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{longtable}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -50,11 +54,9 @@
 	\citeauthor{#1} \citeyearpar{#1}
 }
 
-
 %%Force correct display style for math environments
 \everymath{\displaystyle}
-
 \begin{document}
-	\section{Hei}
+	\include{prepost}
 \end{document}
 
