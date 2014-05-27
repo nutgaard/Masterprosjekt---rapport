@@ -11,6 +11,8 @@
 \usepackage{tabularx}
 \usepackage{tikz}
 \usepackage{longtable}
+\usepackage{ifthen}
+\usepackage[margin=0.75in]{geometry}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -58,5 +60,96 @@
 \everymath{\displaystyle}
 \begin{document}
 	\include{prepost}
+	\begin{center}
+		\Huge{TurtleBot}
+	\end{center}
+
+	\section{The TurtleBot application}
+	The \textit{graphics view} seen in figure~\ref{fig:augmented} is the first thing you'll see when the application starts. 
+	In order for you to get familiar with the layout we have highlighted the different components, 
+	and provided a simple description of them below figure~\ref{fig:augmented}. 
+	\image{imgs/SimpleMainAugmented.png}{\columnwidth}{Graphics view}{fig:augmented}
+	
+	\begin{description}
+		\item[1] This is the available \textit{codeblocks} for your \textit{program}.
+		\item[2] The \textit{startblock}. This is a special kind of \textit{codeblock}. 
+			It may not be moved or removed, and must always be the first \textit{codeblock} in the \textit{program}.
+		\item[3] The \textit{program}. This part consists of one of more \textit{codeblocks}, and are the part which tells the robot what to do.
+			An explaination of the different codeblocks can be seen in section~\ref{sec:normal} and section~\ref{sec:extended}.
+		\item[4] The \textit{Options} menu. 
+		\item[5] The \textit{Run} button. Pressing this button run the \textit{program}.
+		\item[6] The \textit{Clear} button. This button will remove all blocks except the \textit{startblock}.
+		\item[7] The \textit{Input mode} button. This button will change the input view. 
+		If you are working in the \textit{graphics view} it will change to the \textit{textual view}, and vise versa.
+	\end{description}
+	
+	\subsection{Views}
+	The application is divided into several different views and panels. 
+	When you first start the application it will start in the \textit{graphics view}(see figure~\ref{fig:augmented}), 
+	this is the view where most of the programming will be done. Programming in this view is done by dragging \textit{codeblocks} around the screen.
+	As an alternative to the \textit{graphics view}, there is also a \textit{textual view}(see figure~\ref{fig:extendedTextual}). 
+	The \textit{textual view} has the same function and goal as the \textit{graphics view}, but requires you to write the code yourselves in text form.
+	Changing between \textit{graphics view} and \textit{textual view} can be done by pressing the button numbered \textbf{7} in figure \ref{fig:augmented}. 
+	Any \textit{code} or \textit{codeblocks} are then converted to the correct format.
+	
+	\subsubsection{Graphics view}
+	In order to create program you drag the codeblock you want from the available blocks down to the startblock, a small indicator should appear.
+	In order to change the order of your codeblocks, simply drag the codeblock you want to move into the correct position. 
+	If you want to remove a codeblock from your program just drag it back to the list of available blocks at the top.
+	
+	\subsubsection{Textual view}
+	When working in \textit{textual view} you must write the code yourselves. 
+	In figure~\ref{fig:extendedTextual} you see an example of a \textit{program} written with in \textit{extened mode}.
+		
+	\subsection{Normal mode}\label{sec:normal}
+	When starting the application for the first time, it will start in what is called \textit{normal mode} showing the \textit{graphics view}.
+	In \textit{normal mode} you have four \textit{codeblocks} available to you: 
+	
+	\begin{center}
+		\begin{tabular}{ll}
+			\textbf{FWD - Forward} & \textbf{BACK - Backward}\\
+			\textbf{TL - Turn Left} & \textbf{TR - Turn Right}\\
+			\label{tab:moves}
+		\end{tabular}
+	\end{center}
+	
+	\noindent
+	\textbf{FWD} and \textbf{BACK} makes the robot move forward and backward respectively. The input value determines how far the robot will go.
+	\textbf{TL} and \textbf{TR} makes the robot turn either left of right. The input value determines how many degrees it will turn. 
+	
+	\bigskip\noindent
+	In figure~\ref{fig:augmented} you can see an example where all these four \textit{codeblocks} are used. 
+	The resulting picture from this \textit{program} can be seen in figure~\ref{fig:simpleProg}.
+	\image{imgs/SimpleProg.PNG}{null}{The result from running the program in figure~\ref{fig:augmented}}{fig:simpleProg}
+	
+	\subsection{Extended mode}\label{sec:extended}
+	If \textit{extended mode} is turn on you will see five new \textit{codeblocks} appear as available (figure~\ref{fig:extendedMain}).
+	These blocks are related to programs that need \textit{variables}, \textit{procedures} and \textit{loops}. 
+	The usage of these blocks and how they work will be explained in another document.
+	
+	\image{imgs/ExtendedMain.PNG}{0.7\columnwidth}{The main view when extended mode is on.}{fig:extendedMain}
+	\image{imgs/ExtendedTextual.PNG}{0.7\columnwidth}{The textual view when extended mode is on.}{fig:extendedTextual}
+	\subsection{The simulator}
+	The \textit{simulator view} is to show you the result of your program. 
+	This view shows when you press the \textbf{run} button(numbered 5 in figure~\ref{fig:augmented}). 
+	When the simulation is running you have the ability to stop it by pressing the \textbf{run} button (turned red), 
+	or by pressing the \textbf{change view} button(numbered 7 in figure~\ref{fig:augmented}).
+	\image{imgs/Simulator.PNG}{0.7\columnwidth}{The simulator view.}{fig:simulator}
+	
+	\subsection{Options}
+	The \textit{options panel} allows you to change the behaviour of the application at runtime, change the inital setup, and connect to an external robot.
+	The yellow \textit{Connect} button is only visible if the device has bluetooth enabled. 
+	
+	\bigskip\noindent
+	To connect to an external robot; click on the \textit{Connect} button and wait for a list of robots to show up on the screen(figure~\ref{fig:connectionSelection}),
+	click on the desired robot and wait for the connection to happen. If everything works fine the \textit{Connect} button should turn green, this is an indication that
+	the application is in contact with the robot.
+	\image{imgs/Options.PNG}{0.7\columnwidth}{The options view.}{fig:options}
+	\image{imgs/ConnectionSelection.PNG}{0.7\columnwidth}{The list of available robots.}{fig:connectionSelection}
+	\image{imgs/Connected.PNG}{0.7\columnwidth}{The options view when connected to a robot.}{fig:optionsConnected}
+	\subsubsection{OnScreen keyboard}
+	This is fallback solution, if the native keyboard doesn't work.
+	\image{imgs/Keyboard.PNG}{0.7\columnwidth}{The on screen keyboard for numeric input.}{fig:keyboardNumeric}
+	\image{imgs/KeyboardAlpha.PNG}{0.7\columnwidth}{The on screen keyboard for alphanumeric input.}{fig:keyboardAlpha}
 \end{document}
 
