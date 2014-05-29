@@ -13,6 +13,7 @@
 \usepackage{longtable}
 \usepackage{ifthen}
 \usepackage[margin=0.75in]{geometry}
+\usepackage{caption}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -59,16 +60,36 @@
 %%Force correct display style for math environments
 \everymath{\displaystyle}
 \begin{document}
-	\include{prepost}
 	\begin{center}
 		\Huge{TurtleBot}
 	\end{center}
 
-	\section{The TurtleBot application}
-	The \textit{graphics view} seen in figure~\ref{fig:augmented} is the first thing you'll see when the application starts. 
-	In order for you to get familiar with the layout we have highlighted the different components, 
+	\section{The TurtleBot application}	
+	At its very core is the TurtleBot application a combined integrated development environment and simulator,
+	enabling children to explore the world of robotics and programming. 
+	The application was created with extendability in mind, having two distinct methods for creating programs, 
+	the possibility of extending the existing block language,
+	several programming languages, and different visual setups depending on your preference and needs.
+		
+	\subsection{Basic screen layout}
+	The application is divided into three major components; \textit{header}, \textit{body} and \textit{footer}(figure~\ref{fig:augmented}). 
+	
+	\bigskip\noindent
+	In order to make the application easy to use by people unfamiliar to programming and robotics it utilizes a
+	block programming interface as its default input method. 
+	With this input method the user can drag \textit{codeblocks} from the header, down to 
+	the body/programming area. After the blocks has been placed in the programming area they may be moved around
+	to change the program or deleted by dragging them back to the header.
+	
+	\bigskip\noindent
+	As seen in figure~\ref{fig:augmented} the application starts with four codeblocks the first time. 
+	These blocks are the \textit{move-blocks} in the application. 
+	Everytime one of these blocks are executed by the simulator it will move the robot around. 	
+	
+	\bigskip\noindent
+	In order for you to get more familiar with the layout we have highlighted the different components, 
 	and provided a simple description of them below figure~\ref{fig:augmented}. 
-	\image{imgs/SimpleMainAugmented.png}{\columnwidth}{Graphics view}{fig:augmented}
+	\image{imgs/SimpleMainAugmented.png}{\columnwidth}{Graphics view. \\ \textbf{NB}: button 6 has been moved to the left side}{fig:augmented}
 	
 	\begin{description}
 		\item[1] This is the available \textit{codeblocks} for your \textit{program}.
@@ -82,26 +103,21 @@
 		\item[7] The \textit{Input mode} button. This button will change the input view. 
 		If you are working in the \textit{graphics view} it will change to the \textit{textual view}, and vise versa.
 	\end{description}
-	
-	\subsection{Views}
-	The application is divided into several different views and panels. 
-	When you first start the application it will start in the \textit{graphics view}(see figure~\ref{fig:augmented}), 
-	this is the view where most of the programming will be done. Programming in this view is done by dragging \textit{codeblocks} around the screen.
-	As an alternative to the \textit{graphics view}, there is also a \textit{textual view}(see figure~\ref{fig:extendedTextual}). 
-	The \textit{textual view} has the same function and goal as the \textit{graphics view}, but requires you to write the code yourselves in text form.
-	Changing between \textit{graphics view} and \textit{textual view} can be done by pressing the button numbered \textbf{7} in figure \ref{fig:augmented}. 
-	Any \textit{code} or \textit{codeblocks} are then converted to the correct format.
-	
-	\subsubsection{Graphics view}
-	In order to create program you drag the codeblock you want from the available blocks down to the startblock, a small indicator should appear.
-	In order to change the order of your codeblocks, simply drag the codeblock you want to move into the correct position. 
-	If you want to remove a codeblock from your program just drag it back to the list of available blocks at the top.
-	
-	\subsubsection{Textual view}
-	When working in \textit{textual view} you must write the code yourselves. 
-	In figure~\ref{fig:extendedTextual} you see an example of a \textit{program} written with in \textit{extened mode}.
 		
-	\subsection{Normal mode}\label{sec:normal}
+	\subsection{Views}
+	The header/programming area in the application has three different views, which all serve a different purpose.
+	The view shown in figure~\ref{fig:augmented} is the \textit{graphics view}, here programming is done by drag'n'drop as explained.
+	The second view is the \textit{textual view}, as seen in figure~\ref{fig:extendedTextual}. 
+	The textual view provides the textual counterpart to the graphics view, and when used with block programming you are able to switch between the two
+	without losing your program. The view also supports an alternative programming language for more experienced users.
+	The textual view is considered harder to understand, and it is therefore recommended that most people start with the graphics view.
+	The final view is the \textit{simulator view}. This view takes on many different visual appearances, 
+	depending on the state of the application and different options. In its most basic form it will look like figure~\ref{fig:simulator},
+	but depending on what has been done previously in the application it may have changed. 
+	A list of all the different simulator appearances can be seen SEE SECTION IMAGE SIMULATORS.
+	
+	\subsection{Programming}
+	\subsubsection{Normal mode}\label{sec:normal}
 	When starting the application for the first time, it will start in what is called \textit{normal mode} showing the \textit{graphics view}.
 	In \textit{normal mode} you have four \textit{codeblocks} available to you: 
 	
@@ -122,8 +138,8 @@
 	The resulting picture from this \textit{program} can be seen in figure~\ref{fig:simpleProg}.
 	\image{imgs/SimpleProg.PNG}{null}{The result from running the program in figure~\ref{fig:augmented}}{fig:simpleProg}
 	
-	\subsection{Extended mode}\label{sec:extended}
-	If \textit{extended mode} is turn on you will see five new \textit{codeblocks} appear as available (figure~\ref{fig:extendedMain}).
+	\subsubsection{Extended mode}\label{sec:extended}
+	In \textit{extended mode} you will see five new \textit{codeblocks} appear as available (figure~\ref{fig:extendedMain}).
 	These blocks are related to programs that need \textit{variables}, \textit{procedures} and \textit{loops}. 
 	The usage of these blocks and how they work will be explained in another document.
 	
@@ -135,7 +151,7 @@
 	When the simulation is running you have the ability to stop it by pressing the \textbf{run} button (turned red), 
 	or by pressing the \textbf{change view} button(numbered 7 in figure~\ref{fig:augmented}).
 	\image{imgs/Simulator.PNG}{0.7\columnwidth}{The simulator view.}{fig:simulator}
-	
+		
 	\subsection{Options}
 	The \textit{options panel} allows you to change the behaviour of the application at runtime, change the inital setup, and connect to an external robot.
 	The yellow \textit{Connect} button is only visible if the device has bluetooth enabled. 
