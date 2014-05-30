@@ -14,6 +14,8 @@
 \usepackage{ifthen}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{caption}
+\usepackage{listings}
+\usepackage{color}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -59,6 +61,50 @@
 
 %%Force correct display style for math environments
 \everymath{\displaystyle}
+
+%%Code highlighting setup
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+\lstdefinelanguage{MyBasic}{
+	keywords={FWD, BACK, TL, TR, SET, PROC, END, CALL, REP},
+	ndkeyword{},
+	keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+	sensitive=true
+}
+\lstset{
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+
+
 \begin{document}
 	\begin{center}
 		\Huge{TurtleBot}
@@ -115,6 +161,7 @@
 	depending on the state of the application and different options. In its most basic form it will look like figure~\ref{fig:simulator},
 	but depending on what has been done previously in the application it may have changed. 
 	A list of all the different simulator appearances can be seen SEE SECTION IMAGE SIMULATORS.
+	\image{imgs/ExtendedTextual.PNG}{0.7\columnwidth}{The textual view when extended mode is on.}{fig:extendedTextual}
 	
 	\subsection{Programming}
 	\subsubsection{Normal mode}\label{sec:normal}
@@ -136,36 +183,166 @@
 	\bigskip\noindent
 	In figure~\ref{fig:augmented} you can see an example where all these four \textit{codeblocks} are used. 
 	The resulting picture from this \textit{program} can be seen in figure~\ref{fig:simpleProg}.
+	For examples of textual program please see section~\ref{sec:code}.
 	\image{imgs/SimpleProg.PNG}{null}{The result from running the program in figure~\ref{fig:augmented}}{fig:simpleProg}
 	
 	\subsubsection{Extended mode}\label{sec:extended}
 	In \textit{extended mode} you will see five new \textit{codeblocks} appear as available (figure~\ref{fig:extendedMain}).
 	These blocks are related to programs that need \textit{variables}, \textit{procedures} and \textit{loops}. 
-	The usage of these blocks and how they work will be explained in another document.
-	
+	The usage of these blocks and how they work is beyond the scope of this introduction, but it should be easy to figure out for anyone with previous experience with programming.
 	\image{imgs/ExtendedMain.PNG}{0.7\columnwidth}{The main view when extended mode is on.}{fig:extendedMain}
-	\image{imgs/ExtendedTextual.PNG}{0.7\columnwidth}{The textual view when extended mode is on.}{fig:extendedTextual}
+
+	\subsubsection{Javascript mode}
+	The javascript mode is a purely textual mode, and only recommended for those who have mastered using the extended mode in textual form, or have previous knowledge about programming.
+	This mode utilized an architectural artifact within the application to allow for writing pure and real javascript code directly into the application. 
+	To use the javascript mode; change your view to the textual view and add \texttt{//\#javascript} as the first line and you are good to go.	
+		
 	\subsection{The simulator}
-	The \textit{simulator view} is to show you the result of your program. 
-	This view shows when you press the \textbf{run} button(numbered 5 in figure~\ref{fig:augmented}). 
-	When the simulation is running you have the ability to stop it by pressing the \textbf{run} button (turned red), 
-	or by pressing the \textbf{change view} button(numbered 7 in figure~\ref{fig:augmented}).
-	\image{imgs/Simulator.PNG}{0.7\columnwidth}{The simulator view.}{fig:simulator}
+	As mentioned previously the simulator has many different appearances which depends on the current state of the application. 
+	Here is a list of the current simulator modes:
+	\subsubsection{Always simulator}
+		With the \textit{always simulator} mode the simulator is shown regardless of the state of your application. 
+		\image{imgs/Simulator.PNG}{0.7\columnwidth}{The simulator view.}{fig:simulator}
+		
+	\subsubsection{Bluetooth adaptive headsup display}
+		The \textit{bluetooth adaptive headsup display} changes its appearances depending on wether the application
+		is connected to a robot via bluetooth or not.
+		In the case where it is not connected to a robot it will show the default simulator view, as seen in figure~\ref{fig:simulator}.
+		When the application is connected it will just show the current task of the robot, as seen in figure~\ref{fig:bluetoothHeadsup}
+		\image{imgs/bluetoothHeadsup.PNG}{0.7\columnwidth}{The bluetooth headsup display.}{fig:bluetoothHeadsup}
+	\subsubsection{Bluetooth adaptive blackout}
+		The \textit{bluetooth adaptive blackout display} has similar characteristics to the bluetooth adaptive heasdup display, 
+		but even removes the heasdup display. While the program is runnin all focus will be at the robot as the screen will at
+		this point not show any useful information.
+		\image{imgs/bluetoothBlackout.PNG}{0.7\columnwidth}{The bluetooth blackout display.}{fig:bluetoothBlackout}
+	\subsubsection{Just trace simulator}
+		This mode is does not send any information to the robot even if it is connected. 
+		Instead this mode can be used for rapid debugging of your program. 
+		This mode skips all fancy animations that other modes may have, and draws the a trace of the robots movement as fast as it can.
+		The end image will be very similar to those of the normal simulator.
 		
 	\subsection{Options}
 	The \textit{options panel} allows you to change the behaviour of the application at runtime, change the inital setup, and connect to an external robot.
-	The yellow \textit{Connect} button is only visible if the device has bluetooth enabled. 
+	If the yellow \textit{Connect} button does not appear then check the bluetooth settings on your device, as this button only
+	appears if the application detects a device with bluetooth.
+	\image{imgs/Options.PNG}{0.7\columnwidth}{The options view.}{fig:options}
 	
 	\bigskip\noindent
+	The following attributes are exposed through the options menu:
+	
+	\bigskip\noindent
+	\begin{tabular}{lp{7cm}p{3cm}}
+		\textbf{Attribute} & \textbf{Description} & \textbf{Default}\\
+		\hline
+		\textbf{Use extended mode} & Allows the user to toggle between \textit{normal} and \textit{extended} mode. & unchecked(normal mode) \\
+		\textbf{Show procedure invokations} & Determines wether or not to show the blocks from the extended mode during simulation. & unchecked(dont show) \\
+		\textbf{Default view} & Allows the user to set the \textit{textual view} as default. & \#program(graphics view) \\
+		\textbf{Smart keyboard} & Turns on different modes for the on screen keyboard. & none(dont show) \\
+		\textbf{Simulator selection} & Allows the user to change which simulator mode that are used. & bluetooth adaptive headsup \\
+	\end{tabular}
+	
+	\subsubsection{Connecting to a robot}
 	To connect to an external robot; click on the \textit{Connect} button and wait for a list of robots to show up on the screen(figure~\ref{fig:connectionSelection}),
 	click on the desired robot and wait for the connection to happen. If everything works fine the \textit{Connect} button should turn green, this is an indication that
-	the application is in contact with the robot.
-	\image{imgs/Options.PNG}{0.7\columnwidth}{The options view.}{fig:options}
+	the application is in contact with the robot(figure~\ref{fig:optionsConnected}).
 	\image{imgs/ConnectionSelection.PNG}{0.7\columnwidth}{The list of available robots.}{fig:connectionSelection}
 	\image{imgs/Connected.PNG}{0.7\columnwidth}{The options view when connected to a robot.}{fig:optionsConnected}
-	\subsubsection{OnScreen keyboard}
-	This is fallback solution, if the native keyboard doesn't work.
+	\subsubsection{On screen keyboard}
+	This is fallback solution, if the native keyboard doesn't work correctly.
 	\image{imgs/Keyboard.PNG}{0.7\columnwidth}{The on screen keyboard for numeric input.}{fig:keyboardNumeric}
 	\image{imgs/KeyboardAlpha.PNG}{0.7\columnwidth}{The on screen keyboard for alphanumeric input.}{fig:keyboardAlpha}
+	
+	\subsection{Textual code examples}\label{sec:code}
+		All the example below will draw a square with side length of $100$, and return to the original starting position and facing the same way as when it started.
+	\subsubsection{Normal mode}
+		\begin{minipage}{\linewidth}
+			\begin{lstlisting}[frame=single,numbers=left,caption=Normal mode.,language=MyBasic]
+FWD 100
+TL 90
+FWD 100
+TL 90
+FWD 100
+TL 90
+FWD 100
+TL 90
+			\end{lstlisting}
+		\end{minipage}
+	\subsubsection{Extended mode}
+		\begin{minipage}{\linewidth}
+			\begin{lstlisting}[frame=single,numbers=left,caption=Extended mode using loops.,language=MyBasic]
+REP 4
+	FWD 100
+	TL 90
+END
+			\end{lstlisting}
+		\end{minipage}
+		\begin{minipage}{\linewidth}
+			\begin{lstlisting}[frame=single,numbers=left,caption=Extended mode using procedures and loops.,language=MyBasic]
+PROC A
+	FWD 100
+	TL 90
+END
+REP 4
+	PROC A
+END
+			\end{lstlisting}
+		\end{minipage}
+		\begin{minipage}{\linewidth}
+			\begin{lstlisting}[frame=single,numbers=left,caption=Extended mode using procedures loops and variables.,language=MyBasic]
+SET NUM 4
+SET LENGTH 100
+SET ANGLE 90
+PROC SEGMENT
+    FWD LENGTH
+    TL ANGLE
+END 
+REP NUM
+    CALL SEGMENT
+END 
+			\end{lstlisting}
+		\end{minipage}
+		\begin{minipage}{\linewidth}
+			\begin{lstlisting}[frame=single,numbers=left,caption=The internal representation of the previous program.,language=Javascript]
+var icount = 0; 
+
+SET("NUM", 4);var NUM = 4; 
+SET("LENGTH", 100);var LENGTH = 100; 
+SET("ANGLE", 90);var ANGLE = 90; 
+
+function SEGMENT() { 
+	icount++; 
+	if (icount > 30000){return;} 
+	FWD(LENGTH); 
+
+	icount++; 
+	if (icount > 30000){return;} 
+	TL(ANGLE); 
+	END();
+} 
+
+REP(NUM);
+for (var generated_55033 = 0; generated_55033 < NUM;generated_55033++) { 
+	CALL("SEGMENT");
+	SEGMENT(); 
+	END();
+}
+			\end{lstlisting}
+		\end{minipage}
+	\subsubsection{Javascript mode}
+		\begin{minipage}{\linewidth}
+			\begin{lstlisting}[frame=single,numbers=left,caption=Javascript mode,language=JavaScript]
+//#javascript
+var num = 4;
+var length = 100;
+var angle = 90;
+function segment(){
+	FWD(length);
+	TL(angle);
+}
+for (var i = 0; i < num; i++){
+	segment();
+}	
+			\end{lstlisting}
+		\end{minipage}
 \end{document}
 
