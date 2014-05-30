@@ -82,7 +82,7 @@
 }
 \lstdefinelanguage{MyBasic}{
 	keywords={FWD, BACK, TL, TR, SET, PROC, END, CALL, REP},
-	ndkeyword{},
+	ndkeywords={},
 	keywordstyle=\color{blue}\bfseries,
   ndkeywordstyle=\color{darkgray}\bfseries,
 	sensitive=true
@@ -283,7 +283,7 @@ PROC A
 	TL 90
 END
 REP 4
-	PROC A
+	CALL A
 END
 			\end{lstlisting}
 		\end{minipage}
@@ -341,7 +341,7 @@ function segment(){
 }
 for (var i = 0; i < num; i++){
 	segment();
-}	
+}		
 			\end{lstlisting}
 		\end{minipage}
 \end{document}
