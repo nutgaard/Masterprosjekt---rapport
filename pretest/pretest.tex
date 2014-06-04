@@ -1,0 +1,459 @@
+
+\documentclass[12pt]{exam}
+
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage[numbers]{natbib}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{ifthen}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{color}
+
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
+\,\operatorname{min}}\;}
+
+%Figures aliases
+%Usage: \image{path}{width}{caption}{label}
+%Try to allways use \image and let latex fix positioning of figures.
+%By passing 'null' as width the latex will use the figures default size
+%Do however but the command at the wanted position within the text, 
+%if we at a later stage want to fix the positioning of all images it could be done by rewriting this alias.
+\newcommand{\image}[4]{
+	\ifthenelse{\equal{false}{true}}{%true - true => latex fixes positioning, mismatch => forced positioning by float
+		\begin{figure}[ht]
+			\centering
+			\insertImage{#1}{#2}
+			\caption{#3}
+			\label{#4}
+		\end{figure}
+	}{
+		\imageHere{#1}{#2}{#3}{#4}
+	}	
+}
+\newcommand{\imageHere}[4]{
+	\begin{figure}[H]
+		\centering
+		\insertImage{#1}{#2}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+}
+%Helper function, do not use
+\newcommand{\insertImage}[2]{
+	\ifthenelse{\equal{#2}{null}}{
+		\includegraphics{#1}
+	}{
+		\includegraphics[width=#2]{#1}
+	}
+}
+\newcommand{\tcite}[1]{
+	\citeauthor{#1} \citeyearpar{#1}
+}
+
+%%Force correct display style for math environments
+\everymath{\displaystyle}
+
+%%Code highlighting setup
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+\lstdefinelanguage{MyBasic}{
+	keywords={FWD, BACK, TL, TR, SET, PROC, END, CALL, REP},
+	ndkeywords={},
+	keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+	sensitive=true
+}
+\lstset{
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+
+
+\begin{document}
+\usetikzlibrary{quotes,angles,calc,arrows}
+
+{\LARGE NAME:\underline{\hspace{10cm}}}
+
+\bigskip
+
+\tikzset{
+    %Define standard arrow tip
+    >=latex,
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
+\newcommand{\tikzAngleOfLine}{\tikz@AngleOfLine}                               
+  \def\tikz@AngleOfLine(#1)(#2)#3{%                                            
+  \pgfmathanglebetweenpoints{%                                                 
+    \pgfpointanchor{#1}{center}}{%                                             
+    \pgfpointanchor{#2}{center}}                                               
+  \pgfmathsetmacro{#3}{\pgfmathresult}%                                        
+  }  
+			
+																																						
+\newcommand{\pairspace}{
+\vspace{2 cm}
+}
+
+\newcommand{\degrees}{
+\square \hspace{0.5cm} 30^\circ \newline
+\square \hspace{0.5cm} 60^\circ \newline
+\square \hspace{0.5cm} 90^\circ \newline
+\square \hspace{0.5cm} 120^\circ \newline
+\square \hspace{0.5cm} 180^\circ \newline
+\square \hspace{0.5cm} 270^\circ \newline
+\square \hspace{0.5cm} 330^\circ 
+}
+
+\newcommand{\degreesReflex}{
+\square \hspace{0.5cm} 30^\circ \newline
+\square \hspace{0.5cm} 60^\circ \newline
+\square \hspace{0.5cm} 90^\circ \newline
+\square \hspace{0.5cm} 120^\circ \newline
+\square \hspace{0.5cm} 150^\circ \newline
+\square \hspace{0.5cm} 270^\circ \newline
+\square \hspace{0.5cm} 330^\circ 
+}
+
+\newcommand{\anglePaint}[2]{
+	\begin{tikzpicture}[scale=3,line width=1pt, baseline=(current bounding box.north)]                                    
+		\coordinate (A) at (0,0);                                                    
+		\coordinate (B) at ($(A)+(#1:1)$);                                                    
+		\coordinate (C) at ($(A)+(#2:1)$);                                                
+		\draw (A) -- (B);                                            
+		\draw (A) -- (C);                                            
+		\tikzMarkAngle{(A)}{(B)}{(C)}   
+	\end{tikzpicture}  
+}
+
+\newcommand{\anglePaintReflex}[2]{
+	\begin{tikzpicture}[scale=3,line width=1pt, baseline=(current bounding box.north)]                                    
+		\coordinate (A) at (0,0);                                                    
+		\coordinate (B) at ($(A)+(#1:1)$);                                                    
+		\coordinate (C) at ($(A)+(#2:1)$);                                                
+		\draw (A) -- (B);                                            
+		\draw (A) -- (C);                                            
+		\draw (#1:0.25) arc (#1:#2:0.25);
+	\end{tikzpicture}  
+}
+
+\newcommand{\tikzMarkAngle}[3]{                                                
+\tikzAngleOfLine#1#2{\AngleStart}                                              
+\tikzAngleOfLine#1#3{\AngleEnd}                                                
+\draw #1+(\AngleStart:0.15cm) arc (\AngleStart:\AngleEnd:0.15cm);              
+}   
+
+
+
+%Start of test
+\begin{questions}
+\pairspace
+\question What is an angle? Try to explain with words.
+\vspace{4 cm}
+\pairspace
+
+\question Draw an angle
+\vspace{4 cm}
+\pairspace
+
+\question Draw a bigger angle. Explain why it is bigger.
+\vspace{4 cm}
+
+\newpage
+\question Which angle is bigger in each pair? Circle the one you think is biggest. 
+
+\bigskip
+
+\begin{tikzpicture}[thick, scale= 2]
+	\draw (0,0) -- (0:1);
+	\draw (0,0) -- (80:1);
+	\begin{scope}[shift={(2,0)}]
+		\draw (0,0) -- (60:2);
+		\draw (0,0) -- (20:2);
+  \end{scope}
+\end{tikzpicture}
+
+\pairspace
+
+\begin{tikzpicture}[thick, scale= 2]
+	\draw (0,0) -- (35:1);
+	\draw (0,0) -- (-35:1);
+	\begin{scope}[shift={(2,0)}]
+		\draw (0,0) -- (-45:1);
+		\draw (0,0) -- (-135:1);
+  \end{scope}
+\end{tikzpicture}
+
+\pairspace
+
+\begin{tikzpicture}[thick, scale= 2]
+	\draw (0,0) -- (60:1);
+	\draw (0,0) -- (80:1);
+	\begin{scope}[shift={(2,0)}]
+		\draw (0,0) -- (40:1);
+		\draw (0,0) -- (10:1);
+  \end{scope}
+\end{tikzpicture}
+
+\pairspace
+
+\begin{tikzpicture}[thick, scale= 2]
+	\draw (0,0) -- (30:1);
+	\draw (0,0) -- (60:1);
+	\draw (60:0.25) arc ((60:390:0.25));
+	\begin{scope}[shift={(3,0)}]
+		\draw (0,0) -- (180:1);
+		\draw (0,0) -- (135:1);
+		\draw (135:0.25) arc ((135:-180:0.25));
+  \end{scope}
+\end{tikzpicture}
+
+\pairspace
+
+\begin{tikzpicture}[thick, scale= 2]
+	\draw (0,0) -- (0:1);
+	\draw (0,0) -- (90:1);
+	\draw (90:0.25) arc ((90:360:0.25));
+	\begin{scope}[shift={(2,0)}]
+		\draw (0,0) -- (22:1);
+		\draw (0,0) -- (67:1);
+		\draw (67:0.25) arc ((67:382:0.25));
+  \end{scope}
+\end{tikzpicture}
+
+\pairspace
+
+\newpage
+\question How big is the missing angle measurement? Write the answer on the line.                                                        
+
+%Triangle nr 1
+\begin{tikzpicture}[scale=4,line width=1pt]                                    
+  \coordinate (A) at (0,0);                                                    
+  \coordinate (B) at ($(A)+(90:1)$);                                                    
+  \coordinate (C) at ($(B)+(-30:2)$);                                                
+  \draw (A) -- (B) -- (C) -- cycle;                                            
+	
+  \tikzMarkAngle{(C)}{(B)}{(A)}   
+	\node at ($(C)+(170:0.40)$) {?=\underline{\hspace{1cm}}};
+	
+	\tikzMarkAngle{(A)}{(B)}{(C)}
+	\node at ($(A)+(45:0.25)$) {$90^\circ$};
+	
+	\tikzMarkAngle{(B)}{(A)}{(C)}           
+	\node at ($(B)+(-60:0.25)$) {$60^\circ$};
+\end{tikzpicture}  
+
+\pairspace
+
+%Parallel lines
+\begin{tikzpicture}[scale=2, line width=1pt]
+  \coordinate (A) at (-2,0);                                                    
+  \coordinate (B) at (3,0);                                                    
+	\coordinate (E) at (60:-1);                                                
+	\coordinate (F) at (60:1);                                                
+	
+	\draw (A) -- (B);
+	\draw (E) -- (F);
+	
+	\draw (180:0.25cm) arc (180:0:0.25cm); 
+	
+	\node at ($(30:0.5)$) {$60^\circ$};
+	\node at ($(130:0.6)$) {?=\underline{\hspace{1cm}}};
+\end{tikzpicture}
+
+\pairspace
+
+%Triangle nr 2
+\begin{tikzpicture}[scale=4,line width=1pt]                                    
+  \coordinate (A) at (0,0);                                                    
+  \coordinate (B) at ($(A)+(1.4142,0)$);                                                    
+  \coordinate (C) at ($(A)+(45:1)$);                                                
+  \draw (A) -- (B) -- (C) -- cycle;                                            
+	
+  \tikzMarkAngle{(C)}{(B)}{(A)}   
+	\node at ($(C)+(-90:0.30)$) {?=\underline{\hspace{1cm}}};
+	
+	\tikzMarkAngle{(A)}{(B)}{(C)}
+	\node at ($(A)+(22.5:0.25)$) {$45^\circ$};
+	
+	\tikzMarkAngle{(B)}{(A)}{(C)}           
+	\node at ($(B)+(157.5.5:0.25)$) {$45^\circ$};
+\end{tikzpicture}  
+
+How did you find the answer?
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\pairspace
+
+\newcommand{\writeEstimate}{
+	\newline 
+	\newline 
+	Write an estimate 
+	\newline 
+	\newline 
+	\underline{\hspace{2cm}}
+}
+
+\newpage
+\question Estimate the angles
+
+
+    \begin{longtable}[l]{ p{4cm} r }
+    \degrees & \anglePaintReflex{90}{180} \\
+		\\
+		\degrees & \anglePaintReflex{-70}{-100}\\
+		\\
+		\writeEstimate & \anglePaintReflex{-45}{-135} \\
+		\\
+		\writeEstimate & \anglePaintReflex{0}{135} \\
+    \end{longtable}
+
+\bigskip
+How did you estimate this angle?
+\newline
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\pairspace
+\newpage
+\question Estimate the angles		
+    \begin{longtable}[l]{ p{4cm} r }
+    \degrees & \anglePaintReflex{30}{360} \\
+		\\
+		\degrees & \anglePaintReflex{0}{-270} \\
+		\\
+		\writeEstimate & \anglePaintReflex{180}{405} \\
+		\\
+		\writeEstimate & \anglePaintReflex{-45}{225} \\
+    \end{longtable}
+
+\bigskip
+How did you estimate this angle?
+\newline
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\pairspace
+\newpage
+\question How many degrees and in which direction (right or left) should you turn the spinner arrow to aim it directly at the center of the black dot? Circle the direction you choose and write how many degrees on the line.
+
+\newcommand{\drawArrow}[2]{
+	\draw #1 circle (0.07);
+	\draw[->, line width=2pt, shift={($#1+(#2:0.07)$)}] (0,0) -- (#2:.7);
+	\draw[shift={($#1+(#2:-0.07)$)}, line width=2pt] (0,0) -- (#2+180:.7);
+}
+
+\newcommand{\drawArrorChoice}[1]{
+	\node at ($#1+(0,0.5)$) {LEFT / RIGHT};
+	\node at ($#1$) {How many degrees?};
+	\node at ($#1+(0,-0.5)$) {\underline{\hspace{2cm}}};
+}
+
+\begin{tikzpicture}[scale=2, line width=1pt]
+	\draw (-3,0) -- (3,0);  
+	\draw (0,3) -- (0,-3);  
+	
+	\drawArrow{(-2,1.5)}{90}
+	\filldraw (-1,1.5) circle (0.1);
+	
+	\drawArrow{(1.5,2)}{225}
+	\filldraw (1.5,1) circle (0.1);
+	
+	\drawArrow{(-1.5,-1.5)}{225}
+	\filldraw (-.5,-.5) circle (0.1);
+	
+	\drawArrow{(1.5,-1.5)}{0}
+	\filldraw (.5,-.5) circle (0.1);
+	
+	
+	\drawArrorChoice{(3,1.5)}
+	\drawArrorChoice{(-3.2,1.5)}
+	\drawArrorChoice{(-3,-1.5)}
+	\drawArrorChoice{(3.5,-1.5)}
+	%\draw (0,0) circle (0.07);
+	%\draw[->, line width=2pt, shift={(0:0.07)}] (0,0) -- (.7,0);
+	%\draw[shift={(0:-0.07)}, line width=2pt] (0,0) -- (-.7,0);
+\end{tikzpicture}
+
+How did you think when you solved these tasks?
+\newline
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\newline
+\newline
+\underline{\hspace{\columnwidth}}
+\pairspace
+
+
+\newpage
+
+\question A robot turns 30 degrees every time it turns. How many turns must the robot make before it is facing in the same direction as it was when it started? How did you get your answer?
+
+\pairspace
+\pairspace
+\pairspace
+
+\question A robot turns 40 degrees left, then it turns 20 degrees right and then 30 degrees left. How far and in what direction has the robot turned in total from where it started? How did you get your answer?
+
+\pairspace
+\pairspace
+\pairspace
+	
+\question Do you think you can learn about angles and degrees using robotics?
+
+\end{questions}
+
+\end{document}
