@@ -10,6 +10,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage{amssymb}
 \usepackage{tabularx}
+\usepackage{ifthen}	
 %\usepackage{cite}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
@@ -50,7 +51,18 @@
 		\includegraphics[width=#2]{#1}
 	}
 }
-
+\newcommand{\wrap}[2]{
+	\ifthenelse{\equal{#2}{}}{
+		\begin{minipage}[t]{0.7\columnwidth}
+			#1
+		\end{minipage}
+	}{
+		\begin{minipage}[t]{#2\columnwidth}
+			Backup #1
+		\end{minipage}
+	}
+}
+\newcommand{\chirp}[0]{ChIRP}
 
 %%Force correct display style for math environments
 \everymath{\displaystyle}
