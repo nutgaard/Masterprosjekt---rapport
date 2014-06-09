@@ -11,10 +11,6 @@
 \usepackage{amssymb}
 \usepackage{tabularx}
 %\usepackage{cite}
-\usepackage{algorithm}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-\usepackage{ifthen}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -61,31 +57,44 @@
 
 \begin{document}
 
-\include{intro/front}
+%\include{intro/front}
 \setcounter{page}{0}
 \pagenumbering{roman}
 \include{intro/abstract}
 \include{intro/preface}
-\include{oneBigFile}
-%\include{prepost}
 \pagenumbering{gobble}
 \tableofcontents
 \newpage
-%\listoftables
-%\newpage
-\listoffigures
+\listoftables
 \newpage
-\listofalgorithms
+\listoffigures
 \newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
+%\include{oneBigFile}
+%\include{prepost}
+\part{Introduction}
+\include{introduction/introduction}
+\part{Research Approach}
+\include{approach/approach}
+\part{Literature Study}
+\include{literature/literature}
+\part{Design and Development}
+\include{development/development}
+\part{Results}
+\include{results/results}
+\part{Discussion}
+\include{discussion/discussion}
+\part{Conclusion}
+\include{conclusion/conclusion}
+
 
 \clearpage
 \bibliographystyle{plain}
 \bibliography{refs}
 
 \begin{appendices}
-	\include{appendices/algorithms/algorithms}
+	%\include{appendices/algorithms/algorithms}
 \end{appendices}
 
 \end{document}
