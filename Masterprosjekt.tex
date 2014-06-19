@@ -13,6 +13,7 @@
 \usepackage{longtable}
 \usepackage{ifthen}	
 %\usepackage{cite}
+\usepackage[numbers]{natbib}
 
 \newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
 \newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
@@ -64,6 +65,9 @@
 	}
 }
 \newcommand{\chirp}[0]{ChIRP}
+\newcommand{\tcite}[1]{
+	\citeauthor{#1} \citeyearpar{#1}
+}
 
 %%Force correct display style for math environments
 \everymath{\displaystyle}
@@ -107,7 +111,7 @@
 
 
 \clearpage
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 \bibliography{refs}
 
 \begin{appendices}
