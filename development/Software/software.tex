@@ -40,4 +40,29 @@ Based on this we created a set of requirements that our system had to adhere to:
 \end{tabular}
 
 \subsection{Design decision}
+	In order to accomplish the requirements outlined we went through each one of them in turn, and tried to come up with a strategy that would 
+	to create the best possible solution.
+	
+	\bigskip\noindent
+	The first decision to be made were regarding the platform and how to achieve a crossplatform solution. 
+	A native approach was quickly discarded as it would require multiple implementations in multiple languages (E.g. Objective-C for iOS devices, and Java for android devices, etc.). 
+	Removing the native approach from our solution pool still left us with several options, including game frameworks and standardized cross platform tools.
+	In a report by vision mobile in January 2013 they present a study involving six hundred developers and their preferences~\cite{developerCPT}. 
+	In addition to the top five most used frameworks from vision mobile's report and some newer frameworks, we initially included game frameworks into the pool of frameworks. 
+	The game frameworks were however discarded relativly fast as they rely heavily on custom built user interfaces and low level programming(openGL/webGL) for performance reasons.
+	
+	\bigskip\noindent
+	After pruning the game frameworks from our solution pool we looked throught the remaining options, PhoneGap(Cordova), Appcelerator, Adobe AIR, Sencha, Qt, DevExpress and Xamarin.
+	Qt, Sencha, DevExpress, Xamarin and Appcelerator was removed from the pool as they all costs money in order to use the full frameworks commercially and to a large extend focuses on more enterprise applications.
+	This left us with Adobe AIR and PhoneGap as possible frameworks. 
+	We decided to move forward with PhoneGap\footnote{Actually Apache Cordova, which is practicly the same but provided with an Apache licence.}
+	due to language preferences. Adobe AIR, while stating that one can use javascript, does in fact require the use of Flash and ActionScript for its mobile applications.
+	Apache Cordova on the other hand is build around standard web technologies as javascript, HTML and CSS.
+	
+	
+	
+	
+	
+	
+	
 	
