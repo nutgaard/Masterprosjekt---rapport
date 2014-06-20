@@ -1,24 +1,25 @@
 \documentclass[12pt,a4paper]{book}
-\usepackage[english]{babel}
-\usepackage[latin1]{inputenc}
-\usepackage{graphicx}
-\usepackage{natbib}
-\usepackage{fancyhdr}
-\usepackage[Glenn]{fncychap}
-\usepackage[hidelinks,colorlinks]{hyperref}
-\usepackage{geometry}
-\usepackage{tikz}
-\usepackage{float}
-\usepackage{mathtools}
-\usepackage[toc,page]{appendix}
-\usepackage{amssymb}
-\usepackage{tabularx}
-\usepackage{longtable}
-\usepackage{ifthen}	
-%\usepackage{cite}	
-\usepackage[a4,center,cam]{crop}
+\usepackage[english]{babel}										%Creating correct english
+\usepackage[latin1]{inputenc}									%Input encoding
+\usepackage{graphicx}													%Figures
+\usepackage{natbib}														%Proper citations
+\usepackage{fancyhdr}													%Pretty headings on each page
+\usepackage[Glenn]{fncychap}									%Pretty chapters
+\usepackage[hidelinks,colorlinks]{hyperref}		%Making urls and references clickable in pdf view
+\usepackage{nameref} 													%For fetching the title from references
+\usepackage{geometry}													%Adding additions control on margins, for easy viewing of B5 format
+\usepackage{tikz}															%Drawing lib
+\usepackage{float}														%For forcing positions of floating environments
+\usepackage{mathtools}												%In case we need some math, if nothing gets changed we may remove this
+%\usepackage[toc,page]{appendix}							%Legacy code for appendices
+\usepackage{amssymb}													%More math stuff
+\usepackage{tabularx}													%Better table environment with proper column controls
+\usepackage{longtable}												%In case we have tables which span multiple pages, remove if not necessary
+\usepackage{ifthen}														%Needed for our macros
+\usepackage[a4,center,cam]{crop}							%It was in the template, but only activated when B5 format is turn on.
 
-%\geometry{b5paper}
+
+%\geometry{b5paper}														%Show the pdf in B5 format, however this scales just the page and not the text itself, so not an accurate representation of the finished product.
 
 \newcommand{\thesisAuthor}{Jan Tore St{\o}lsvik and Nicklas Utgaard}
 \newcommand{\thesisTitle}{Educational Robotics}
@@ -93,72 +94,72 @@
 		\end{minipage}
 	}
 }
+
+%Macro for consistent writing of ChIRP.
 \newcommand{\chirp}[0]{ChIRP}
+
+%Table cite, for pretty references in tables
 \newcommand{\tcite}[1]{
 	\citeauthor{#1} \citeyearpar{#1}
 }
+%Creates a completely blank page. May be usefull sometimes
 \newcommand{\blankpage}[0]{
 	\newpage
 	\thispagestyle{plain}
 	\mbox{}
 }
 
+%Bibtex setup
 \bibliographystyle{apalike}
 \bibpunct{[}{]}{;}{a}{,}{,}
 
-%%Force correct display style for math environments
+%Force correct display style for math environments
 \everymath{\displaystyle}
 
 \begin{document}
+
+%Exclude introduction pages from pageanchoring since there will be no references to these pages, and it made alot of warnings. :P
 \hypersetup{pageanchor=false}
 \include{intro/front}
 \blankpage	
 \cleardoublepage
 \frontmatter
 
-
-%\setcounter{page}{0}
-%\pagenumbering{roman}
 \include{intro/abstract}
 \include{intro/preface}
-%\pagenumbering{gobble}
 \tableofcontents
-\newpage
 \listoftables
-\newpage
 \listoffigures
-\newpage
-%\setcounter{page}{0}
-%\pagenumbering{arabic}
+%Turn page anchoring back on in order to allow for refereces to be anchored.
 \hypersetup{pageanchor=true}
-\mainmatter
-%\include{oneBigFile}
-%\include{prepost}
-\part{Introduction}
-\include{introduction/introduction}
-\part{Research Approach}
-\include{approach/approach}
-\include{research_questions/research_questions}
-\include{process/process}
-\part{Literature Study}
-\include{pedagogy/pedagogy}
-\include{state_of_the_art/state_of_the_art}
-\include{literature/literature}
-\part{Design and Development}
-\include{development/development}
-\part{Results}
-\include{results/results}
-\part{Discussion}
-\include{discussion/discussion}
-\part{Conclusion}
-\include{conclusion/conclusion}
 
+\mainmatter
+\part{Introduction}\label{part:introduction}
+\include{introduction/introduction}
+
+\part{Research Approach}\label{part:approach}
+\include{approach/approach}
+
+\part{Literature Study}\label{part:literature}
+\include{literature/literature}
+
+\part{Design and Development}\label{part:development}
+\include{development/development}
+
+\part{Results}\label{part:results}
+\include{results/results}
+
+\part{Discussion}\label{part:discussion}
+\include{discussion/discussion}
+
+\part{Conclusion}\label{part:conslusion}
+\include{conclusion/conclusion}
 
 \clearpage
 \backmatter
-%\bibliographystyle{plainnat}
 \bibliography{refs}
 \part{Appendices}
+%Legacy code for appendices, just leave it for now. In case we want to use it instead of manually provide chapters and stuff.
 %\begin{appendices}
 	%\include{appendices/algorithms/algorithms}
 %\end{appendices}
