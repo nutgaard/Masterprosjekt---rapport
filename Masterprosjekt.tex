@@ -1,10 +1,13 @@
-\documentclass[12pt]{report}
-
+\documentclass[12pt,a4paper]{book}
+\usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
-\usepackage[Glenn]{fncychap}
 \usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage[Glenn]{fncychap}
+\usepackage[hidelinks,colorlinks]{hyperref}
+\usepackage{geometry}
 \usepackage{tikz}
-\usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage{mathtools}
 \usepackage[toc,page]{appendix}
@@ -12,12 +15,36 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{ifthen}	
-%\usepackage{cite}
-\usepackage[numbers]{natbib}
+%\usepackage{cite}	
+\usepackage[a4,center,cam]{crop}
 
-\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
-\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
-\,\operatorname{min}}\;}
+%\geometry{b5paper}
+
+\newcommand{\thesisAuthor}{Jan Tore St{\o}lsvik and Nicklas Utgaard}
+\newcommand{\thesisTitle}{Educational Robotics}
+\newcommand{\thesisType}{TDT4501 Datateknikk, Master thesis}
+\newcommand{\thesisDate}{Spring 2014}
+
+%PDF info
+\hypersetup{pdfauthor={\thesisAuthor}}
+\hypersetup{pdftitle={\thesisTitle}}
+\hypersetup{pdfsubject={\thesisType}}
+\hypersetup{linkcolor=black}
+\hypersetup{citecolor=black}
+\hypersetup{urlcolor=black}
+
+%Fancy headings
+\pagestyle{fancy}
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\let\uppercase\relax\leftmark}}
+\rhead[\fancyplain{}{\let\uppercase\relax\rightmark}]{\fancyplain{}{\thepage}}
+\chead[\fancyplain{}{}]{\fancyplain{}{}}
+\lfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\cfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\rfoot[\fancyplain{}{}]{\fancyplain{}{}}
+\setlength{\headheight}{15pt}
 
 %Figures aliases
 %Usage: \image{path}{width}{caption}{label}
@@ -53,6 +80,8 @@
 		\includegraphics[width=#2]{#1}
 	}
 }
+
+%Use to get text-wrapping for long text blobs in tabels
 \newcommand{\wrap}[2]{
 	\ifthenelse{\equal{#2}{}}{
 		\begin{minipage}[t]{0.7\columnwidth}
@@ -68,26 +97,41 @@
 \newcommand{\tcite}[1]{
 	\citeauthor{#1} \citeyearpar{#1}
 }
+\newcommand{\blankpage}[0]{
+	\newpage
+	\thispagestyle{plain}
+	\mbox{}
+}
+
+\bibliographystyle{apalike}
+\bibpunct{[}{]}{;}{a}{,}{,}
 
 %%Force correct display style for math environments
 \everymath{\displaystyle}
 
 \begin{document}
+\hypersetup{pageanchor=false}
+\include{intro/front}
+\blankpage	
+\cleardoublepage
+\frontmatter
 
-%\include{intro/front}
-\setcounter{page}{0}
-\pagenumbering{roman}
+
+%\setcounter{page}{0}
+%\pagenumbering{roman}
 \include{intro/abstract}
 \include{intro/preface}
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 \tableofcontents
 \newpage
 \listoftables
 \newpage
 \listoffigures
 \newpage
-\setcounter{page}{0}
-\pagenumbering{arabic}
+%\setcounter{page}{0}
+%\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+\mainmatter
 %\include{oneBigFile}
 %\include{prepost}
 \part{Introduction}
@@ -111,12 +155,13 @@
 
 
 \clearpage
-\bibliographystyle{plainnat}
+\backmatter
+%\bibliographystyle{plainnat}
 \bibliography{refs}
-
-\begin{appendices}
+\part{Appendices}
+%\begin{appendices}
 	%\include{appendices/algorithms/algorithms}
-\end{appendices}
+%\end{appendices}
 
 \end{document}
 
