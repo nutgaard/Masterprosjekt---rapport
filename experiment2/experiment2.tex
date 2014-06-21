@@ -1,0 +1,318 @@
+
+\documentclass[12pt]{exam}
+
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{longtable}
+\usepackage[numbers]{natbib}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{ifthen}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{color}
+
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}
+\,\operatorname{min}}\;}
+
+%Figures aliases
+%Usage: \image{path}{width}{caption}{label}
+%Try to allways use \image and let latex fix positioning of figures.
+%By passing 'null' as width the latex will use the figures default size
+%Do however but the command at the wanted position within the text, 
+%if we at a later stage want to fix the positioning of all images it could be done by rewriting this alias.
+\newcommand{\image}[4]{
+	\ifthenelse{\equal{false}{true}}{%true - true => latex fixes positioning, mismatch => forced positioning by float
+		\begin{figure}[ht]
+			\centering
+			\insertImage{#1}{#2}
+			\caption{#3}
+			\label{#4}
+		\end{figure}
+	}{
+		\imageHere{#1}{#2}{#3}{#4}
+	}	
+}
+\newcommand{\imageHere}[4]{
+	\begin{figure}[H]
+		\centering
+		\insertImage{#1}{#2}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+}
+%Helper function, do not use
+\newcommand{\insertImage}[2]{
+	\ifthenelse{\equal{#2}{null}}{
+		\includegraphics{#1}
+	}{
+		\includegraphics[width=#2]{#1}
+	}
+}
+\newcommand{\tcite}[1]{
+	\citeauthor{#1} \citeyearpar{#1}
+}
+
+%%Force correct display style for math environments
+\everymath{\displaystyle}
+
+%%Code highlighting setup
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+\lstdefinelanguage{MyBasic}{
+	keywords={FWD, BACK, TL, TR, SET, PROC, END, CALL, REP},
+	ndkeywords={},
+	keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+	sensitive=true
+}
+\lstset{
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+
+
+\begin{document}
+\usetikzlibrary{quotes,angles,calc,arrows}
+
+\tikzset{
+    %Define standard arrow tip
+    >=latex,
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,},
+    line/.style={scale=3,line width=1pt},
+}
+
+\newcommand{\tikzAngleOfLine}{\tikz@AngleOfLine}                               
+  \def\tikz@AngleOfLine(#1)(#2)#3{%                                            
+  \pgfmathanglebetweenpoints{%                                                 
+    \pgfpointanchor{#1}{center}}{%                                             
+    \pgfpointanchor{#2}{center}}                                               
+  \pgfmathsetmacro{#3}{\pgfmathresult}%                                        
+  }  
+			
+																																						
+\newcommand{\pairspace}{
+\vspace{2 cm}
+}
+
+\newcommand{\degrees}{
+\square \hspace{0.5cm} 30^\circ \newline
+\square \hspace{0.5cm} 60^\circ \newline
+\square \hspace{0.5cm} 90^\circ \newline
+\square \hspace{0.5cm} 120^\circ \newline
+\square \hspace{0.5cm} 180^\circ \newline
+\square \hspace{0.5cm} 270^\circ \newline
+\square \hspace{0.5cm} 330^\circ 
+}
+
+\newcommand{\degreesReflex}{
+\square \hspace{0.5cm} 30^\circ \newline
+\square \hspace{0.5cm} 60^\circ \newline
+\square \hspace{0.5cm} 90^\circ \newline
+\square \hspace{0.5cm} 120^\circ \newline
+\square \hspace{0.5cm} 150^\circ \newline
+\square \hspace{0.5cm} 270^\circ \newline
+\square \hspace{0.5cm} 330^\circ 
+}
+
+\newcommand{\anglePaint}[2]{
+	\begin{tikzpicture}[scale=3,line width=1pt, baseline=(current bounding box.north)]                                    
+		\coordinate (A) at (0,0);                                                    
+		\coordinate (B) at ($(A)+(#1:1)$);                                                    
+		\coordinate (C) at ($(A)+(#2:1)$);                                                
+		\draw (A) -- (B);                                            
+		\draw (A) -- (C);                                            
+		\tikzMarkAngle{(A)}{(B)}{(C)}   
+	\end{tikzpicture}  
+}
+
+\newcommand{\anglePaintReflex}[2]{
+	\begin{tikzpicture}[scale=3,line width=1pt, baseline=(current bounding box.north)]                                    
+		\coordinate (A) at (0,0);                                                    
+		\coordinate (B) at ($(A)+(#1:1)$);                                                    
+		\coordinate (C) at ($(A)+(#2:1)$);                                                
+		\draw (A) -- (B);                                            
+		\draw (A) -- (C);                                            
+		\draw (#1:0.25) arc (#1:#2:0.25);
+	\end{tikzpicture}  
+}
+
+\newcommand{\tikzMarkAngle}[3]{                                                
+\tikzAngleOfLine#1#2{\AngleStart}                                              
+\tikzAngleOfLine#1#3{\AngleEnd}                                                
+\draw #1+(\AngleStart:0.15cm) arc (\AngleStart:\AngleEnd:0.15cm);              
+}   
+
+\newcommand{\settings}{
+	scale=3,line width=1pt
+}
+
+%Start of test
+
+{\Large Use the robots to draw these shapes}
+\begin{questions}
+
+	\question
+	\begin{tikzpicture}[line]          
+		\coordinate (A) at (0,0);                                                    
+		\coordinate (B) at ($(A)+(0:1)$);                                                    
+		\coordinate (C) at ($(B)+(120:1)$);   
+		\draw (A) -- (B) -- (C) -- cycle;
+	\end{tikzpicture}  
+
+	\pairspace
+
+	\question
+		\begin{tikzpicture}[line]          
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(0:1)$);                                                    
+			\coordinate (C) at ($(B)+(90:1)$);   
+			\coordinate (D) at ($(C)+(180:1)$); 
+			\draw (A) -- (B) -- (C) -- (D) -- cycle;
+		\end{tikzpicture}
+
+	\pairspace
+
+	\question
+		\begin{tikzpicture}[line]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(0:1)$);                                                    
+			\coordinate (C) at ($(B)+(72:1)$);   
+			\coordinate (D) at ($(C)+(144:1)$); 
+			\coordinate (E) at ($(D)+(216:1)$); 
+			\draw (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+		\end{tikzpicture}
+	
+	\pairspace
+	
+	\question
+		\begin{tikzpicture}[line]                                    
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(2,0)$);                                                    
+			\coordinate (C) at ($(B)+(30:1)$);   
+			\coordinate (D) at ($(C)+(-2,0)$); 
+			\draw (A) -- (B) -- (C) -- (D) -- cycle;
+		\end{tikzpicture}  
+
+	\pairspace
+
+	\question
+		\begin{tikzpicture}[line]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(90:1)$);                                                    
+			\coordinate (C) at ($(B)+(-30:2)$);                                                
+			\draw (A) -- (B) -- (C) -- cycle; 
+			%5 5,9 2,9
+		\end{tikzpicture}
+	
+	\pairspace
+
+	\question
+		\begin{tikzpicture}[line]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(2,0)$);                                                    
+			\coordinate (C) at ($(B)+(120:1)$);   
+			\coordinate (D) at ($(A)+(60:1)$); 
+			\draw (A) -- (B) -- (C) -- (D) -- cycle;
+			%5,9 2,9 2,9 2,9
+		\end{tikzpicture}
+		
+		\pairspace
+		
+	\question
+		\begin{tikzpicture}[line]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(60:1)$);   
+			\coordinate (C) at ($(B)+(120:1)$);                                                    
+			\coordinate (D) at ($(C)+(240:1)$);   
+			\draw (A) -- (B) -- (C) -- (D) -- cycle;
+		\end{tikzpicture}
+		
+	\pairspace
+	
+		\question
+		\begin{tikzpicture}[line]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (C) at ($(A)+(45:1)$);   
+			\coordinate (B) at ($(C)+(-45:1)$);                                                    
+			\draw (A) -- (B) -- (C) -- cycle;
+			%4,1 2,9 2,9
+		\end{tikzpicture}
+		
+	\pairspace
+
+	\question
+		\begin{tikzpicture}[line]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(0:1)$);                                                    
+			\coordinate (C) at ($(B)+(-144:1)$);   
+			\coordinate (D) at ($(C)+(-288:1)$); 
+			\coordinate (E) at ($(D)+(-432:1)$); 
+			\draw (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+		\end{tikzpicture}
+		
+	\pairspace
+
+	\question
+		\begin{tikzpicture}[scale=2,line width=1pt]
+			\coordinate (A) at (0,0);                                                    
+			\coordinate (B) at ($(A)+(0:1)$);                                                    
+			\coordinate (C) at ($(B)+(60:1)$);   
+			\coordinate (D) at ($(C)+(-60:1)$); 
+			\coordinate (E) at ($(D)+(0:1)$); 
+			\coordinate (F) at ($(E)+(-120:1)$); 
+			\coordinate (G) at ($(F)+(-60:1)$); 
+			\coordinate (H) at ($(G)+(-180:1)$); 
+			\coordinate (I) at ($(H)+(-120:1)$); 
+			\coordinate (J) at ($(I)+(-240:1)$); 
+			\coordinate (K) at ($(J)+(-180:1)$); 
+			\coordinate (L) at ($(K)+(-300:1)$); 
+			\draw (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- cycle;
+		\end{tikzpicture}
+		
+		\pairspace
+
+
+
+
+\end{questions}
+\end{document}
