@@ -110,6 +110,16 @@
 	\thispagestyle{plain}
 	\mbox{}
 }
+%For creating small pretty tables
+\newcommand{\smalltable}[3]{
+	\begin{table}[H]
+		\centering
+		\tiny
+		#3
+		\caption{#1}
+		\label{#2}
+	\end{table}
+}
 
 %Bibtex setup
 \bibliographystyle{apalike}
