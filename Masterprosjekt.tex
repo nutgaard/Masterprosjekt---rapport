@@ -18,7 +18,8 @@
 \usepackage{ifthen}														%Needed for our macros
 \usepackage[a4,center,cam]{crop}							%It was in the template, but only activated when B5 format is turn on.
 \usepackage{pdfpages}													%For importing other pdfs into the report
-
+%For creating pretty tables
+\usepackage{array,multirow}
 
 %\geometry{b5paper}														%Show the pdf in B5 format, however this scales just the page and not the text itself, so not an accurate representation of the finished product.
 
@@ -118,11 +119,11 @@
 \everymath{\displaystyle}
 
 %For fixing how appendices are listed in the TOC
-\renewcommand\backmatter{
-    \def\chaptermark##1{\markboth{%
-        \ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  ##1}{%
-        \ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  ##1}}%
-    \def\sectionmark##1{\relax}}
+%\renewcommand\backmatter{
+%    \def\chaptermark##1{\markboth{%
+%        \ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  %##1}{%
+        %\ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  ##1}}%
+    %\def\sectionmark##1{\relax}}
 
 \begin{document}
 
@@ -164,15 +165,15 @@
 \include{conclusion/conclusion}
 
 \clearpage
-\backmatter
+%\backmatter
 \bibliography{refs}
-%\part{Appendices}
-%\appendix
-%\chapter{}
+
 %Legacy code for appendices, just leave it for now. In case we want to use it instead of manually provide chapters and stuff.
 \begin{appendices}
-	%\include{appendices/algorithms/algorithms}
-	\include{appendices/tests/tests}
+	\chapter{Pretest}\label{appendix:pretest}
+		\includepdf[pages=-]{appendices/tests/pretest}
+	\chapter{Posttest}\label{appendix:posttest}
+		\includepdf[pages=-]{appendices/tests/posttest}	
 \end{appendices}
 
 \end{document}
