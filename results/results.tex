@@ -1,43 +1,79 @@
 \chapter{Results}
-In order to determine each students level of understanding and knowledge prior to the experiment, seven days before the first stession, a pretest was preformed using the test created in collaboration with the class' teacher~(Appendix~\ref{appendix:pretest}).
+In order to determine each students level of understanding and knowledge prior to the experiment, seven days before the first stession, a pretest was preformed using the test created in collaboration with the class' teacher~(Appendix~\ref{appendix:pretest}).For the inital analysis of the data we used a independent-samples t-test.
 
-\bigskip\noindent
-For the inital analysis of the data we used a independent-samples t-test.
+\section{Independent-samples t-test}
 This test is used to determine if a difference between the means in the two groups exists, and if this difference is statistically significant.
 But in order to use this test the six assumption regarding study design and the nature of the data must first be confirmed to hold.
 
-\bigskip\noindent
+\subsection{Assumptions regarding study design}
 The first three assumptions are directed at how the study was designed.
 The assumptions are; 
 1) must have one dependent variable measured at the continous level, 2) must have one independent dichotomous variable, and 3) should have independence of observations. In our case all of these three assumptions hold. The dependent variable is \texttt{diff}, representing the diffrence from pretest to posttest, which is indeed a continous variable. The independent variable in this case is wether or not a participant were exposed to the robot or just the simulator, which we have encoded as \texttt{robot}. The last assumption as there was no overlap between the different group. It should however bit noted that participants from the different group could communicate with eachother when they were not actively participating the study(e.g. during the weekend, break, etc), but we do not see this as a major infraction of the assumption.
 
-\bigskip\noindent
+\subsection{Assumptions regarding the data}
 The last three assumption are directed at the nature of the data, and will require some extra analysis to verify. The forth assumption assumes that there should be no significant outliers in the different group in terms of the dependent variable. 
 
 \image{images/results/boxplot.PNG}{\linewidth}{Boxplot of difference grouped by treatment}{fig:boxplot}
 
 \bigskip\noindent
-As seen in figure~\ref{fig:boxplot} an extreme outlier found found in our dataset within the robotics group(The asterix represents an extreme outlier in SPSS). By reassessing the tests, and investigating the circumstances during the pretest and posttest is was determined that the outlier result were must likely not caused by errors during assessment, data entry or the tests. As a result of this, a comparison of the results with and without the outlier was conducted (see table~\ref{table:outliers}). It should be noted that the results without the outliers failed Levene's test for equality of variances ($p = 0.033$) and results in the table are therefore produced by using the Welch t-test. Both do however show that there was no statistically significant difference in mean difference score between the robotics and simulator group($p > 0.05$ for both results). 
+As seen in figure~\ref{fig:boxplot} an extreme outlier found found in our dataset within the robotics group(The asterix represents an extreme outlier in SPSS). By reassessing the tests, and investigating the circumstances during the pretest and posttest is was determined that the outlier result were must likely not caused by errors during assessment, data entry or the tests. As a result of this, a comparison of the results with and without the outlier was conducted (see table~\ref{table:outliers}). 
+It should be noted that the results without the outliers failed Levene's test for equality of variances ($p = 0.033$) and results in the table are therefore produced by using the Welch t-test. Both do however show that there was no statistically significant difference in mean difference score between the robotics and simulator group($p > 0.05$ for both results). 
 
 \bigskip\noindent
-\smalltable{Comparasion of results with and without outliers, using independent samples t-test}{table:outliers}{
+\smalltable{Comparasion of results with and without outliers, using independent samples t-test. 95\% CI}{table:outliers}{
 	\begin{tabular}{llllll}\hline
 		Include outliers & t & df & Sig. & Mean difference & Std. Error difference\\\hline
-		No & 0.232 & 7.05 & 0.823 & 0.25 & 1.078\\
-		Yes & 0.967 & 9 & 0.359 & 1.6 & 1.655\\\hline
+		No & 0.232 & 7.05 & 0.823 & 0.25 ($-2.296..2.796$) & 1.078\\
+		Yes & 0.967 & 9 & 0.359 & 1.6 ($-2.143..5.343$) & 1.655\\\hline
 	\end{tabular}
 }
 
+\bigskip\noindent
+The fifth assumption assumes that the dependent variable should be approximately normally distributed for each group. This assumption was tested before making the comparisons seen in table~\ref{table:outliers} as this assumption must hold in order to make the comparison valid. 
+In order to check the this assumption hold we calculated the skewness and kurtosis values and their respective z-values, looked at the values produces by using Shapiro-Wilks test for normality and looked at the normal Q-Q plots for each group(see tables~\ref{table:skew} and ~\ref{table:shapiro}, and figures~\ref{fig:QQRobot} and ~\ref{fig:QQSimulator}).
+
+\bigskip\noindent
+\smalltable{Z-values for skewness and kurtosis}{table:skew}{
+	\begin{tabular}{lllll}
+		Group & Skewness & Kurtosis & Z-skewness & Z-kurtosis\\\hline
+		Robot & -1.838 & 3.751 & 0.000 & 0.286 \\
+		Simulator & 0.00 & 0.400 & -2.013 & 1.876 \\\hline
+	\end{tabular}
+}
+\bigskip\noindent
+\smalltable{Test for normality}{table:shapiro}{
+	\begin{tabular}{l|lll|lll}\hline
+		Group & \multicolumn{3}{l}{Kolmogorov-Smirnov} & \multicolumn{3}{l}{Shapiro-Wilk}\\\cline{2-4}\cline{5-7}
+		& Statistic & df & Sig. & Statistic & df & Sig.\\\hline
+		Robot & 0.376 & 5 & 0.020 & 0.788 & 5 & 0.065\\
+		Simulator & 0.164 & 6 & 0.200 & 0.950 & 6 & 0.739\\\hline
+	\end{tabular}
+}
+\image{images/results/QQPlotRobot.PNG}{\linewidth}{Normal Q-Q plot of differences for the robotics group}{fig:QQRobot}
+\image{images/results/QQPlotSimulator.PNG}{\linewidth}{Normal Q-Q plot of differences for the simulator group}{fig:QQSimulator}
+
+\bigskip\noindent
+As seen by this(tables~\ref{table:skew} and ~\ref{table:shapiro}, and figures~\ref{fig:QQRobot} and ~\ref{fig:QQSimulator}) we can be fairly certain that the assumption regarding normality is not violated as all z-values are within the $\pm 2.58$ range (representing a statistical significance level of $0.01$) and the Shapiro-Wilk test shows $p > 0.05$ for both groups. 
+
+\bigskip\noindent
+The last assumption relates to homogeneity of variances within each group.
+As mentioned when comparing the results with and without outliers, this assumption was violated the outlier was excluded($p = 0.033$), but held when it was included($p = 0.863$). None of the results do however show a statistically significant difference, and it therefore fair to assume that there is no statistically difference between the two groups.
 
 \bigskip\noindent
 \smalltable{Tests means for different groups}{table:means}{
-	\begin{tabular}{lll}
-		Group & Pretest mean & Posttest Mean\\\hline
-		Robot & 18.40 & 18.80\\
-		Simulator & 13.17 & 15.17\\
-		All & 15.54 & 16.82\\\hline
+	\begin{tabular}{lllll}
+		Group & Pretest mean & Posttest Mean & Diff. Mean & Diff. SD\\\hline
+		Robot & 18.40 & 18.80 & 0.40 & 2.37\\
+		Simulator & 13.17 & 15.17 & 2.00 & 3.13\\
+		All & 15.54 & 16.82 & 1.27 & 2.72\\\hline
+		Robot, no outlier & 18.75 & 20.50 & 1.75 & 0.96\\\hline
 	\end{tabular}
 }
+
+\subsection{Conclusion}
+The independent-samples t-test was used to determine if there were differences in the increase from pretest to posttest between the robotics group and simulator group. One outlier was identified within the dataset (figure~\ref{fig:boxplot}), but did not effect the decision of keeping or rejection the null hypothesis and was thus kept in the dataset during the rest of the analysis. The difference scores for each group were normally distributed as shown by z-values and Shapiro-Wilk's test ($p < 0.05$), and there was homogeneity of variances when the outlier was included($p = 0.863$). The increase from pretest to posttest was greater for the simulator group ($M = 2.00, SD = 3.13$) than for the robot group ($M = 0.40, SD = 2.37$), but not a statistically significant difference, $M = 1.60$, $95\% CI [-2.14, 5.34]$, $t(9) = 0.967, p = 0.359$.
+
+
 \smalltable{Paired samples T-test of differences}{table:paired}{
 	\begin{tabular}{lllllll}\hline	
 		Group & \multicolumn{3}{l}{Paired differences} & t & df & Sig.(2-tailed)\\
@@ -52,14 +88,5 @@ As seen in figure~\ref{fig:boxplot} an extreme outlier found found in our datase
 		Group & N & Difference mean & Std. Deviation & Std. Error Mean\\\hline
 		$Score >= 15$ & 6 & 0.33 & 2.80 & 1.15\\
 		$Score < 15$ & 5 & 2.44 & 2.41 & 1.08\\\hline
-	\end{tabular}
-}
-\smalltable{Tests of Normality}{table:normality}{
-	\begin{tabular}{l|lll|lll}\hline
-		Group & \multicolumn{3}{l}{Kolmogorov-Smirnov} & \multicolumn{3}{l}{Shapiro-Wilk}\\\cline{2-4}\cline{5-7}
-		& Statistic & df & Sig. & Statistic & df & Sig.\\\hline
-		Robot & 0.376 & 5 & 0.020 & 0.788 & 5 & 0.065\\
-		Simulator & 0.164 & 6 & 0.200 & 0.950 & 6 & 0.739\\
-		All & 0.187 & 11 & 0.200 & 0.927 & 11 & 0.380\\\hline
 	\end{tabular}
 }
