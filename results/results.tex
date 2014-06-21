@@ -1,20 +1,65 @@
 \chapter{Results}
-In order to determine each students level of understanding and knowledge prior to the experiment, seven days before the first stession, a pretest was preformed using the test created in collaboration with the class' teacher~(see appendix\ref{appendix:pretest}).
+In order to determine each students level of understanding and knowledge prior to the experiment, seven days before the first stession, a pretest was preformed using the test created in collaboration with the class' teacher~(Appendix~\ref{appendix:pretest}).
 
 \bigskip\noindent
+For the inital analysis of the data we used a independent-samples t-test.
+This test is used to determine if a difference between the means in the two groups exists, and if this difference is statistically significant.
+But in order to use this test the six assumption regarding study design and the nature of the data must first be confirmed to hold.
+
+\bigskip\noindent
+The first three assumptions are directed at how the study was designed.
+The assumptions are; 
+1) must have one dependent variable measured at the continous level, 2) must have one independent dichotomous variable, and 3) should have independence of observations. In our case all of these three assumptions hold. The dependent variable is \texttt{diff}, representing the diffrence from pretest to posttest, which is indeed a continous variable. The independent variable in this case is wether or not a participant were exposed to the robot or just the simulator, which we have encoded as \texttt{robot}. The last assumption as there was no overlap between the different group. It should however bit noted that participants from the different group could communicate with eachother when they were not actively participating the study(e.g. during the weekend, break, etc), but we do not see this as a major infraction of the assumption.
+
+\bigskip\noindent
+The last three assumption are directed at the nature of the data, and will require some extra analysis to verify. The forth assumption assumes that there should be no significant outliers in the different group in terms of the dependent variable. 
+
+\image{images/results/boxplot.PNG}{\linewidth}{Boxplot of difference grouped by treatment}{fig:boxplot}
+
+\bigskip\noindent
+As seen in figure~\ref{fig:boxplot} an extreme outlier found found in our dataset within the robotics group(The asterix represents an extreme outlier in SPSS). By reassessing the tests, and investigating the circumstances during the pretest and posttest is was determined that the outlier result were must likely not caused by errors during assessment, data entry or the tests. As a result of this, a comparison of the results with and without the outlier was conducted (see table~\ref{table:outliers}). It should be noted that the results without the outliers failed Levene's test for equality of variances ($p = 0.033$) and results in the table are therefore produced by using the Welch t-test. Both do however show that there was no statistically significant difference in mean difference score between the robotics and simulator group($p > 0.05$ for both results). 
+
+\bigskip\noindent
+\smalltable{Comparasion of results with and without outliers, using independent samples t-test}{table:outliers}{
+	\begin{tabular}{llllll}\hline
+		Include outliers & t & df & Sig. & Mean difference & Std. Error difference\\\hline
+		No & 0.232 & 7.05 & 0.823 & 0.25 & 1.078\\
+		Yes & 0.967 & 9 & 0.359 & 1.6 & 1.655\\\hline
+	\end{tabular}
+}
+
+
+\bigskip\noindent
+\smalltable{Tests means for different groups}{table:means}{
+	\begin{tabular}{lll}
+		Group & Pretest mean & Posttest Mean\\\hline
+		Robot & 18.40 & 18.80\\
+		Simulator & 13.17 & 15.17\\
+		All & 15.54 & 16.82\\\hline
+	\end{tabular}
+}
 \smalltable{Paired samples T-test of differences}{table:paired}{
-	\begin{tabular}{lllllllll}\hline	
-		Group & Pretest mean & Posttest mean & \multicolumn{3}{l}{Paired differences} & t & df & Sig.(2-tailed)\\
-		\cline{4-6}
-		& & & Mean & Std deviation & Std. error mean & & &\\\hline
-		Robot & 18.40 & 18.80 & 0.40 & 3.13 & 1.40 & 0.29 & 4 & 0.79\\
-		Simulation & 13.17 & 15.17 & 2.00 & 2.37 & 0.97 & 2.07 & 5 & 0.09\\\hline
+	\begin{tabular}{lllllll}\hline	
+		Group & \multicolumn{3}{l}{Paired differences} & t & df & Sig.(2-tailed)\\
+		\cline{2-4}
+		& Mean & Std deviation & Std. error mean & & &\\\hline
+		Robot & 0.40 & 3.13 & 1.40 & 0.29 & 4 & 0.79\\
+		Simulator & 2.00 & 2.37 & 0.97 & 2.07 & 5 & 0.09\\\hline
 	\end{tabular}
 }
 \smalltable{Indenpendent Samples T-test of differences, group by pretest-score}{table:score}{
 	\begin{tabular}{lllll}\hline
 		Group & N & Difference mean & Std. Deviation & Std. Error Mean\\\hline
 		$Score >= 15$ & 6 & 0.33 & 2.80 & 1.15\\
-		$Score < 15$ & 5 & 2.44 & 2.41 & 1.08
+		$Score < 15$ & 5 & 2.44 & 2.41 & 1.08\\\hline
+	\end{tabular}
+}
+\smalltable{Tests of Normality}{table:normality}{
+	\begin{tabular}{l|lll|lll}\hline
+		Group & \multicolumn{3}{l}{Kolmogorov-Smirnov} & \multicolumn{3}{l}{Shapiro-Wilk}\\\cline{2-4}\cline{5-7}
+		& Statistic & df & Sig. & Statistic & df & Sig.\\\hline
+		Robot & 0.376 & 5 & 0.020 & 0.788 & 5 & 0.065\\
+		Simulator & 0.164 & 6 & 0.200 & 0.950 & 6 & 0.739\\
+		All & 0.187 & 11 & 0.200 & 0.927 & 11 & 0.380\\\hline
 	\end{tabular}
 }
