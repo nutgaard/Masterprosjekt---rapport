@@ -11,12 +11,13 @@
 \usepackage{tikz}															%Drawing lib
 \usepackage{float}														%For forcing positions of floating environments
 \usepackage{mathtools}												%In case we need some math, if nothing gets changed we may remove this
-%\usepackage[toc,page]{appendix}							%Legacy code for appendices
+\usepackage[toc,page,titletoc]{appendix}							%Legacy code for appendices
 \usepackage{amssymb}													%More math stuff
 \usepackage{tabularx}													%Better table environment with proper column controls
 \usepackage{longtable}												%In case we have tables which span multiple pages, remove if not necessary
 \usepackage{ifthen}														%Needed for our macros
 \usepackage[a4,center,cam]{crop}							%It was in the template, but only activated when B5 format is turn on.
+\usepackage{pdfpages}													%For importing other pdfs into the report
 
 
 %\geometry{b5paper}														%Show the pdf in B5 format, however this scales just the page and not the text itself, so not an accurate representation of the finished product.
@@ -116,6 +117,13 @@
 %Force correct display style for math environments
 \everymath{\displaystyle}
 
+%For fixing how appendices are listed in the TOC
+\renewcommand\backmatter{
+    \def\chaptermark##1{\markboth{%
+        \ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  ##1}{%
+        \ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  ##1}}%
+    \def\sectionmark##1{\relax}}
+
 \begin{document}
 
 %Exclude introduction pages from pageanchoring since there will be no references to these pages, and it made alot of warnings. :P
@@ -158,11 +166,14 @@
 \clearpage
 \backmatter
 \bibliography{refs}
-\part{Appendices}
+%\part{Appendices}
+%\appendix
+%\chapter{}
 %Legacy code for appendices, just leave it for now. In case we want to use it instead of manually provide chapters and stuff.
-%\begin{appendices}
+\begin{appendices}
 	%\include{appendices/algorithms/algorithms}
-%\end{appendices}
+	\include{appendices/tests/tests}
+\end{appendices}
 
 \end{document}
 
