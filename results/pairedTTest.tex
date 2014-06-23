@@ -1,10 +1,56 @@
 \chapter{Paired T-test}\label{ch:pairedttest}
-\smalltable{Paired samples T-test of differences}{table:paired}{
+This analysis was used to determine if a difference between the means in the pretest and the posttest exists for each group, and if these differences are statistically significant. 
+In order to use this analysis, four assumptions regarding study design and the nature of the data must first be confirmed to hold.
+
+\section{Assumptions regarding study design}
+The first two assumptions when using preparing for the paired t-test are related to the study design. The assumptions are;
+1) must have one dependent variable measured at the continous level, and
+2) mst have one independent dichotomous variable.
+These assumptions are the same as the first two assumptions when using the independent-samples t-test, and were shown to hold in section~\ref{sec:assumptionStudy}. 
+
+\section{Assumptions regarding the data}
+The last to assumptions are related to the nature of the data. 
+The assumptions are;
+3) there should be no significant outliers in the differences, and
+4) the distribution of differences in the dependent variable should be approximately normally distributed.
+
+\subsection{Testing for outliers}
+This assumption is similar to the fourth assumption in the independent-samples t-test, and as we learned while preforming the that analysis there was an outlier within the robotics group (section~\ref{sec:outliers}, figure~\ref{fig:boxplot}). In order to see if the outlier affected the results we adopted the same strategy as in the independent-samples t-test and ran the analysis with and without outliers.
+
+\subsection{Testing for normality}
+This assumption is similiar to the fifth assumption in the independent-samples t-test. Section~\ref{sec:normality} shows that this assumptions holds with and without the outlier included by presenting z-values (table~\ref{table:skew}), data from Shapiro-Wilk's test (table~\ref{table:shapiro}), and normal Q-Q plots (figures~\ref{fig:QQRobot}, \ref{fig:QQRobotPruned}, and \ref{fig:QQSimulator}).
+
+\subsection{Analysis summary}
+The paired t-test was used to determine if there were any statistically significant change from pretest to posttest within the two different group. One outlier was identified within the robotics group (figure~\ref{fig:boxplot}), as showed in table~\ref{table:paired}, the exclusion of the outlier did affect the result($p_{robot} = 0.79, p_{robot*} = 0.03$).
+The test for normality was the same as for the independent-samples t-test and showed that the difference scores within each group were normally distributed. 
+The simulator group did better on its posttest($M = 15.17, SD = 3.43$) then on its pretest($M = 13.17, SD = 4.36$), a statistically non-significant mean increase of $2.0$points, $95\%CI[-0.48,4.48],t(5)=2.07,p=0.93,d=0.84$.
+The robotics group similarly did better on its posttest($M=18.80, SD = 4.97$) then on its pretest($M = 18.40, SD = 2.97$), a statistically non-significant mean increase of $0.4$points, $95\%CI[-3.49,4.29],t(4)=0.286,p=0.79,d=0.13$. The results for the robotics group do however drastically change when the outliers were excluded from the analysis, in fact showing a statistically significant mean increase of $1.75$points, $95\%CI[0.23,3.27],t(3)=3.656,p=0.035,d=1.83$.
+
+\smalltable{Paired samples T-test of differences. *: outliers removed}{table:paired}{
 	\begin{tabular}{lllllll}\hline	
 		Group & \multicolumn{3}{l}{Paired differences} & t & df & Sig.(2-tailed)\\
 		\cline{2-4}
 		& Mean & Std deviation & Std. error mean & & &\\\hline
 		Robot & 0.40 & 3.13 & 1.40 & 0.29 & 4 & 0.79\\
+		Robot* & 1.75 & 0.96 & 0.48 & 3.66 & 3 & 0.03\\
 		Simulator & 2.00 & 2.37 & 0.97 & 2.07 & 5 & 0.09\\\hline
+	\end{tabular}
+}
+\smalltable{Tests means for different groups. *: outliers removed}{table:means2}{
+	\begin{tabular}{lllll}
+		Group & Pretest mean & Posttest Mean & Diff. Mean & Diff. SD\\\hline
+		Robot & 18.40 & 18.80 & 0.40 & 2.37\\
+		Robot* & 18.75 & 20.50 & 1.75 & 0.96\\
+		Simulator & 13.17 & 15.17 & 2.00 & 3.13\\
+		All & 15.54 & 16.82 & 1.27 & 2.72\\\hline
+	\end{tabular}
+}
+\smalltable{Paired samples correlations. *: outliers removed }{table:correlations}{
+	\begin{tabular}{llll}\hline
+		Group & N & Correlations & Sig.\\\hline
+		Robot & 5 & 0.804 & 0.101 \\
+		Robot* & 4 & 0.969 & 0.031 \\
+		Simulator & 6 & 0.841 & 0.036\\
+		All & 11 & 0.814 & 0.002\\\hline
 	\end{tabular}
 }
