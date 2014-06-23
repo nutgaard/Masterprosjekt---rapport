@@ -1,8 +1,33 @@
 \chapter{Additional analyses}\label{ch:additionalTests}
-\smalltable{Indenpendent Samples T-test of differences, group by pretest-score}{table:score}{
+The analysis conducted in chapter~\ref{ch:independentttest} showed that there was no statistically significant difference between the gains of the groups (table~\ref{table:outliers}). 
+The analysis did however show that the robotics group had a higher pretest mean score compared to the simulator group(18.40 compared to 13.17), and it is therefore of interest to see if this difference in inital scores affected the study.
+In order to investigate this we split all the cases into two groups based on their pretest scores, and ran the independent-samples t-test analysis again.
+
+\bigskip\noindent
+Once again an outlier was identified, the results below there include statistics for both the inclusion and exclusion of outliers. The normality assumption was verified to hold through the use of Shapiro-Wilks test and homogeneity of variances was verified with Levene's test. Both assumption held with and without outliers included.
+
+\bigskip\noindent
+The analysis shows that cases where the pretest score was below 15 have a tendency to achieve a greater increase than those who started with a score above 15(table~\ref{table:score} and \ref{table:scoreNoOutlier}). The difference however was not seen as statistically significant (table~\ref{table:pretestScore}).
+
+\smalltable{Group statistics for differences when grouping by pretest score, with outliers.}{table:score}{
 	\begin{tabular}{lllll}\hline
 		Group & N & Difference mean & Std. Deviation & Std. Error Mean\\\hline
 		$Score >= 15$ & 6 & 0.33 & 2.80 & 1.15\\
-		$Score < 15$ & 5 & 2.44 & 2.41 & 1.08\\\hline
+		$Score < 15$ & 5 & 2.40 & 2.41 & 1.08\\\hline
+	\end{tabular}
+}
+\smalltable{Group statistics for differences when grouping by pretest score, without outliers.}{table:scoreNoOutlier}{
+	\begin{tabular}{lllll}\hline
+		Group & N & Difference mean & Std. Deviation & Std. Error Mean\\\hline
+		$Score >= 15$ & 5 & 1.40 & 1.14 & 0.51\\
+		$Score < 15$ & 5 & 2.40 & 2.41 & 1.08\\\hline
+	\end{tabular}
+}
+
+\smalltable{Independent samples test when grouping by pretest score.}{table:pretestScore}{
+	\begin{tabular}{llllll}
+		Outliers & t & df & Sig & Mean diff. & Std. Error Diff\\\hline
+		Yes & -1.295 & 9 & 0.228 & -2.06 & 1.596\\
+		No & -0.839 & 8 & 0.426 & -1.00 & 1.192\\\hline
 	\end{tabular}
 }

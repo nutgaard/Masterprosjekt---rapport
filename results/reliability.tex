@@ -1,0 +1,51 @@
+\chapter{Cronbach's Alpha}
+In order to measure the internal consistency (reliability) of the pretest and posttest we used Cronbach's Alpha as a measurement. 
+The pretest and posttest was divided into six different scales, measuring
+basic understanding of angles, sizes of inner angles, sizes of reflex angles, sizes of complementary angles and angles in shapes, understanding of the robot turning, and maths involving angles. A list of tasks and the categoriy they affect is listed in table~\ref{table:testCategories}. 
+
+\bigskip\noindent
+The task indicators, \texttt{q1..q24}, refer to the tasks in the pretest and posttest where the participants could score point. The first task, \texttt{q1}, would be the second task on the pretest; \textit{draw an angle}. The fourth task on the pretest include five subtasks, these are represented as the task indicators \texttt{q3} to \texttt{q7}, and so on.
+The same categories were used for the posttest as well with task indicators from \texttt{qq1} to \texttt{qq24} to avoid any confusion.
+
+\smalltable{Tasks and categories}{table:testCategories}{
+	\begin{tabular}{ll}
+		Category & Tasks\\\hline
+		Category 1 & q1 and q2\\
+		Category 2 & q3, q4, q5, q11, q12, q13 and q14\\
+		Category 3 & q6, q7, q15, q16, q17 and q18\\
+		Category 4 & q8 and q9\\
+		Category 5 & q19, q20, q21 and q22\\
+		Category 6 & q23 and q24\\
+	\end{tabular}
+}
+
+\bigskip\noindent
+Table~\ref{table:cronbachPretest} and \ref{table:cronbachPosttest} shows the Cronbach's alpha for eachs of these categories for the pretest and posttest respectively. We've added a column for describing other noteworthy observations during this analysis as well. 
+The cronbach's alpha for the whole pretest was $\alpha = 0.812$, for the posttest $\alpha = 0.860$, and for all tests results $\alpha = 0.908$. All of which were above the $0.7$ threshold as recommended by \cite{devellis2003scale} and \cite{kline2005principles}.
+
+
+\smalltable{Cronbach's alpha for pretest}{table:cronbachPretest}{
+	\begin{tabular}{lll}
+		Category & Alpha & Notes\\\hline
+		Category 1 & * & \wrap{\texttt{q1} was excluded because it had zero variance. Could not calculate with just one variable.}{}\\
+		Category 2 & 0.739 & \wrap{\texttt{q12} showed negative correlation with the rest of the variables. Deleting it would give an alpha value of $0.815$ }{} \\
+		Category 3 & 0.873 & \wrap{deleting \texttt{q6} would give an alpha value of $0.877$}{} \\
+		Category 4 & 0.703 & \wrap{\texttt{q9} was excluded because had zero variance}{}\\
+		Category 5 & 0.613 & \wrap{\texttt{q20} had low correlations with the other variables. Deleting it would give an alpha value of $0.750$}{}\\
+		Category 6 & 0.556 & \wrap{}{}\\
+		Whole test & 0.812 & \wrap{Low \textit{Corrected Item-Total Correlations} for the following variables: \texttt{q2}, \texttt{q6}, \texttt{q7}, \texttt{q10}, \texttt{q12}, \texttt{q15}, \texttt{q19}, \texttt{q20} and \texttt{q23}}{}\\\hline
+	\end{tabular}
+}
+\smalltable{Cronbach's alpha for posttest}{table:cronbachPosttest}{
+	\begin{tabular}{lll}
+		Category & Alpha & Notes\\\hline
+		Category 1 & * & \wrap{\texttt{q1} and \texttt{q2} was excluded because they had zero variance. Could not calculate with zero variables.}{}\\
+		Category 2 & * & \wrap{\texttt{q3}, \texttt{q4}, \texttt{q5}, \texttt{q11}, \texttt{q12} and \texttt{q14} was excluded becayse they had zero variance. Could not calulate with just one variable.}{}\\
+		Category 3 & 0.962 & \wrap{Low correlation for \texttt{q17}. Deleting it would give an alpha value of $0.978$}{}\\
+		Category 4 & 0.909 & \wrap{}{}\\
+		Category 5 & 0.384 & \wrap{Low \textit{Corrected Item-Total Correlation} for every variable except \texttt{q21}}{}\\
+		Category 6 & 0.714 & \wrap{}{}\\
+		Whole test & 0.860 & \wrap{Low \textit{Corrected Item-Total Correlation} for \texttt{q19}, \texttt{q20} and \texttt{22}}{}\\
+	\end{tabular}
+}
+
