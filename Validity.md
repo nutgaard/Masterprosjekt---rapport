@@ -16,6 +16,13 @@
 			12. Compensation: rewards for participating
 			13. Experimenter effects: Differences introduced by the researchers
 			14. Subject effects: changes in subject behaviour due to them knowing they are part of a study
+	- External validity, tells you something about how the results can be generalized (generelization to the population, and generalisation acress populations). Can be affected by;
+		1. research design; 
+		2. and potensial threats
+			1. selection biases
+			2. Constructs, methods and confounding: we have to narrow down broad concepts into constructs that can be measured. 
+			3. The 'real world' versus the 'experimental world'
+			4. History effects and maturation
 
 
 
@@ -35,6 +42,11 @@
 	12. Compensation: we used no compensation, so this is not a concern for us.
 	13. Experimenter effects: we tried to mitigate this effect by alternating which group started in the two session.
 	14. Subject effeckt: I dont think this very likely to have happened in our study, mainly because we dealt with kids, and they didnt seem to care for what we were investigating. :P
+- external validity
+	1. Selection biases: analysis has shown that the two groups had different starting point, however this bias came perhaps from the teacher in how she organized the groups. Another issue may be that we excluded those who scored the highest on the pretest
+	2. Constructs, methods and confounding: in our case we looked at a broad concept (maths), but we should not make any conclusion regarding our results and its applicability to math in general as this would be in violation of construct validity, seen as we did not measure the concept of math but rather the construct of angles.
+	3. The 'real world' versus the 'experimental world': our setup seems fairly similar to an ordinary school day at THIS so I don't think this is an issue for us.
+	4. History effects and maturation: short duration of research period means this most likely did not effect us.
 
 
 Bib:
