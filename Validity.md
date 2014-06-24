@@ -19,22 +19,22 @@
 
 
 
-- Out study
-	- validity
-		1. history effects: relatively short period from pretest to posttest gives a low likelyhood of this effecting our results.
-		2. maturation: long terms effects are not relevant for our study. Shortterm effect can however be. 
-		3. Testing effects: Both groups were exposed to the same testing paradigm so this would not effect us. The learning effect could still be of concern though as the kids may have remembered and learned some of the questions from the pretest.
-		4. The pretest and posttest were the same, so this does not seems relevant for our study.
-		5. Statistical regression: extreme high scores on the pretest and low scores on the posttest may be an indication of regression towards the mean. However many of your questions were not multiple choice questions and are therefore less likely to introduce luckbased point in our tests.
-		6. selection biases: analysis shows that the robotics group had a much higher mean on their pretest than the simulator group. This is something we really need to mention. We should also mention that the task of diving the kids were not random, but the assignment of group to robots or simulator was.
-		7. mortality: we saw several student that did not participate in both session, this may be a problem in long studies. But I think we are in the clear.
-		8. Casual time order: This is not relevant for our case.
-		9. Diffusion: This is a real concern for us, since all the kids were in the same class and was very aware of what the other groups were doing. This manifested itself a perhaps a little disappointment in the simulator group.
-		10. Compensatory rivalry: again this could be a real concern for us. Some of the kids in the simulator group were especially disappointed that they were not in the robotics group.
-		11. Demoralization: perhaps even more of a concern than 10, but for the same reasons.
-		12. Compensation: we used no compensation, so this is not a concern for us.
-		13. Experimenter effects: we tried to mitigate this effect by alternating which group started in the two session.
-		14. Subject effeckt: I dont think this very likely to have happened in our study, mainly because we dealt with kids, and they didnt seem to care for what we were investigating. :P
+#How it may effect our study
+- internal validity
+	1. history effects: relatively short period from pretest to posttest gives a low likelyhood of this effecting our results.
+	2. maturation: long terms effects are not relevant for our study. Shortterm effect can however be. 
+	3. Testing effects: Both groups were exposed to the same testing paradigm so this would not effect us. The learning effect could still be of concern though as the kids may have remembered and learned some of the questions from the pretest.
+	4. The pretest and posttest were the same, so this does not seems relevant for our study.
+	5. Statistical regression: extreme high scores on the pretest and low scores on the posttest may be an indication of regression towards the mean. However many of your questions were not multiple choice questions and are therefore less likely to introduce luckbased point in our tests.
+	6. selection biases: analysis shows that the robotics group had a much higher mean on their pretest than the simulator group. This is something we really need to mention. We should also mention that the task of diving the kids were not random, but the assignment of group to robots or simulator was.
+	7. mortality: we saw several student that did not participate in both session, this may be a problem in long studies. But I think we are in the clear.
+	8. Casual time order: This is not relevant for our case.
+	9. Diffusion: This is a real concern for us, since all the kids were in the same class and was very aware of what the other groups were doing. This manifested itself a perhaps a little disappointment in the simulator group.
+	10. Compensatory rivalry: again this could be a real concern for us. Some of the kids in the simulator group were especially disappointed that they were not in the robotics group.
+	11. Demoralization: perhaps even more of a concern than 10, but for the same reasons.
+	12. Compensation: we used no compensation, so this is not a concern for us.
+	13. Experimenter effects: we tried to mitigate this effect by alternating which group started in the two session.
+	14. Subject effeckt: I dont think this very likely to have happened in our study, mainly because we dealt with kids, and they didnt seem to care for what we were investigating. :P
 
 
 Bib:
