@@ -1,15 +1,63 @@
 \chapter{State of the art}
 We present a state of the art as a series of answers to our questions stated in the research approach.
 
-%\input{literature/state_of_the_art/1}
-%\input{literature/state_of_the_art/2}
-%\input{literature/state_of_the_art/3}
-%\input{literature/state_of_the_art/4}
-%\input{literature/state_of_the_art/5}
-%\input{literature/state_of_the_art/6}
-
 \section{How well did the different mathematics concepts get taught with robotics?}
-The different studies have focused on different mathematical concepts. 
+Almost all math concepts present in elementary and middle school can be taught in some way or another through robotics, something the diversity of the studies presented shows. 
+This broad applicability of robotics within math also gives room for some of the bigger studies presented, which have been conducted over the course of 
+a full school year~\cite{hussain2006effect,lindh2007does}. 
+The results from these long term studies are very important as they may, to a better extent, measure the long term effects of educational robotics. 
+Most studies are however conducted over a much shorter time span, often just an intensive week of robotics tutoring. 
+Thus it may be harder to measure anything other than changes in content knowledge alone.
+
+\bigskip\noindent
+A summery of the different math concepts investigated can be seen in table~\ref{tab:concepts}. 
+
+\setlength\LTleft{0px}
+\setlength\LTright{0px}
+\begin{longtable}{@{\extracolsep{\fill}}p{0.38\textwidth}p{0.62\textwidth}}
+	\hline \multicolumn{1}{l}{\textbf{Article}} & \multicolumn{1}{l}{\textbf{Math concepts}} \\ \hline\hline
+	\endfirsthead
+	
+	\hline
+	\hline \multicolumn{1}{l}{\textbf{Article}} & \multicolumn{1}{l}{\textbf{Math concepts}} \\ \hline\hline
+	\endhead
+	
+	\hline
+	\caption{Articles and concepts}
+	\label{tab:concepts}
+	\endlastfoot
+	\tcite{barker2007robotics} & Decimals and geometry\\
+	\tcite{nugent2008effect} & Geospatial and GPS concepts\\
+	\tcite{nugent2009use} & Geospatial and GPS concepts\\
+	\tcite{williams2007acquisition} & Physics\\
+	\tcite{mitnik2008autonomous} & Distance, angles, kinematics, and graph construction\\
+	\tcite{mitnik2009collaborative} & Graph construction and interpretation skills.\\
+	\tcite{norton2004using} & Ratio concepts.\\
+	\tcite{silk2011resources} & Proportional reasoning.\\
+\end{longtable}
+
+Most of the papers presented, and otherwise seen, throughout this literature review have provide positive evidence that educational robotics
+may teach children about math. 
+Out of the twelve papers presented in this review we found just two papers that did not provide any evidence of positive returns from using robotics~(\tcite{silk2011resources}, study 1 and 3). 
+In \citeauthor{silk2011resources}'s forth study he did however find significant evidence of increased math content knowledge. 
+
+\bigskip\noindent
+\citeauthor{silk2011resources} argued that just because math is present in an activity, it does not mean that students will learn math~\cite{silk2011resources}.
+His dissertation looks mostly at how the lessons have to be designed to generalize the knowledge students attain. Several problems were encountered and solutions were implemented gradually with increasing success. 
+Thus his work provide important knowledge about how to design future endeavors into educational robotics. 
+
+\bigskip\noindent
+The concerns around disassociation between robotics and math several times in other papers as well and a common suggestion is to make the link between activities and the underlying math very explicit~\cite{nugent2008effect}. 
+
+\bigskip\noindent
+\citeauthor*{lindh2007does} study also provide interesting data regarding the effectiveness of educational robotics. 
+They found that not every student may benefit from the use of robotics, and had to initially accepts their null hypothesis. 
+Further investigation did however show interesting results. 
+Pupils in ninth grade showed a negative \textit{t}-statistic, indicating that they in fact perform worse after partaking in the robotics experiment. 
+For low performing and high performing pupils in fourth grade there was no significant difference, while there was positive results for medium performing pupils in fourth grade. 
+Some consolation was however found in the correlation between fourth grade scores and fifth grade scores. 
+Which, as expected, showed a positive correlation between scores. 
+But did show a significantly lower correlation for the robotics group, indicating a weakening of the relationship between poor performance in forth grade and poor performance in fifth grade. 
 
 \bigskip\noindent
 Even though we focused this literature study on robotics in math education, three of the studies included did not focus on math specifically\cite{barker2007robotics, nugent2008effect, nugent2009use}. They tested broader for SET(science, engineering and technology) or STEM(science, technology, engineering and math) learning gains. Therefore math subjects is only mentioned a sub part in their studies.
@@ -81,13 +129,56 @@ Overall the results are quite weak and it is clear that further studies are need
 \bigskip\noindent
 Another problem with student choice are that some pick students that have prerequisites. For example some pick out students who have already elected to take math in high school, which might create bias and not be very generalizable to a general student population.
 
-\section{Other}
-Robots are said to fosters collaboration. Many papers mentions this in their similar work chapter but we will focus on what is proven in the studies we picked out.
-\cite{lindh2007does} Pupils learning of cooperating in working groups was of interest. In interviews pupils often said lego had enhanced the feeling of a community. Different ways to learn, trial and error or cooperative
-\cite{mitnik2009collaborative} A greater amount of collaborative interactions were observed in the experimental group students. Compared to simulation
-\cite{mitnik2009collaborative} Collaboration in experimental surpassed that of the control group. It increased for both groups.
-\cite{nugent2009use} Nonsignificant results for teamwork 
-\cite{nugent2008effect} results showed positive effects on students’ perceptions of the value of teamwork as measured by questions probing their attitudes in working with others and listening to others while problem solving. 
+\section{What pros or cons except learning gains are there?}
+
+With regards to secondary skills there is a lot greater gap between the results, 
+universally mentioned is however teamwork including social interactions and communication~\cite{mitnik2008autonomous,mitnik2009collaborative,nugent2009use,owens2008lego}.
+When working with robots students tend to get a greater sense of community and start helping each other instead of competing. Students are also eager to help other groups and want to explain how they got their solution.
+
+\bigskip\noindent
+When testing for other secondary skills the results are to a large extent inconclusive or negative. 
+\citeauthor{hussain2006effect} and \citeauthor{lindh2007does} identifies an insignificant increase  in problem-solving, \citeauthor{hussain2006effect} also identifies an insignificant positive attitude change towards LEGO~\cite{hussain2006effect,lindh2007does}. 
+For scientific inquiry \citeauthor{williams2007acquisition} found no significant difference when comparing the pretest and post test~\cite{williams2007acquisition}. 
+Though they argue that scientific inquiry may be a process to be learned through long exposure and that their study was to short.
+\tcite{nugent2008effect} identified an increase in interest and motivation, where pupils working with robots expressed their wish to continue working with robots. Whereas the control group would do the opposite~\cite{nugent2008effect}. 
+
+A common bonus mentioned in several of the studies are that robots fosters collaboration. In \cite{lindh2007does} pupils learning of cooperating in working groups was of interest. In interviews pupils often said the activities had enhanced the feeling of a community. This is the most relevant study for us and it is promising that collaboration was increased also here, in a school context. \cite{mitnik2009collaborative} Had a robotics experimental group and a simulator group acting as the control group. Collaboration was measured by an attitudinal questionnaire and by observation with a focus on four factors shown to foster collaboration is several other studies. The robotics group scored higher on the collaboration questionnaire and a greater amount of collaborative interactions were observed in the experimental group students compared to the simulation group students. In \cite{nugent2008effect} results showed positive effects on students’ perceptions of the value of teamwork as measured by questions probing their attitudes in working with others and listening to others while problem solving. \cite{nugent2009use} Reported non-significant results from a teamwork questionnaire. This study has not described their experimental setup, so it is hard to draw any conclusions on what might have caused these negative results. However they mention that activities happened in robotics summer camps. They speculate that peer relationships within the camp settings can influence the experience of a particular youth.
+
+\bigskip\noindent
+Students motivation is also affected either positive or negative.
+\cite{mitnik2009collaborative} Both groups were motivated, the simulator was based on newness. Motivation throughout the experimental group was seen to be supported by the students need and possibility to immerse into the activity. Students in the experimental group were not just spectators, but became relevant actors of the activity, developing a greater commitment to their team and towards the activity resolution than the control group. Experimental group maintained the motivation throughout all experiment but the simulation decreased after two sessions. 
+\cite{mitnik2009collaborative}Motivation in experimental surpassed that of the control group. Robot motivation was founded on immersion.
+Robots can be tied into many different diciplines
+\cite{barker2007robotics} Robots tie into a variety of disciplines. A robot is made of motors, sensors and programs. Each of these parts depends on different fields of knowledge, such as engineering, electronics and computer science. 
+\cite{nugent2008effect} There was also a questionnaire on motivation and the use of learning strategies.
+
+\bigskip\noindent
+Increased interest for STEM
+Many papers write about how interest in STEM can be improved through the use of educational robotics. In addition several robotics competitions like the FIRST robot league are held specifically to improve attitudes toward STEM and encourage students to pursue careers in STEM.
+
+\cite{silk2011resources} says that competitions effectively blend a focus on excitement and fun with an opportunity to engage in an extended and challenging activity from which to learn valuable STEM-related skills. When compared to a matched comparison group from an existing national data set, alumni participants of the high-school level FIRST robotics competition were more likely to attend college, to major in a STEM-related field, and to expect to pursue a STEM-related career. 
+
+One major question is whether and how students initial interest in working with robots might lead to development of more general understanding about the robot context and problem solving strategies for navigating it. Can students acquire more general understandings that can be applied in other similar situations?
+
+Traditional boundaries between disciplines make it unlikely that if a student has an experience doing something with robotics that they will draw on mathematics to help understand, justify, revise or communicate their design ideas. They are more likely to focus on building a working solution that satisfies some criteria, then demonstrating without an explanation. 
+
+\cite{nugent2009use} Research supports the use of educational robotics to increase academic achievement in specific STEM concept areas.
+
+\cite{nugent2009use} Studies show that robotics generates a high degree of youth interest and engagement and promotes interest in math and science careers.
+
+Some argue that this is mainly because the robot league is only about fun and does not focus on learning anything specific except doing "`engineering work"'. Research in what students actually learn during these competitions are inconclusive or bad. There is not a big focus on the math behind the solution and guess and test strategies are the techniques most often applied.
+
+Overall STEM interest has been shown to increase when this is the focus. However when this is talked about it is often the main objective of the setup and what students actually learn is questionable.
+
+\bigskip\noindent
+Control in a real-world context
+\cite{silk2011resources} says this with a reference. the robots are reliable, manipulable, and inspectable. At the same time they are not simply a made-up or imagined entity, but instead they do real things out in the physical world, and so a person's own intuitive knowledge of the physical world with apply to the robots as well. 
+
+\cite{barker2007robotics} Papert believed that children could identify with the robots because they are concrete, physical manifestations of the computer and the computer's programs. other researchers have also identified the concrete nature of robots as being one of their important advantages. 
+
+\cite{mitnik2009collaborative} In effect, the embodied nature of a robot provides a way to depart from the traditional abstract blackboard mased teaching scheme to a teaching model in which the student can learn by experimenting the subjects in the more natural 3D real world. Compared with a simulated environment, a physical robot can attain most of the simulation benefits. Nevertheless, an environment based on a physical element may help students to develop stronger affective bonds with it, also developing more situatinal interest. Thus robotics technologies can include and extend the benefits introduced by simulations. Simulation + 3-dimentionality, mobility, and the presence of a real, explorable and measurable setting. 
+
+Even though this concept is mentioned often no one talks about a simulator as an alternative or mention what the difference might be. 
 
 \bigskip\noindent
 Feeling of value of math in robotics use
@@ -104,17 +195,37 @@ Interest for different subjects may be affected
 \cite{nugent2009use}On the attitudinal assessment the robotics group scored significantly higher as well. Worked for science, robotics task value. Self-efficacy in robotics and gps. 
 \cite{nugent2008effect} No increase in attitude survey, increased stem, increased student interest in technology but decreased in science. Positively impacted students’ use of a plan to guide their problem solving process. Changing their STEM attitude may be hard if they do not perceive the activity as a STEM activity.
 
-\bigskip\noindent
-Students motivation is also affected either positive or negative.
-\cite{mitnik2009collaborative} Both groups were motivated, the simulator was based on newness. Motivation throughout the experimental group was seen to be supported by the students need and possibility to immerse into the activity. Students in the experimental group were not just spectators, but became relevant actors of the activity, developing a greater commitment to their team and towards the activity resolution than the control group. Experimental group maintained the motivation throughout all experiment but the simulation decreased after two sessions. 
-\cite{mitnik2009collaborative}Motivation in experimental surpassed that of the control group. Robot motivation was founded on immersion.
-Robots can be tied into many different diciplines
-\cite{barker2007robotics} Robots tie into a variety of disciplines. A robot is made of motors, sensors and programs. Each of these parts depends on different fields of knowledge, such as engineering, electronics and computer science. 
-
-\bigskip\noindent
-\cite{nugent2008effect} There was also a questionnaire on motivation and the use of learning strategies.
-
 \section{What should we think about}
+
+activities which are carefully designed to favor strategies that include math as a central rather than supplemental part of the activity have the best chance for achieving learning gains while sustaining engagement[Silk preface]. 
+
+[does lego training stimulate] several researchers including Becker[1987] have stressed that the main evidence showing that LOGO can procude measurable learning when used in "`discovery"' classes has been obtained in situations close to individual tutoring. In normal-sized classes, the evidence clearly shows the need for direct instruction in the concepts and skills to be learned from LOGo, as well as further direct instruction to enable students to generalize what they have learned for transfer to other situations. This is in complete opposition to papert's conception of the discovery approach to LOGO.
+
+[does lego training stimulate] There needs to be a large space for the pupils to work, they must be able to spread the LEGO material on the ground, play around, and test different kind of solutions for each kind of project they face. The working groups should not be too big (max 2-3 per group). the task given to the pupils must be concrete, relevant and realistic to solve. it is very important that the pupils can relate the material to their ordinary school work and their different subjects. This test was done in a regular school and therefore addressed these problems. Many other studies does not attempt to do this and therefore is not that relevant in the question: how can we integrate this technology into schools. 
+
+[does lego training stimulate] the advantage of two teachers working parallel in the classroom. This made it possible for one teacher to aid a specific group while the other maintained control over the classroom. 
+
+[acquisition] Provides 4 principles for design and implementation of robotics programs. 
+
+1: Just-in-time resources such as lessons, tutorials and examples should be embedded to support scientific inquiry and acquisition of content knowledge. The finding of the study is consistent with the literature. many researchers emphasize the importance of providing resources such as case examples, informative resources and various scaffolding tools to support student-centered learning. Future studies are needed to develop and research various types of resources that are important in robotics programs. 
+
+2: Students should be encouraged to explain their design by citing related scientific concepts and principles during debriefings. Must ask students to use ecientific concepts to explain the design of their robots and the strategies that worked or did not work for them. 
+
+3: A robotics program should provide opportunities for students to explore the learning environment but at the sam etime encourage them to follow the process of scientific inquiry to complete design challenges. Future research may be needed to examine how to maintain the balance between free play and problem solving structured by the scientific inquiry process. 
+
+It is a challenge to designers to maintain the interest while also bridgning that interest into a depper, more conceptually productive form of engagement. 
+
+Challenges
+
+Focused content, how do they learn math not just play
+
+Motivated activity, how do you get students to care
+
+Accessible problems, how can students understand what they are supposed to do?
+
+Useful resources, how to you provide the resources they need to solve it?
+
+
 Almost all papers used a control group that did not do anything. So their score was kept constant. This is a concern in our minds. How can they reliably test the value of robotics for example in a summer camp, when the control group has summer vacation and does not learn in any way. In summary generally all the studies’ activities were extra curricular activities. The exceptions are \cite{lindh2007does} which had robotics in schools 2 hours a week instead of traditional activities, this became robotics vs school. \cite{mitnik2009collaborative} Compared the robotics to a simulator. And in \cite{silk2011resources} the robotics activity were matched up against a robotics competition, to see if the learning gains came from their test setup and not just generally working with robots.  
 
 \bigskip\noindent
@@ -168,6 +279,7 @@ The participants are collected from different settings, some studies have after 
 
 \bigskip\noindent
 Trial and error 
+\cite{lindh2007does} Different ways to learn, trial and error or cooperative
 \cite{williams2007acquisition} Even though the scientific inquiry process was introduced, students predominantly used the trials and error method to solve problems. 
 \cite{lindh2007does}more seldom are students read the written instruction from the teacher or book
 
@@ -182,6 +294,11 @@ Other proposals not mentioned yet
 \cite{mitnik2009collaborative} Teammate roles are used to force cooperation among them, assuring everyone gets involved in the resolution process. Grapher role, distance measurer role and timer role. The software is difference based on what role they have. 
 
 \section{Future work}
+Why should we use robots and not a simulator?
+Does a physical robot provide a better basis for intellectual model building?
+How should the effectiveness of educational robotics be tested in a specific area within mathematics? not many papers include their tests or the reasoning behind them. No pedagogical expertise is taken into account either.  
+
+\bigskip\noindent
 Much of the future work mentioned is based on bigger sample sizes. 
 \cite{mitnik2009collaborative} Mentions the need for a bigger sample size.
 \cite{lindh2007does} Proposes a test run over 2-3 years in school with 3500+ students. 
