@@ -1,0 +1,30 @@
+\section{Design principles}
+One of the many goals of this project was to clear the way for future work with the \chirp robot in an educational setting. In order for us to achieve this goal we were determined to create a system which would not only work for our current setting, but that could be extended and/or modified to fulfill other purposes as well.
+
+\bigskip\noindent
+In addition to make the system easy to extend and modify we had to enforce a high degree of usability throughout the user interface, this was mainly due to the fact that were going to test the system with children. This got us into thinking about utilizing bluetooth as a means to program the robot as using the arduino development environment was tedious and errorprone in various ways. 
+
+\bigskip\noindent
+As utilizing bluetooth became a viable options for programming the robot we determined that a mobile solution using already existing smartphones and/or tablets would probably the easiest solution to use for all parties involved. This did however pose another requirement on the system as we did not want to create a vendor specific solution, e.g. forcing the use of android, iphone or windows phone on the users. 
+This can also be seen as a continuation of one of the design goals when the \chirp robot was created, as it was meants as a cheaper alternative to other existing robots. 
+
+\bigskip\noindent
+Based off this knowledge we created five broad design principles for when design choices were to be made. These principles can be seen in table~\ref{table:requirements}.
+\smalltable{Design principles}{table:requirements}{
+\begin{tabular}{lll}
+	\textbf{\#} & \textbf{Name} & \textbf{Description}\\
+	\hline
+	R1 & Extendability & \wrap{The system should be easy to extend with new functionality.}{}\\
+	R2 & Modifiability & \wrap{The system should be easy to modify. Settings/options should be included to allow for changes at runtime.}{}\\
+	R3 & Usability & \wrap{The system should provide an easy to use user interface.}{}\\
+	R4 & Platform & \wrap{The system should work on as many as possible platform.}{}\\
+	R5 & Applicability & \wrap{The system should be applicable outside the scope of this project.}{}\\\hline
+\end{tabular}
+}	
+	
+	
+	
+	
+	
+	
+	
