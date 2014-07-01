@@ -1,11 +1,11 @@
-\section{System proposal}\label{sec:architectureReasoning}
+\section{Software framework}\label{sec:framework}
 In order to answer the questions proposed in the thesis while adhering to the design principles outlined we decided to utilize ideas from previous researchers within the field of educational robotics. 
 One of the eariest researchers looking into how robotics could be used in schools and one of the creators of the Logo programming language were Seymour Papert (\cite{papert1980mindstorms}). Who has several decades of experience with using robots as a tool in education.
 We therefore felt it natural to lean on this preexisting knowledge, and utilize the basis of Logo and its successors for our thesis. We felt this would give us a solid pedagogical fundation to start working with the application, however the complexity of the Logo language was overkill for this project. In order to mitigate this we propose a system where parts of the programming language can be disabled to make it easier for the participants to understand and grasp. In addition to basing much of the language of Logo we drew inspiration from MIT's scratch program\footnote{\url{http://scratch.mit.edu/about/}}, which is a programming tool based on predefined codeblocks in order to remove the need for writing the correct syntax to make your program compile. By utilizing a similar strategy to MIT would could allow the participants to create their program through a fully interactive graphics interface by dragging and dropping codeblocks into position. 
 
 \bigskip\noindent
-In order to create the system we needed a two component system, the \chirp robot and a programming device. 
-From the get go we experience the troubles of using the arduino integrated developer environment(AIDE), and decided that using it as the programming device would not work.
+We proposed to create the system as a two component system, the \chirp robot and a programming device. 
+From the get-go we experience trouble in using the arduino integrated developer environment(AIDE), and decided that using it as the programming device would not work.
 Previous work with the robot had however shown that bluetooth was a viable option for communication between a mobile device and the robot(\cite{chrip2013ResearcherNight}).
 A solution based on bluetooth communication would allow the system to be vastly more usable for non-technical people and children.
 It was therefore decided that the system would use tablets(android, iPad, ect) as its programming device.
@@ -15,10 +15,6 @@ As the system was created to be used in an educational setting all the way down 
 we needed to make it easy to use for everyone, while still maintaining the complexity needed for children of an higher age and/or skillset. 
 We wanted to create a system that could be used to teach fourth graders maths, and still be used to teach tenth grader at the same time. 
 This reinforced the need for the system to be extendable, but also have an easy to use user interface. 
-
-\bigskip\noindent
-In order to accomplish the requirements outlined we went through each one of them in turn, and tried to come up with a strategy that would 
-	to create the best possible solution.
 	
 \bigskip\noindent
 	The first decision to be made were regarding the platform and how to achieve a crossplatform solution. 
@@ -48,3 +44,5 @@ In order to accomplish the requirements outlined we went through each one of the
 	The framwork that had commercial licenses or a "`pay to use"' business model were removed from the list of potensial frameworks, which left us with the choice between Apache Cordova, Adobe AIR and Xamarin.
 	We decided to move forward with PhoneGap due to language preferences in the team. Adobe AIR, while stating that one can use javascript, does in fact require the use of Flash and ActionScript for its mobile applications, and the we had very little experience with C\#.
 	Apache Cordova on the other hand is build around standard web technologies as javascript, HTML and CSS, which both members of the project have been working with before.
+	
+	
