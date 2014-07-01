@@ -43,12 +43,91 @@ The main responsibilities of each class is shown in table~\ref{table:technical}.
 	\end{longtable}
 }
 
+\bigskip\noindent
+To see the resulting software please see appendix~\ref{appendix:appIntro}, which gives an introduction to the application.
+
 \section{Hardware accessories}
 After the mainpart of the application was created we still had a lot of work ahead of us before we had a working prototype. In order to make the robot ready for the experiment we still missed the contraption which would handle the drawing with the physical robot, and the bluetooth modules that were to mounted on top of the robot. 
 
 \subsection{Chassis modifications}
-The problem we initially underestimated was how we should make the physical robot draw on paper. While a front or back mounted pen would be an easy solution this would not create the angles properly, and thus was not a real viable options. The clearence below the robot was to small for anything to fit underneath it, and the battery was placed in such a way that nothing could fit between the wheels of the robot. 
+The problem we initially underestimated was how we should make the physical robot draw on paper. While a front or back mounted pen would be an easy solution this would not create the angles properly, and thus was not a real viable options. The clearence below the robot was to small for anything to fit underneath it, and the battery was placed in such a way that nothing could fit between the wheels of the robot (see figure~\ref{fig:robotUnder}). In order to fix this problem we designed a batteryholder which could be mounted on top of the robot (see figure~\ref{fig:batteryHolder}), but due to techinical problems witht the 3D printes we were not able to test this design. And we had to resort to an alternative solution using velcro to position the battery at the back of the robot and duct tape to add a counterweight at the front of the robot to provide stability (see figures in~\ref{fig:robot}). 
 
 \bigskip\noindent
+While this solved the problem of making room beneath the robot we still had multiple issues with getting the robot to draw properly. These issues were mainly due to inaccuracies in the 3D-printing environment meaning the the spring used to push the drawing tip into the paper would get snagged inside its container (figures~\ref{fig:pencilHolder} and~\ref{fig:pencilHolderReal}).
 
 
+\begin{figure}[H]
+	\centering
+	\subfigure[Battery holder]{
+		\includegraphics[width=0.4\linewidth]{images/BatteryHolder.JPG}
+		\label{fig:batteryHolder}
+	}
+	\subfigure[Pencil holder]{
+		\includegraphics[width=0.4\linewidth]{images/PencilHolder.JPG}
+		\label{fig:pencilHolder}
+	}
+	\subfigure[Printed pencil holder]{
+		\includegraphics[width=0.4\linewidth]{images/penHolder.png}
+		\label{fig:pencilHolderReal}
+	}
+	\caption{3D printed utilities}
+	\label{fig:3d}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfigure[Front of robot]{
+		\includegraphics[width=0.4\linewidth]{images/robotFront.png}
+		\label{fig:robotFront}
+	}
+	\subfigure[Back of robot]{
+		\includegraphics[width=0.4\linewidth]{images/robotBack.png}
+		\label{fig:robotBack}
+	}
+	\subfigure[Underside of robot]{
+		\includegraphics[width=0.4\linewidth]{images/robotUnder.png}
+		\label{fig:robotUnder}
+	}
+	\subfigure[Robot drawing an angle]{
+		\includegraphics[width=0.4\linewidth]{images/robotDrawing.png}
+		\label{fig:robotDrawing}
+	}
+	\caption{Pictures of the robot}
+	\label{fig:robot}
+\end{figure}
+
+\subsection{Bluetooth circuit board}
+The \chirp team had previously tested using bluetooth communication between an android device and the robot. We therefore got help in creating the inital circuitry for our bluetooth module(figure~\ref{fig:circuitDrawing}). This drawing was at this point designed in the Eagle software in order to make it possible to produce at a later stage(~\ref{fig:circuitDesign}). 
+
+\bigskip\noindent
+It can be seen in figure~\ref{fig:circuitProto} that some soldering around the board was necessary in the prototype. The prototype did however lead us to believe that the circuit itself was functional and we were able to proceed with creating all the circuit boards that we needed. 
+Figure~\ref{fig:circuitTrans} shows the template used in the etching process when creating these boards. While figure~\ref{fig:circuitboard} shows the circuit board alongside with the bluetooth module we used for our robots. The complete assembly of the robot can be seen in figure~\ref{fig:robotDrawing}.
+
+\begin{figure}[!htb]
+	\centering
+	\subfigure[Inital circuit]{
+		\includegraphics[width=0.4\linewidth]{images/bluetoothCircuit.png}
+		\label{fig:circuitDrawing}
+	}
+	\subfigure[Created in circuit designer]{
+		\includegraphics[width=0.4\linewidth]{images/circuitDrawing.PNG}
+		\label{fig:circuitDesign}
+	}
+	\subfigure[Prototype template]{
+		\includegraphics[width=0.4\linewidth]{images/bluetoothProtoTrans.png}
+		\label{fig:circuitProtoTrans}
+	}
+	\subfigure[Prototype circuitboard]{
+		\includegraphics[width=0.4\linewidth]{images/bluetoothProto.png}
+		\label{fig:circuitProto}
+	}
+	\subfigure[Finished template]{
+		\includegraphics[width=0.4\linewidth]{images/bluetoothTrans.png}
+		\label{fig:circuitTrans}
+	}
+	\subfigure[Finished circuitboard]{
+		\includegraphics[width=0.4\linewidth]{images/bluetooth.png}
+		\label{fig:circuitboard}
+	}
+	\caption{Circuit boards}
+	\label{fig:circuit}
+\end{figure}

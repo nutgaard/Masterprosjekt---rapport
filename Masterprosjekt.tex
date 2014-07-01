@@ -20,6 +20,7 @@
 \usepackage{pdfpages}													%For importing other pdfs into the report
 %For creating pretty tables
 \usepackage{array,multirow}
+\usepackage{subfigure}												%For creating tables of figures
 
 %\geometry{b5paper}														%Show the pdf in B5 format, however this scales just the page and not the text itself, so not an accurate representation of the finished product.
 
@@ -190,6 +191,8 @@
 		\includepdf[pages=-]{appendices/tests/experiment1}	
 	\chapter{Experiment 2 tasks}\label{appendix:experiment2}
 		\includepdf[pages=-]{appendices/tests/experiment2}	
+	\chapter{Application introduction}\label{appendix:appIntro}
+		\includepdf[pages=-]{appendices/Application}
 \end{appendices}
 
 \end{document}
