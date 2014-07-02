@@ -14,6 +14,42 @@ They start with the assumptions related to each analysis, if assumptions are vio
 At the very end they all end with a small summary of the analysis. 
 The very last chapter (chapter~\ref{ch:cronbach}) in this part of the report shows the Cronbach's alpha analysis for measuring the internal consistency reliability and test-retest analysis using Pearson's product-moment correlations between pretest and posttest scores to measure the stability reliability.
 
+\bigskip\noindent
+For simplicity and readability we've included a small table with some of the statistics from the different analyses here. 
+\smalltable{Statistics from the study}{table:statistics}{
+	\subfloat[General statistics\label{table:general}]{
+		\begin{tabular}{lll}
+			& Simulator & Robotics\\\hline
+			Participants & 6 & 5\\
+			Male & 1 & 2\\
+			Female & 5 & 3\\
+			\hline
+		\end{tabular}
+	}\\
+	\subfloat[Means. SD in paranthesis. * outlier removed. Sig.Gain calculated by paired t-test\label{table:means}]{
+		\begin{tabular}{lllll}
+			& Simulator & Robotics & Robotics* & Total\\\hline
+			Pretest mean & 13.17(4.36) & 18.40(2.97) & 18.75(3.30) & 15.55(4.52)\\
+			Posttest mean & 15.17(3.43) & 18.80(4.97) & 20.50(3.69)& 18.82(4.40)\\
+			Gain & 2.00(2.37) & 0.40(3.13) & 1.75(0.96) & 1.27(2.72)\\
+			Normalized gain & 0.17(0.17) & 0.19(0.56) & 0.42(0.26) & 0.18(0.37)\\
+			Sig. Gain (p) & 0.09 & 0.79 & 0.03 & 0.152\\
+			\hline
+		\end{tabular}
+	}\\
+	\subfloat[Comparisons between the groups calculated by independent t-test. * outlier removed\label{table:genComp}]{
+		\begin{tabular}{llll}
+			& t & df & Sig\\\hline
+			Pretest & -2.274 & 9 & 0.049\\
+			Pretest* & -2.166 & 8 & 0.062\\
+			Gains & 0.967 & 9 & 0.359\\
+			Gains* & 0.232 & 7.05 & 0.823\\
+			Normalized Gains & -0.117 & 9 & 0.910 \\
+			Normalized Gains* & -1.903 & 8 & 0.094\\
+			\hline
+		\end{tabular}
+	}
+}
 \input{results/independentTTest}
 \input{results/pairedTTest}
 \input{results/additionalTests}

@@ -136,6 +136,10 @@
         %\ifnum  \c@secnumdepth > \m@ne  \@chapapp\ \thechapter:  \fi  ##1}}%
     %\def\sectionmark##1{\relax}}
 
+\newcommand{\vcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+
 \begin{document}
 
 %Exclude introduction pages from pageanchoring since there will be no references to these pages, and it made alot of warnings. :P

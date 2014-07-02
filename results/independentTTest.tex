@@ -81,15 +81,29 @@ The last assumption relates to homogeneity of variances within each group.
 As mentioned when comparing the results with and without outliers, this assumption was violated when the outlier was excluded($p = 0.033$), but held when it was included($p = 0.863$). None of the results do however show a statistically significant difference, and it therefore fair to assume that there is no statistically difference between the two groups.
 
 \section{Analysis summary}
-The independent-samples t-test was used to determine if there were differences in the increase from pretest to posttest between the robotics group and simulator group. One outlier was identified within the dataset (figure~\ref{fig:boxplot}), but did not effect the decision of keeping or rejection the null hypothesis and was thus kept in the dataset during the rest of the analysis. The difference scores for each group were normally distributed as shown by z-values and Shapiro-Wilk's test ($p < 0.05$), and there was homogeneity of variances when the outlier was included($p = 0.863$). The increase from pretest to posttest was greater for the simulator group ($M = 2.00, SD = 3.13$) than for the robot group ($M = 0.40, SD = 2.37$ with the outlier included, and $M=1.75, SD = 0.96$ when it was excluded), but not a statistically significant difference, $M = 1.60$, $95\% CI [-2.14, 5.34]$, $t(9) = 0.967, p = 0.359$ with the outlier included, and $M = 0.25$, $95\% CI [-2.30, 2.80]$, $t(7.05) = 0.232, p = 0.823$ when it was excluded.
+The independent-samples t-test was used to determine if there were differences in the increase from pretest to posttest between the robotics group and simulator group. One outlier was identified within the dataset (figure~\ref{fig:boxplot}), but did not effect the decision of keeping or rejection the null hypothesis and was thus kept in the dataset during the rest of the analysis. The difference scores for each group were normally distributed as shown by z-values and Shapiro-Wilk's test ($p > 0.05$), and there was homogeneity of variances when the outlier was included($p = 0.863$). The increase from pretest to posttest was greater for the simulator group ($M = 2.00, SD = 3.13$) than for the robot group ($M = 0.40, SD = 2.37$ with the outlier included, and $M=1.75, SD = 0.96$ when it was excluded), but not a statistically significant difference, $M = 1.60$, $95\% CI [-2.14, 5.34]$, $t(9) = 0.967, p = 0.359$ with the outlier included, and $M = 0.25$, $95\% CI [-2.30, 2.80]$, $t(7.05) = 0.232, p = 0.823$ when it was excluded.
 
 \bigskip\noindent
-\smalltable{Tests means for different groups}{table:means}{
-	\begin{tabular}{lllll}
-		Group & Pretest mean & Posttest Mean & Diff. Mean & Diff. SD\\\hline
-		Robot & 18.40 & 18.80 & 0.40 & 2.37\\
-		Simulator & 13.17 & 15.17 & 2.00 & 3.13\\
-		All & 15.54 & 16.82 & 1.27 & 2.72\\\hline
-		Robot, no outlier & 18.75 & 20.50 & 1.75 & 0.96\\\hline
+The analysis presented here have been using the gain from pretest to posttest directly as the dependent variable. A similar analysis was conducted using the normalized gain in order to explain the gain in relation to how much each participant could potensially improve to the posttest. After checking that no assumptions were violated, with the exception of assumption four (no outliers within the groups), we were able to gather the results. 
+
+\smalltable{Results of independent t-test. * outlier removed}{table:fullIndependeny}{
+	\begin{tabular}{llllll}
+		Varable & t & df & Sig. & Mean diff & Std. Error Diff\\\hline
+		Gain & 0.967 & 9 & 0.359 & 1.6 ($-2.143..5.343$) & 1.655\\
+		Gain* & 0.232 & 7.05 &  0.823 & 0.25 ($-2.296..2.796$) & 1.078\\
+		NormalizedGain & -0.117 & 9 & 0.910 & -0.03 ($-0.565..0.509$) & 0.238\\
+		NormalizedGain* & -1.903 & 8 & 0.094 & -0.26 ($-0.565..0.054$) & 0.134\\
+		\hline
 	\end{tabular}
 }
+
+%\bigskip\noindent
+%\smalltable{Tests means for different groups}{table:means}{
+%	\begin{tabular}{lllll}
+%		Group & Pretest mean & Posttest Mean & Diff. Mean & Diff. SD\\\hline
+%		Robot & 18.40 & 18.80 & 0.40 & 2.37\\
+%		Simulator & 13.17 & 15.17 & 2.00 & 3.13\\
+%		All & 15.54 & 16.82 & 1.27 & 2.72\\\hline
+%		Robot, no outlier & 18.75 & 20.50 & 1.75 & 0.96\\\hline
+%	\end{tabular}
+%}
