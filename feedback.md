@@ -20,8 +20,8 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	2	| Add more details about simulations, and more screenshots. 					|	:white_large_square:	|
 |	3	| Include a table to explain the procedure for both groups. Section 14.1 14.2 	|	:white_large_square:	|
 |	4	| Justification of using the LOGO language is too weak.							|	:white_large_square:	|
-|	5	| Results: compate the pre-test of both groups, then compare the improvements.	|	:white_large_square:	|
-|	6	| Results: Use `gain` instead of `diff`											|	:white_large_square:	|
+|	5	| Results: compate the pre-test of both groups, then compare the improvements.	|	:white_check_mark:		|
+|	6	| Results: Use `gain` instead of `diff`											|	:white_check_mark:		|
 |	7	| Calculate normalized gains in results 										|	:white_large_square:	|
 |	8	| Details for which tasks were completed by each group.							|	:white_large_square:	|
 |	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:white_large_square:	|
