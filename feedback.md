@@ -23,9 +23,9 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
 
 
-## Comments to tasks
+# Comments to tasks
 
-
+# Keypoints from the feedback
 
 1. Informal language
 2. Experiment details were described in a story format.
@@ -40,6 +40,8 @@ The table shows a brief overview over the feedback from Amali, the full text can
 9. A table that gives statistical details will improve the readability. for e.g. this table should have number of students for each group, mean pre-test scores , post-test scores, mean number of tasks completed etc. Please refer to the table 1 in the paper attached. 
 10. Did you give partial marks in the pre- and post-tests ? 
 11. One of the important aspects of this study was that we got the teachers involved and got ideas from them how they teach maths etc. Rather than just going to school and did the experiment. So it needs to be clearly explained.
+
+# The mail from Amali
 
 ```text
 Hi Nicklas, Jan 
