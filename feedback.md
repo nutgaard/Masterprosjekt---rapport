@@ -22,9 +22,9 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	4	| Justification of using the LOGO language is too weak.							|	:white_large_square:	|
 |	5	| Results: compate the pre-test of both groups, then compare the improvements.	|	:white_check_mark:		|
 |	6	| Results: Use `gain` instead of `diff`											|	:white_check_mark:		|
-|	7	| Calculate normalized gains in results 										|	:white_large_square:	|
-|	8	| Details for which tasks were completed by each group.							|	:white_large_square:	|
-|	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:white_large_square:	|
+|	7	| Calculate normalized gains in results 										|	:white_check_mark:		|
+|	8	| Details for which tasks were completed by each group.							|	:warning:				|
+|	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:warning:				|
 |	10	| Did you give partial marks in the pre- and post-test?							|	:white_large_square:	|
 |	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
 
@@ -32,6 +32,10 @@ The table shows a brief overview over the feedback from Amali, the full text can
 # Comments to tasks
 
 **2:** Some of this was added in one of the appendices after the first draft was sent to Amali. But we should probably try to merge most of it into the report, perhaps even keep the appendix as a duplicate.
+
+**8:** Do we still have these results? Or did we throw them away?
+
+**9:** Tried consolidating some of the results in the `Result` chapter. I do believe most of the results are there, but should probably be presented in a cleaner way.
 
 # Keypoints from the feedback
 
