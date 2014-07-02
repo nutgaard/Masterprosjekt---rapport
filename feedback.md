@@ -1,3 +1,9 @@
+<head>
+	<script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
 # Initial feedback from Amali
 The table shows a brief overview over the feedback from Amali, the full text can be seen below the table.  
 
@@ -25,6 +31,8 @@ The table shows a brief overview over the feedback from Amali, the full text can
 
 # Comments to tasks
 
+**2:** Some of this was added in one of the appendices after the first draft was sent to Amali. But we should probably try to merge most of it into the report, perhaps even keep the appendix as a duplicate.
+
 # Keypoints from the feedback
 
 1. Informal language
@@ -35,7 +43,7 @@ The table shows a brief overview over the feedback from Amali, the full text can
 4. Justification of using the LOGO programming language is weak. 
 5. When you present the results, first you need to compare the pre-test knowledge of both groups. Then compare the improvement in performance.
 6. Rather then say Diff, it would be good to use the word 'gain' or 'learning gain'
-7. it would be good if you could also calculate the normalise gain, and compare it between the groups. Normalised learning gain =learning gain/(100-pre-test score). This will explain the gain in relation to how much room they have for improvement. for e.g. if some one scored 75/100 in the pre-test, the room for improvement is 25 and the post-test score is 85. normalised gain = 10/25.
+7. it would be good if you could also calculate the normalise gain, and compare it between the groups. Normalised learning $gain_{normalized} = \frac{gain}{100-pretest}.$. This will explain the gain in relation to how much room they have for improvement. for e.g. if some one scored 75/100 in the pre-test, the room for improvement is 25 and the post-test score is 85. normalised gain = 10/25.
 8. Do you have details of which tasks were completed by each group for each session? would be good to find out the mean number of tasks completed? 
 9. A table that gives statistical details will improve the readability. for e.g. this table should have number of students for each group, mean pre-test scores , post-test scores, mean number of tasks completed etc. Please refer to the table 1 in the paper attached. 
 10. Did you give partial marks in the pre- and post-tests ? 
