@@ -11,8 +11,8 @@ These assumptions are the same as the first two assumptions when using the indep
 \section{Assumptions regarding the data}
 The last to assumptions are related to the nature of the data. 
 The assumptions are;
-3) there should be no significant outliers in the differences, and
-4) the distribution of differences in the dependent variable should be approximately normally distributed.
+3) there should be no significant outliers in the gain scores, and
+4) the distribution of gains in the dependent variable should be approximately normally distributed.
 
 \subsection{Testing for outliers}
 This assumption is similar to the fourth assumption in the independent-samples t-test, and as we learned while preforming the that analysis there was an outlier within the robotics group (section~\ref{sec:outliers}, figure~\ref{fig:boxplot}). In order to see if the outlier affected the results we adopted the same strategy as in the independent-samples t-test and ran the analysis with and without outliers.
@@ -22,11 +22,11 @@ This assumption is similiar to the fifth assumption in the independent-samples t
 
 \subsection{Analysis summary}
 The paired t-test was used to determine if there were any statistically significant change from pretest to posttest within the two different group. One outlier was identified within the robotics group (figure~\ref{fig:boxplot}), as showed in table~\ref{table:paired}, the exclusion of the outlier did affect the result($p_{robot} = 0.79, p_{robot*} = 0.03$).
-The test for normality was the same as for the independent-samples t-test and showed that the difference scores within each group were normally distributed. 
+The test for normality was the same as for the independent-samples t-test and showed that the gain scores within each group were normally distributed. 
 The simulator group did better on its posttest($M = 15.17, SD = 3.43$) then on its pretest($M = 13.17, SD = 4.36$), a statistically non-significant mean increase of $2.0$points, $95\%CI[-0.48,4.48],t(5)=2.07,p=0.93,d=0.84$.
 The robotics group similarly did better on its posttest($M=18.80, SD = 4.97$) then on its pretest($M = 18.40, SD = 2.97$), a statistically non-significant mean increase of $0.4$points, $95\%CI[-3.49,4.29],t(4)=0.286,p=0.79,d=0.13$. The results for the robotics group do however drastically change when the outliers were excluded from the analysis, in fact showing a statistically significant mean increase of $1.75$points, $95\%CI[0.23,3.27],t(3)=3.656,p=0.035,d=1.83$.
 
-\smalltable{Paired samples T-test of differences. *: outliers removed}{table:paired}{
+\smalltable{Paired samples T-test of gains. *: outliers removed}{table:paired}{
 	\begin{tabular}{lllllll}\hline	
 		Group & \multicolumn{3}{l}{Paired differences} & t & df & Sig.(2-tailed)\\
 		\cline{2-4}

@@ -26,14 +26,14 @@ The assumptions are;
 \subsection{Testing for outliers}\label{sec:outliers}
 The forth assumption assumes that there should be no significant outliers in the different group in terms of the dependent variable. 
 
-\image{images/results/boxplot.PNG}{\linewidth}{Boxplot of difference grouped by treatment}{fig:boxplot}
+\image{images/results/boxplot.PNG}{\linewidth}{Boxplot of gains grouped by treatment}{fig:boxplot}
 
 \bigskip\noindent
 As seen in figure~\ref{fig:boxplot} an extreme outlier was found in our dataset within the robotics group(The asterix represents an extreme outlier in SPSS). 
 By reassessing the tests, and investigating the circumstances during the pretest and posttest it was determined that the outlier were must likely not caused by errors during assessment, data entry or the tests. 
 As a result of this, a comparison of the results with and without the outlier was conducted (see table~\ref{table:outliers}) to see how the outlier effected the analysis. 
 It should be noted that the results without the outliers failed Levene's test for equality of variances ($p = 0.033$) and results in the table are therefore produced by using the Welch t-test. 
-Both do however show that there was no statistically significant difference in mean difference score between the robotics and simulator group($p > 0.05$ for both results).
+Both do however show that there was no statistically significant difference in the gains between the robotics and simulator group($p > 0.05$ for both results).
 For good measure we have included two entries in the following table for the robotics group, one where the outlier was included and one where the outlier was not included.
 
 
@@ -69,9 +69,9 @@ In order to check the this assumption hold we calculated the skewness and kurtos
 		Simulator & 0.164 & 6 & 0.200 & 0.950 & 6 & 0.739\\\hline
 	\end{tabular}
 }
-\image{images/results/QQPlotRobot.PNG}{\linewidth}{Normal Q-Q plot of differences for the robotics group with outliers}{fig:QQRobot}
-\image{images/results/QQPlotRobotWithoutOutlier.PNG}{\linewidth}{Normal Q-Q plot of differences for the robotics group without outliers}{fig:QQRobotPruned}
-\image{images/results/QQPlotSimulator.PNG}{\linewidth}{Normal Q-Q plot of differences for the simulator group}{fig:QQSimulator}
+\image{images/results/QQPlotRobot.PNG}{\linewidth}{Normal Q-Q plot of gains for the robotics group with outliers}{fig:QQRobot}
+\image{images/results/QQPlotRobotWithoutOutlier.PNG}{\linewidth}{Normal Q-Q plot of gains for the robotics group without outliers}{fig:QQRobotPruned}
+\image{images/results/QQPlotSimulator.PNG}{\linewidth}{Normal Q-Q plot of gains for the simulator group}{fig:QQSimulator}
 
 \bigskip\noindent
 As seen by this(tables~\ref{table:skew} and ~\ref{table:shapiro}, and figures~\ref{fig:QQRobot},~\ref{fig:QQRobotPruned}, and ~\ref{fig:QQSimulator}) we can be fairly certain that the assumption regarding normality is not violated as all z-values are within the $\pm 2.58$ range (representing a statistical significance level of $0.01$) and the Shapiro-Wilk test shows $p > 0.05$ for both groups. 
@@ -81,14 +81,15 @@ The last assumption relates to homogeneity of variances within each group.
 As mentioned when comparing the results with and without outliers, this assumption was violated when the outlier was excluded($p = 0.033$), but held when it was included($p = 0.863$). None of the results do however show a statistically significant difference, and it therefore fair to assume that there is no statistically difference between the two groups.
 
 \section{Analysis summary}
-The independent-samples t-test was used to determine if there were differences in the increase from pretest to posttest between the robotics group and simulator group. One outlier was identified within the dataset (figure~\ref{fig:boxplot}), but did not effect the decision of keeping or rejection the null hypothesis and was thus kept in the dataset during the rest of the analysis. The difference scores for each group were normally distributed as shown by z-values and Shapiro-Wilk's test ($p > 0.05$), and there was homogeneity of variances when the outlier was included($p = 0.863$). The increase from pretest to posttest was greater for the simulator group ($M = 2.00, SD = 3.13$) than for the robot group ($M = 0.40, SD = 2.37$ with the outlier included, and $M=1.75, SD = 0.96$ when it was excluded), but not a statistically significant difference, $M = 1.60$, $95\% CI [-2.14, 5.34]$, $t(9) = 0.967, p = 0.359$ with the outlier included, and $M = 0.25$, $95\% CI [-2.30, 2.80]$, $t(7.05) = 0.232, p = 0.823$ when it was excluded.
+The independent-samples t-test was used to determine if there were differences in gains from pretest to posttest between the robotics group and simulator group. One outlier was identified within the dataset (figure~\ref{fig:boxplot}), but did not effect the decision of keeping or rejection the null hypothesis and was thus kept in the dataset during the rest of the analysis. 
+The gains for each group were normally distributed as shown by z-values and Shapiro-Wilk's test ($p > 0.05$), and there was homogeneity of variances when the outlier was included($p = 0.863$). The increase from pretest to posttest was greater for the simulator group ($M = 2.00, SD = 3.13$) than for the robot group ($M = 0.40, SD = 2.37$ with the outlier included, and $M=1.75, SD = 0.96$ when it was excluded), but not a statistically significant difference, $M = 1.60$, $95\% CI [-2.14, 5.34]$, $t(9) = 0.967, p = 0.359$ with the outlier included, and $M = 0.25$, $95\% CI [-2.30, 2.80]$, $t(7.05) = 0.232, p = 0.823$ when it was excluded.
 
 \bigskip\noindent
 The analysis presented here have been using the gain from pretest to posttest directly as the dependent variable. A similar analysis was conducted using the normalized gain in order to explain the gain in relation to how much each participant could potensially improve to the posttest. After checking that no assumptions were violated, with the exception of assumption four (no outliers within the groups), we were able to gather the results. 
 
 \smalltable{Results of independent t-test. * outlier removed}{table:fullIndependeny}{
 	\begin{tabular}{llllll}
-		Varable & t & df & Sig. & Mean diff & Std. Error Diff\\\hline
+		Varable & t & df & Sig. & Mean diff & Std. Error Diff\\
 		Gain & 0.967 & 9 & 0.359 & 1.6 ($-2.143..5.343$) & 1.655\\
 		Gain* & 0.232 & 7.05 &  0.823 & 0.25 ($-2.296..2.796$) & 1.078\\
 		NormalizedGain & -0.117 & 9 & 0.910 & -0.03 ($-0.565..0.509$) & 0.238\\
