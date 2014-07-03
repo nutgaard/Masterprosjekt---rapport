@@ -107,5 +107,78 @@ The main responsibilities of each class is shown in table~\ref{table:technical}.
 \end{center}
 
 \bigskip\noindent
-To see the resulting software please see appendix~\ref{appendix:appIntro}, which gives an introduction to the application.
+As can be seen from the class diagram in figure~\ref{fig:class}, there is a lot of connected components within the application. 
+This architecture was chosen in order to make each component's  responsibility as small and concrete as possible, which prevents alot of ripples if one component should change and helps identify the location of bug. 
+
+\bigskip\noindent
+Most of the classes/files in the application are straight forward javascript "`classes"' with a minimal responsibility, which make them straightforward to understand and debug. The exception to this may be the application backbone responsible for translating our internal program representation into a program which can run on the robot and the simulator. Because of this, and all the other interactions between the components, we've included a short sequence diagram and explaination of how the application works when a user tries to start his or her program. 
+
+\bigskip\noindent
+The diagram starts off with the user initiating the \texttt{Run} sequence, telling the application to take the currect program and run it. 
+The \texttt{Program} class retrieves the program either from the graphical input or from the textual input dependent on which were active at the time when the user started the sequence. The program is at this program replaces by an instance of \texttt{RunnableProgram}, see listing~\ref{lst:loop}.
+When the program have been retrieved and converted the event handler requests a simulator from the \texttt{simulatorFactory}, which in turn determines the currect \texttt{simulator} given the current state of the application(e.g. if a bluetooth connection is actice). 
+With the simulator and runnable program prepared the event handler sends the program to the simulator and lets the simulator take it from there.
+The simulator will at this point request a program generator from the runnable instance.
+The program generator will if necessary convert the program into javascript(listing~\ref{lst:internal}), sandbox the newly created javascript code and run it to generate the output commands needed for the simulator. The commands(listing~\ref{lst:commands}) are at this point presented in a similar fashion to what you would expect from an java iterator (\texttt{hasNext} and \texttt{next} commands). With the support for native generator coming to javascript with the new ECMAscript 6 standard this is self created generator is most likely to be exchanged in favor of a native approach (\cite{mozillaES6}).
+If a bluetooth connection is present at this point and the simulator support bluetooth synchronization it will try to send the commands to the robot. 
+\bigskip\noindent
+In order to contain most of the complexity within the application and not on the arduino we translate the commands into simple \texttt{move} and \texttt{turn} commands for the bluetooth module. A move command would be prefixed with the letter \texttt{m}, followed by a either a \texttt{+} or \texttt{-} indication the direction (positive is forward), and four hex-digits indication the length. I similar structure was used for turn commands with the prefix \texttt{t} instead of \texttt{m} (positive is a right turn).
+
+\bigskip\noindent
+The code snipplets (listings~\ref{lst:loop} and~\ref{lst:internal}) were choosen here as an example due to the fact that most of the language currently implemented is showcased in the example. This is however the extended mode of the language, whereas the experiment was conducted without loops, procedures and variables enabled in the language. 
+
+\image{images/sequence.png}{\linewidth}{Sequence diagram of initialization of a user program}{fig:sequence}
+\begin{minipage}{0.9\linewidth}
+	\begin{lstlisting}[frame=single,numbers=left,caption={Example code for creating a square using variables, procedures and loop.},language=MyBasic,label=lst:loop]
+SET NUM 4
+SET LENGTH 100
+SET ANGLE 90
+PROC SEGMENT
+    FWD LENGTH
+    TL ANGLE
+END 
+REP NUM
+    CALL SEGMENT
+END 
+	\end{lstlisting}
+%\end{minipage}
+%\begin{minipage}{\linewidth}
+	\begin{lstlisting}[frame=single,numbers=left,caption={The internal representation of the previous program.},language=Javascript,label=lst:internal]
+var icount = 0; 
+
+SET("NUM", 4);var NUM = 4; 
+SET("LENGTH", 100);var LENGTH = 100; 
+SET("ANGLE", 90);var ANGLE = 90; 
+
+function SEGMENT() { 
+	icount++; 
+	if (icount > 30000){return;} 
+	FWD(LENGTH); 
+
+	icount++; 
+	if (icount > 30000){return;} 
+	TL(ANGLE); 
+	END();
+} 
+
+REP(NUM);
+for (var generated_55033 = 0; generated_55033 < NUM;generated_55033++) { 
+	CALL("SEGMENT");
+	SEGMENT(); 
+	END();
+}
+	\end{lstlisting}
+	\begin{lstlisting}[frame=single,numbers=left,caption={Commands sent to simulator},language=MyBasic,label=lst:commands]
+FWD 100
+TL 90
+FWD 100
+TL 90
+FWD 100
+TL 90
+FWD 100
+TL 90
+	\end{lstlisting}
+\end{minipage}
+
 \section{Resulting application}
+An introduction to how you can use the program can be found in appendix~\ref{appendix:appIntro}. 

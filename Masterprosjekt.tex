@@ -21,6 +21,8 @@
 %For creating pretty tables
 \usepackage{array,multirow}
 \usepackage{subfig}												%For creating tables of figures
+\usepackage{listings}											%For listing source code
+\usepackage{color}												%For color highlighting source code
 
 %\geometry{b5paper}														%Show the pdf in B5 format, however this scales just the page and not the text itself, so not an accurate representation of the finished product.
 
@@ -138,6 +140,48 @@
 
 \newcommand{\vcell}[2][c]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+%Source code environment and highlighting setup
+%%Code highlighting setup
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, false, finally, for, function, if, in, instanceof, new, null, return, switch, this, throw, true, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  sensitive=true
+}
+\lstdefinelanguage{MyBasic}{
+	keywords={FWD, BACK, TL, TR, SET, PROC, END, CALL, REP},
+	ndkeywords={},
+	keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+	sensitive=true
+}
+\lstset{
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
 
 
 \begin{document}
