@@ -17,7 +17,7 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |:-----:|:------------------------------------------------------------------------------|:-------------------------:|
 |	1a	| Informal language				 												|	:white_large_square:	|
 |	1b	| Experimental details were described in story format. 							|	:white_large_square:	|
-|	2	| Add more details about simulations, and more screenshots. 					|	:white_large_square:	|
+|	2	| Add more details about simulations, and more screenshots. 					|	:white_check_mark:	|
 |	3	| Include a table to explain the procedure for both groups. Section 14.1 14.2 	|	:white_large_square:	|
 |	4	| Justification of using the LOGO language is too weak.							|	:white_large_square:	|
 |	5	| Results: compate the pre-test of both groups, then compare the improvements.	|	:white_check_mark:		|
