@@ -121,14 +121,19 @@ With the simulator and runnable program prepared the event handler sends the pro
 The simulator will at this point request a program generator from the runnable instance.
 The program generator will if necessary convert the program into javascript(listing~\ref{lst:internal}), sandbox the newly created javascript code and run it to generate the output commands needed for the simulator. The commands(listing~\ref{lst:commands}) are at this point presented in a similar fashion to what you would expect from an java iterator (\texttt{hasNext} and \texttt{next} commands). With the support for native generator coming to javascript with the new ECMAscript 6 standard this is self created generator is most likely to be exchanged in favor of a native approach (\cite{mozillaES6}).
 If a bluetooth connection is present at this point and the simulator support bluetooth synchronization it will try to send the commands to the robot. 
+
 \bigskip\noindent
 In order to contain most of the complexity within the application and not on the arduino we translate the commands into simple \texttt{move} and \texttt{turn} commands for the bluetooth module. A move command would be prefixed with the letter \texttt{m}, followed by a either a \texttt{+} or \texttt{-} indication the direction (positive is forward), and four hex-digits indication the length. I similar structure was used for turn commands with the prefix \texttt{t} instead of \texttt{m} (positive is a right turn).
 
-\bigskip\noindent
-The code snipplets (listings~\ref{lst:loop} and~\ref{lst:internal}) were choosen here as an example due to the fact that most of the language currently implemented is showcased in the example. This is however the extended mode of the language, whereas the experiment was conducted without loops, procedures and variables enabled in the language. 
+\image{images/sequence.png}{0.9\linewidth}{Sequence diagram of initialization of a user program}{fig:sequence}
 
-\image{images/sequence.png}{\linewidth}{Sequence diagram of initialization of a user program}{fig:sequence}
-\begin{minipage}{0.9\linewidth}
+\bigskip\noindent
+The code snipplets (listings~\ref{lst:loop} and~\ref{lst:internal}) were choosen here as an example due to the fact that most of the language currently implemented is showcased in the example. This is however the extended mode of the language, whereas the experiment was conducted without loops, procedures and variables enabled in the language. Another reason for using this rather overly complex example is to give a thorough presentation of the internal representation (e.g. how the halting program is solved by limiting the number of total commands).
+
+\bigskip\noindent
+It should be noted that the inital solution to translate the user program into robot commands were done by our own simple translater. This did however become infeasble to maintain as the application language evolved and started to touch on more advanced programming structures as loops and procedures.  
+
+\begin{minipage}{\linewidth}
 	\begin{lstlisting}[frame=single,numbers=left,caption={Example code for creating a square using variables, procedures and loop.},language=MyBasic,label=lst:loop]
 SET NUM 4
 SET LENGTH 100
@@ -143,6 +148,18 @@ END
 	\end{lstlisting}
 %\end{minipage}
 %\begin{minipage}{\linewidth}
+	\begin{lstlisting}[frame=single,numbers=left,caption={Commands sent to simulator},language=MyBasic,label=lst:commands]
+FWD 100
+TL 90
+FWD 100
+TL 90
+FWD 100
+TL 90
+FWD 100
+TL 90
+	\end{lstlisting}
+\end{minipage}
+\begin{minipage}{\linewidth}
 	\begin{lstlisting}[frame=single,numbers=left,caption={The internal representation of the previous program.},language=Javascript,label=lst:internal]
 var icount = 0; 
 
@@ -167,16 +184,6 @@ for (var generated_55033 = 0; generated_55033 < NUM;generated_55033++) {
 	SEGMENT(); 
 	END();
 }
-	\end{lstlisting}
-	\begin{lstlisting}[frame=single,numbers=left,caption={Commands sent to simulator},language=MyBasic,label=lst:commands]
-FWD 100
-TL 90
-FWD 100
-TL 90
-FWD 100
-TL 90
-FWD 100
-TL 90
 	\end{lstlisting}
 \end{minipage}
 
