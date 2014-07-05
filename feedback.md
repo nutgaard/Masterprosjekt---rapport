@@ -48,7 +48,7 @@ The table shows a brief overview over the feedback from Amali, the full text can
 # Keypoints from the feedback
 
 1. Informal language
-2. Experiment details were described in a story format.
+2. Experiment details were described in a story format.	
 	* e.g "The first session was delayed because we were waiting for an extra tablet which never showed up" should rather be "We had to use phone instead of tablets due to unavailability." Then discuss the effect of this on their learning experience
 	* e.g "we arrived at the school at 9.00.. Then the students were already in the class..." The important thing here is the fact that: This is the first learning activity that the students did on the day.  This may have a positive effect on their learning. Was it the case for both groups?
 3. It would also be good to include a table to explain the procedure for both groups (what is discussed in 14.1 and 14.2). It is not clear who did what e.g. who did the introduction and who did the recap?
@@ -60,8 +60,22 @@ The table shows a brief overview over the feedback from Amali, the full text can
 9. A table that gives statistical details will improve the readability. for e.g. this table should have number of students for each group, mean pre-test scores , post-test scores, mean number of tasks completed etc. Please refer to the table 1 in the paper attached. 
 10. Did you give partial marks in the pre- and post-tests ? 
 11. One of the important aspects of this study was that we got the teachers involved and got ideas from them how they teach maths etc. Rather than just going to school and did the experiment. So it needs to be clearly explained.
+12. Chapter 23(observations, I believe this is now chapter 25) is hard to follow.  
+	It's easier if you introduce some sort of categorisation to the pre-test.e.g  
+	1: Definitions of angles  
+	2, 3: Drawing angles  
+	4: Comparing the size of an angle  
+	5: Find the mission angle  
+	6, 7: Estimating the size of the angles.   
+	etc  
+13. Analysis of observations
+	1. you can compare the means mark for each category (Where does this fit in our report? Additional analysis perhaps?)
+	2. Did we mentioned if we gave partial marks, worth mentioning in the report.
+	3. Did you mark the explanations? If so, you can calculate the mean score for each calculation. This way you can compare whether the quality of the explanations improved.
+	4. The result would look good in a table.
+14. If scoring to Q1, Q2, Q3 are applied we can test the difference between declarative and procedural knowledge. 
 
-# The mail from Amali
+# The first mail from Amali
 
 ```text
 Hi Nicklas, Jan 
@@ -95,6 +109,38 @@ The important thing here is the fact that: This is the first learning activity t
 I'll send some more feedback about the last two chapters, as I'm still thinking of a good way to analyse the questions in the pre-and post-tests in a  detailed way. 
 
 Hope this helps... Please feel to ask further questions if feedback is not clear.
+
+Thanks
+
+Amali
+
+```
+
+# The second mail from Amali
+```text
+Hi Nicklas, Jan
+
+Hope you got my previous email. How's the writing going ?
+
+Some ideas to discuss the answers in more detail (chapter 23). This chapter is a hard to follow.
+
+It's easier if you introduce some sort of categorisation to the pre-test
+
+1. Definition of angles
+2,3 - drawing angles  
+4 - Comparing the size of an angle
+5 Find the missing angle
+6,7 - estimating the size of the angles etc.
+
+Now some things you can do in terms of analysis
+
+1. You can compare the mean mark for each category
+2. It was not clear whether you gave partial marks, worth mentioning in the report
+3. Did you mark the explanations? If so, you can calculate the mean score for each calculation. This way you can compare whether the qaulity of the explanations improved. 
+
+It would be good if you can present them in a  table. 
+
+Q1,2 and 3 are testing declarative knowledge because they are asking students to write text-book definitions. All the other questions require applying declarative knowledge (i.e. procedural knowledge).  Then we can see whether student improvement was in the declarative or procedural knowledge or both (if you calculate the mean scores for each of these categories).
 
 Thanks
 
