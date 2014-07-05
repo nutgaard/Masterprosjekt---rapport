@@ -27,6 +27,10 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:warning:				|
 |	10	| Did you give partial marks in the pre- and post-test?							|	:white_large_square:	|
 |	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
+|	12	| Ch:observations:: include introductions to the different categories			|	:white_large_square:	|
+|	13	| Ch:observations:: analyze means of each category								|	:white_large_square:	|
+|	14	| Ch:observations:: clearify if partial marks were given						|	:white_large_square:	|
+|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_large_square:	|
 
 
 # Comments to tasks
@@ -36,6 +40,10 @@ The table shows a brief overview over the feedback from Amali, the full text can
 **8:** Do we still have these results? Or did we throw them away?
 
 **9:** Tried consolidating some of the results in the `Result` chapter. I do believe most of the results are there, but should probably be presented in a cleaner way.
+
+**13-15:** Amali would like the results from these points i a table
+
+**other:** Q1, Q2, and Q3 (she probably means the tasks numbers on the pretest) are testing declarative knowledge. All the other require applying declarative knowledge (i.e. procedural knowledge). This way we can see if wether students improved in declarative or procedural knowledge.
 
 # Keypoints from the feedback
 
