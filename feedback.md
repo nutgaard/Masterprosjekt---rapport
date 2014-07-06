@@ -19,13 +19,13 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	1b	| Experimental details were described in story format. 							|	:white_large_square:	|
 |	2	| Add more details about simulations, and more screenshots. 					|	:white_check_mark:	|
 |	3	| Include a table to explain the procedure for both groups. Section 14.1 14.2 	|	:white_large_square:	|
-|	4	| Justification of using the LOGO language is too weak.							|	:white_large_square:	|
+|	4	| Justification of using the LOGO language is too weak.							|	:white_check_mark:	|
 |	5	| Results: compate the pre-test of both groups, then compare the improvements.	|	:white_check_mark:		|
 |	6	| Results: Use `gain` instead of `diff`											|	:white_check_mark:		|
 |	7	| Calculate normalized gains in results 										|	:white_check_mark:		|
 |	8	| Details for which tasks were completed by each group.							|	:warning:				|
 |	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:warning:				|
-|	10	| Did you give partial marks in the pre- and post-test?							|	:white_large_square:	|
+|	10	| Did you give partial marks in the pre- and post-test?							|	:white_check_mark:	|
 |	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
 |	12	| Ch:observations:: include introductions to the different categories			|	:white_large_square:	|
 |	13	| Ch:observations:: analyze means of each category								|	:white_large_square:	|
