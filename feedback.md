@@ -25,7 +25,7 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	7	| Calculate normalized gains in results 										|	:white_check_mark:		|
 |	8	| Details for which tasks were completed by each group.							|	:warning:				|
 |	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:warning:				|
-|	10	| Did you give partial marks in the pre- and post-test?							|	:white_large_square:	|
+|	10	| Did you give partial marks in the pre- and post-test?							|	:white_check_mark:	|
 |	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
 |	12	| Ch:observations:: include introductions to the different categories			|	:white_large_square:	|
 |	13	| Ch:observations:: analyze means of each category								|	:white_large_square:	|
