@@ -8,9 +8,23 @@ The second to last section will go into details about the technical aspect of th
 
 \section{Application of design principles}
 In order to answer the questions proposed in the thesis while adhering to the design principles outlined we decided to utilize ideas from previous researchers within the field of educational robotics. 
-One of the eariest researchers looking into how robotics could be used in schools and one of the creators of the Logo programming language were Seymour Papert (\cite{papert1980mindstorms}). Who has several decades of experience with using robots as a tool in education.
-We therefore felt it natural to lean on this preexisting knowledge, and utilize the basis of Logo and its successors for our thesis. We felt this would give us a solid pedagogical fundation to start working with the application.
-The full Logo language was however not needed for this project(and overly complex), in order to mitigate this we proposed a system where parts of the programming language can be disabled to make it easier for the participants to understand and grasp. In addition to basing much of the language of Logo we drew inspiration from MIT's scratch program\footnote{\url{http://scratch.mit.edu/about/}}, which is a programming tool based on predefined codeblocks. This removes the need for writing the correct syntax to make your program compile, and thus loweres the startup threshold for all participants. By utilizing a similar strategy to MIT would could allow the participants to create their program through a fully interactive graphics interface by dragging and dropping codeblocks into position. 
+One of the eariest researchers looking into how robotics could be used in schools and one of the creators of the Logo programming language were Seymour Papert (\cite{papert1980mindstorms}). The Logo programming language have since been implemented in numerous programs, including programs as MIT's Scratch, Turtle Art, and StarLogo TNG~\cite{logoHomepage}. Even a modified version of Scratch have created to allow for simple programming of the Arduino~\cite{logoForArduino}. Though there exist alternative solutions we found that these are often uniquely coupled to a specific robot, f.ex ROBOLAB and Lego Mindstorm robot.
+%, and therefore chose to focus on implementations of the Logo language specification. 
+This, coupled with the extensive research conducted using the Logo language~cite{clements1990effects,clements1993research,clements1996development,clements2001logo,papert1980mindstorms}, made us decide to base our implementation on the Logo language as well. 
+
+\bigskip\noindent
+Some issues does however exist between the current implementations of Logo and our design principles. First of all is the lack of extendability and modifiability in the existing solutions. All of them come as prepackaged solution, where modifications to the source is either not possible or extremely complex.
+The second issues is their inherent complexity as they all implement the full Logo language specification. While this can be seen as a positive trait, we feel that the complexity of the Logo language in general is too much when using it as a mathematical tool. 
+%Who has several decades of experience with using robots as a tool in education.
+%We therefore felt it natural to lean on this preexisting knowledge, and utilize the basis of Logo and its successors for our thesis. We felt this would give us a solid pedagogical fundation to start working with the application.
+
+\bigskip\noindent
+Given the issues identified with the current solutions, we decided to implement everything from the bottom up. 
+The full Logo language was however not needed for this project( or for many other projects), in order to mitigate this we proposed a system where parts of the programming language can be disabled to make it easier for the participants to understand and grasp. This way we would have the possibility of just using the commands associated with turtle graphics (e.g. \texttt{forward, backward, turn-left, turn-right}), and hide away the concepts more related to programming general. 
+As a natural part of basing out solution on the Logo specification we looked at the current solutions. The Scratch solution\footnote{\url{http://scratch.mit.edu/about/}} provided a block based programming interface for the specifications, something that would fit our needs perfectly. 
+Utilizing block-programming we were able to remove the need for writing correct syntax in order to make a program runnable, and thus increase the usability of the solution drastically. 
+
+%In addition to basing much of the language of Logo we drew inspiration from MIT's scratch program\footnote{\url{http://scratch.mit.edu/about/}}, which is a programming tool based on predefined codeblocks. This removes the need for writing the correct syntax to make your program compile, and thus loweres the startup threshold for all participants. By utilizing a similar strategy to MIT would could allow the participants to create their program through a fully interactive graphics interface by dragging and dropping codeblocks into position. 
 
 \bigskip\noindent
 We proposed to create the system as a two component system, the \chirp robot and a programming device. 
@@ -26,8 +40,9 @@ We wanted to create a system that could be used to teach fourth graders maths, a
 This reinforced the need for the system to be extendable, but also have an easy to use user interface. 
 In order to solve this we proposed making several ways of creating the programs in the application, and making our programming modular so that subparts of the language could be disabled when not needed.
 	
-\section{Choice of framework}
+\subsection{Choice of framework}
 	The first decision to be made were regarding the platform and how to achieve a crossplatform solution. 
+	As solutions involving programming a computer connected to the arduino was seen as too complex we focused on frameworks aimed at mobile devices. 
 	A native approach was quickly discarded as it would require multiple implementations in multiple languages (E.g. Objective-C for iOS devices, and Java for android devices, etc.). 
 	Removing the native approach from our solution pool still left us with several options, including game frameworks and standardized cross platform tools.
 	In a report by vision mobile in January 2013 they present a study involving six hundred developers and their preferences (\cite{developerCPT}). 
