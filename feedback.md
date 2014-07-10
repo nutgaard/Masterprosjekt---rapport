@@ -17,20 +17,20 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |:-----:|:------------------------------------------------------------------------------|:-------------------------:|
 |	1a	| Informal language				 												|	:white_large_square:	|
 |	1b	| Experimental details were described in story format. 							|	:white_large_square:	|
-|	2	| Add more details about simulations, and more screenshots. 					|	:white_check_mark:	|
+|	2	| Add more details about simulations, and more screenshots. 					|	:white_check_mark:		|
 |	3	| Include a table to explain the procedure for both groups. Section 14.1 14.2 	|	:white_large_square:	|
-|	4	| Justification of using the LOGO language is too weak.							|	:white_check_mark:	|
+|	4	| Justification of using the LOGO language is too weak.							|	:white_check_mark:		|
 |	5	| Results: compate the pre-test of both groups, then compare the improvements.	|	:white_check_mark:		|
 |	6	| Results: Use `gain` instead of `diff`											|	:white_check_mark:		|
 |	7	| Calculate normalized gains in results 										|	:white_check_mark:		|
 |	8	| Details for which tasks were completed by each group.							|	:warning:				|
 |	9	| Include a table of statistical details, see table 1 in atteched paper. 		|	:warning:				|
-|	10	| Did you give partial marks in the pre- and post-test?							|	:white_check_mark:	|
-|	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
-|	12	| Ch:observations:: include introductions to the different categories			|	:white_large_square:	|
+|	10	| Did you give partial marks in the pre- and post-test?							|	:white_check_mark:		|
+|	11	| Be very clear about the role the teacher had in designing the experiment.		|	:warning:				|
+|	12	| Ch:observations:: include introductions to the different categories			|	:warning:				|
 |	13	| Ch:observations:: analyze means of each category								|	:white_large_square:	|
-|	14	| Ch:observations:: clearify if partial marks were given						|	:white_check_mark:	|
-|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_chack_mark:	|
+|	14	| Ch:observations:: clearify if partial marks were given						|	:white_check_mark:		|
+|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_chack_mark:		|
 
 
 # Comments to tasks
@@ -40,6 +40,10 @@ The table shows a brief overview over the feedback from Amali, the full text can
 **8:** Do we still have these results? Or did we throw them away?
 
 **9:** Tried consolidating some of the results in the `Result` chapter. I do believe most of the results are there, but should probably be presented in a cleaner way.
+
+**11:** We mention this throughout the report, but should we make more explicit?
+
+**12:** Description added to both 17.1 and 23.1
 
 **13-15:** Amali would like the results from these points i a table
 
