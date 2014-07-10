@@ -1,9 +1,9 @@
-\chapter{Hardware}\label{ch:hardware}
+\section{Hardware}\label{ch:hardware}
 The hardware part of the project consisted of initially three separate parts, a drawing contraptions, a battery holder, and a bluetooth shield. 
 In the final version of the robot we ended up not using the battery holder due to problems with the manufacturing hardware. 
 In this chapter we will first present the chassis modification, before moving on to present the circuitry needed for the bluetooth module. 
 
-\section{Chassis modifications}
+\subsection{Chassis modifications}
 The problem we initially underestimated was how we should make the physical robot draw on paper. While a front or back mounted pen would be an easy solution this would not create the angles properly, and thus was not a real viable options. The clearence below the robot was to small for anything to fit underneath it, and the battery was placed in such a way that nothing could fit between the wheels of the robot (see figure~\ref{fig:robotUnder}). In order to fix this problem we designed a batteryholder which could be mounted on top of the robot (see figure~\ref{fig:batteryHolder}), but due to techinical problems witht the 3D printes we were not able to test this design. And we had to resort to an alternative solution using velcro to position the battery at the back of the robot and duct tape to add a counterweight at the front of the robot to provide stability (see figures in~\ref{fig:robot}). 
 
 \bigskip\noindent
@@ -42,7 +42,7 @@ While this solved the problem of making room beneath the robot we still had mult
 	\label{fig:robot}
 \end{figure}
 
-\section{Bluetooth circuit board}
+\subsection{Bluetooth circuit board}
 The \chirp team had previously tested using bluetooth communication between an android device and the robot. We therefore got help in creating the inital circuitry for our bluetooth module(figure~\ref{fig:circuitDrawing}). This drawing was at this point designed in the Eagle software in order to make it possible to produce at a later stage(~\ref{fig:circuitDesign}). 
 
 \bigskip\noindent
