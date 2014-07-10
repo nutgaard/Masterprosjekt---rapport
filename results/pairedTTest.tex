@@ -1,26 +1,26 @@
-\chapter{Paired T-test}\label{ch:pairedttest}
+\section{Paired T-test}\label{ch:pairedttest}
 This analysis was used to determine if a difference between the means in the pretest and the posttest exists for each group, and if these differences are statistically significant. 
 In order to use this analysis, four assumptions regarding study design and the nature of the data must first be confirmed to hold.
 
-\section{Assumptions regarding study design}
+\subsection*{Assumptions regarding study design}
 The first two assumptions when using preparing for the paired t-test are related to the study design. The assumptions are;
 1) must have one dependent variable measured at the continous level, and
 2) mst have one independent dichotomous variable.
 These assumptions are the same as the first two assumptions when using the independent-samples t-test, and were shown to hold in section~\ref{sec:assumptionStudy}. 
 
-\section{Assumptions regarding the data}
+\subsection*{Assumptions regarding the data}
 The last to assumptions are related to the nature of the data. 
 The assumptions are;
 3) there should be no significant outliers in the gain scores, and
 4) the distribution of gains in the dependent variable should be approximately normally distributed.
 
-\subsection{Testing for outliers}
+\subsubsection*{Testing for outliers}
 This assumption is similar to the fourth assumption in the independent-samples t-test, and as we learned while preforming the that analysis there was an outlier within the robotics group (section~\ref{sec:outliers}, figure~\ref{fig:boxplot}). In order to see if the outlier affected the results we adopted the same strategy as in the independent-samples t-test and ran the analysis with and without outliers.
 
-\subsection{Testing for normality}
+\subsubsection*{Testing for normality}
 This assumption is similiar to the fifth assumption in the independent-samples t-test. Section~\ref{sec:normality} shows that this assumptions holds with and without the outlier included by presenting z-values (table~\ref{table:skew}), data from Shapiro-Wilk's test (table~\ref{table:shapiro}), and normal Q-Q plots (figures~\ref{fig:QQRobot}, \ref{fig:QQRobotPruned}, and \ref{fig:QQSimulator}).
 
-\subsection{Analysis summary}
+\subsubsection*{Analysis summary}
 The paired t-test was used to determine if there were any statistically significant change from pretest to posttest within the two different group. One outlier was identified within the robotics group (figure~\ref{fig:boxplot}), as showed in table~\ref{table:paired}, the exclusion of the outlier did affect the result($p_{robot} = 0.79, p_{robot*} = 0.03$).
 The test for normality was the same as for the independent-samples t-test and showed that the gain scores within each group were normally distributed. 
 The simulator group did better on its posttest($M = 15.17, SD = 3.43$) then on its pretest($M = 13.17, SD = 4.36$), a statistically non-significant mean increase of $2.0$points, $95\%CI[-0.48,4.48],t(5)=2.07,p=0.93,d=0.84$.
