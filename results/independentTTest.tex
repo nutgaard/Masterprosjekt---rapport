@@ -1,9 +1,9 @@
-\chapter{Independent-samples t-test}\label{ch:independentttest}
+\section{Independent-samples t-test}\label{ch:independentttest}
 This test is used to determine if a difference between the means in the two groups exists, and if this difference is statistically significant.
 An alternative analysis that could be used here is the ANOVA analysis, as this would similar results when the independent variable is dichotomous.
 In order to use this analysis, six assumption regarding study design and the nature of the data must first be confirmed to hold.
 
-\section{Assumptions regarding study design}\label{sec:assumptionStudy}
+\subsection*{Assumptions regarding study design}\label{sec:assumptionStudy}
 The first three assumptions are directed at how the study was designed.
 The assumptions are; 
 1) must have one dependent variable measured at the continous level, 
@@ -16,14 +16,14 @@ which we have encoded as \texttt{robot}. Since \texttt{robot} have just two poss
 The last assumption states that should be no overlap between the different group, which also holds true for our study. 
 It should however bit noted that participants from the different group could communicate with eachother when they were not actively participating the study(e.g. during the weekend, break, etc) and that this could introduce some errors, but we do not see this as a major infraction of the assumption.
 
-\section{Assumptions regarding the data}
+\subsection*{Assumptions regarding the data}
 The last three assumption are directed at the nature of the data, and will require some extra analysis to verify. 
 The assumptions are;
 4) there should be no significant outliers in the two groups,
 5) the dependent variable should be approximately normally distributed for each group, and
 6) there is homogeneity of variances between the two groups.
 
-\subsection{Testing for outliers}\label{sec:outliers}
+\subsubsection*{Testing for outliers}\label{sec:outliers}
 The forth assumption assumes that there should be no significant outliers in the different group in terms of the dependent variable. 
 
 \image{images/results/boxplot.PNG}{\linewidth}{Boxplot of gains grouped by treatment}{fig:boxplot}
@@ -46,7 +46,7 @@ For good measure we have included two entries in the following table for the rob
 	\end{tabular}
 }
 
-\subsection{Testing the normality}\label{sec:normality}
+\subsubsection*{Testing the normality}\label{sec:normality}
 The fifth assumption assumes that the dependent variable should be approximately normally distributed for each group. This assumption was tested before making the comparisons seen in table~\ref{table:outliers} as this assumption must hold in order to make the comparison valid. 
 In order to check the this assumption hold we calculated the skewness and kurtosis values and their respective z-values, looked at the values produces by using Shapiro-Wilks test for normality and looked at the normal Q-Q plots for each group(see tables~\ref{table:skew} and ~\ref{table:shapiro}, and figures~\ref{fig:QQRobot},\ref{fig:QQRobotPruned} and ~\ref{fig:QQSimulator}).
 
@@ -76,11 +76,11 @@ In order to check the this assumption hold we calculated the skewness and kurtos
 \bigskip\noindent
 As seen by this(tables~\ref{table:skew} and ~\ref{table:shapiro}, and figures~\ref{fig:QQRobot},~\ref{fig:QQRobotPruned}, and ~\ref{fig:QQSimulator}) we can be fairly certain that the assumption regarding normality is not violated as all z-values are within the $\pm 2.58$ range (representing a statistical significance level of $0.01$) and the Shapiro-Wilk test shows $p > 0.05$ for both groups. 
 
-\subsection{Testing for homogeneity between variances}
+\subsubsection*{Testing for homogeneity between variances}
 The last assumption relates to homogeneity of variances within each group.
 As mentioned when comparing the results with and without outliers, this assumption was violated when the outlier was excluded($p = 0.033$), but held when it was included($p = 0.863$). None of the results do however show a statistically significant difference, and it therefore fair to assume that there is no statistically difference between the two groups.
 
-\section{Analysis summary}
+\subsection*{Analysis summary}
 The independent-samples t-test was used to determine if there were differences in gains from pretest to posttest between the robotics group and simulator group. One outlier was identified within the dataset (figure~\ref{fig:boxplot}), but did not effect the decision of keeping or rejection the null hypothesis and was thus kept in the dataset during the rest of the analysis. 
 The gains for each group were normally distributed as shown by z-values and Shapiro-Wilk's test ($p > 0.05$), and there was homogeneity of variances when the outlier was included($p = 0.863$). The increase from pretest to posttest was greater for the simulator group ($M = 2.00, SD = 3.13$) than for the robot group ($M = 0.40, SD = 2.37$ with the outlier included, and $M=1.75, SD = 0.96$ when it was excluded), but not a statistically significant difference, $M = 1.60$, $95\% CI [-2.14, 5.34]$, $t(9) = 0.967, p = 0.359$ with the outlier included, and $M = 0.25$, $95\% CI [-2.30, 2.80]$, $t(7.05) = 0.232, p = 0.823$ when it was excluded.
 
