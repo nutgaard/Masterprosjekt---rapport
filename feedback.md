@@ -30,7 +30,8 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	12	| Ch:observations:: include introductions to the different categories			|	:warning:				|
 |	13	| Ch:observations:: analyze means of each category								|	:white_check_mark:		|
 |	14	| Ch:observations:: clearify if partial marks were given						|	:white_check_mark:		|
-|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_chack_mark:		|
+|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_check_mark:		|
+
 
 
 # Comments to tasks
