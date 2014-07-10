@@ -1,0 +1,220 @@
+diff --git a/Masterprosjekt.tex b/Masterprosjekt.tex
+index 519f871..6335db4 100755
+--- a/Masterprosjekt.tex
++++ b/Masterprosjekt.tex
+@@ -212,7 +212,7 @@
+ \part{Design and Development}\label{part:development}
+ \include{development/development}
+ 
+-\part{Research Methodology}\label{part:method}
++\chapter{Research Methodology}\label{part:method}
+ \include{method/method}
+ 
+ \part{Results}\label{part:results}
+diff --git a/method/choice.tex b/method/choice.tex
+index ff818eb..117505f 100755
+--- a/method/choice.tex
++++ b/method/choice.tex
+@@ -1,12 +1,12 @@
+-\chapter{Choice of methods}
+-Most research methods can be placed in one of two categories: quantitative or qualitative methods. Qualitative research is often used to get an insight into how students perceive something, and their thoughts and feelings about the subject. It is also used to understand their behavior. Quantitative methods have a focus on finding the general correlations, and discover tendencies that give interesting insights for future research or can be supported through other methods. This is done by pointing out special factors that are the cause of a given tendency \cite{tjora2012kvalitative}. If you want a broad understanding of a phenomenon you should use quantitative methods. Testing a hypothesis statistically is an example of quantitative research methods. 
++\section{Choice of methods}
++Most research methods can be placed in one of two categories: quantitative or qualitative methods. Qualitative research is often used to get an insight into how students perceive something, and their thoughts and feelings about the subject. It is also used to understand their behavior. Quantitative methods have a focus on finding the general correlations, and discover tendencies that give interesting insights for future research or can be supported through other methods. This is done by pointing out special factors that are the cause of a given tendency \cite{tjora2012kvalitative}. If you want a broad understanding of a phenomenon you should use quantitative methods. Testing a hypothesis statistically is an example of quantitative research methods. In this chapter we discuss some methods applicable for our project and at the end we reason about our choice of methods. 
+ 
+-\section{Test}
++\subsection{Test}
+ Tests are commonly used  in schools to find out what the students know and what they have learned. All the papers presented in the pre study applied a pretest and a posttest to support their findings, as this was one of the inclusion criteria. 
+ %We wanted statistically significant results to support our decisions. 
+ 
+ \bigskip\noindent
+-One advantage of using a test is that students are used to being tested in this manner. It is relatively easy and efficient to get an overview of what the students know, or don't know and what they have learned.
++One advantage of using a test is that students are used to being tested in this manner. It is relatively efficient to get an overview of what the students know, or don't know and what they have learned. This is because a test can be distributed to several students at the same time.
+ 
+ \bigskip\noindent
+ Using tests alone has limitations to what can be measured. It is hard to test for deeper kinds of knowledge, as test questions often have only one right answer. It only test whether students know the answer or not, even though they might have managed the task with a little help. For example if a student did not understand the question due to language limitations. With this in mind the question about tests are: does this test really reflect what they understand and what is outside their understanding \cite{andersen2009evaluering}. A way to work around this would be to include several items in the test that measures the same underlying knowledge. Interview or an oral test can also be used in this case to get better knowledge of their understanding.
+@@ -16,13 +16,13 @@ A test should be built on a solid knowledge within the given area to make sure i
+ %There have been plenty of research on maths tests
+ %There has been done little research in this area which makes it harder to create a valid and reliable test.
+ 
+-\section{Observation}
++\subsection{Observation}
+ Observation is used especially within social anthropology. This type of observation is a set of methods where the researcher participates, openly or hidden, in people's daily lives in a given period of time\cite{tjora2012kvalitative}. In the same way observation can be used in a certain context. The goal of observation is often to see with your own eyes what happens to a person or group in a given situations or under certain circumstances. According to \tcite{thagaard2003systematikk} observation is particularly suited to give information about people's behavior and how they interact with each other, thus it is a good option to measure cooperation. 
+ 
+ \bigskip\noindent
+ Observation can be used as the only method in an experiment, but can be, and is often, used as a supplement to other methods. We distinguish between open and hidden observation and spectator, partially participating or completely participating observation. In hidden observation the researcher is present and observing, without the observee being informed of this. The advantage of this type of observation is that the participants don't get influenced and change their behavior as a result of being observed. The downside may be ethical issues and considerations. The difference between non-participating and participating observation is well illustrated by the difference in observing a handball match as a player or spectator. 
+ 
+-\section{Interview}
++\subsection{Interview}
+ Interview is used in situations where you want to study meaning, attitude and experience\cite{tjora2012kvalitative}. According to \tcite{thagaard2003systematikk} interview is particularly well used to give information about a person's experience, point of view and self understanding. In an interview situation the researcher often tries to create a relaxed atmosphere, so that the interview resembles a normal conversation revolving around some chosen topics. During the conversation the researcher leads the conversation by asking open or closed questions. The goal is often to get the interview object to talk as freely as possible. In this way it becomes clear what the interview subject means. Their attitudes and experiences comes forward. 
+ 
+ \bigskip\noindent
+@@ -32,7 +32,7 @@ A disadvantage is that it takes a lot of time and the subject might feel less an
+ \bigskip\noindent
+ Students might have difficulties with the way questions are written, there can for example be language barriers, and with a short explanation they might be able to answer questions in an oral test that they would have answered incorrectly in a written test. In an oral test there are also opportunities to argue why they approached the way they did and how they solved the task in greater detail. We get to understand their thought process and understand what they have actually misunderstood and understood and not just misinterpreted.  
+ 
+-\section{Questionnaire}
++\subsection{Questionnaire}
+ Questionnaires are in general considered a quantitative method. \tcite{ringdal2001enhet} writes that a questionnaire is a systematic method to collect data from a sample of people. This is done to give a statistical description of the population the sample is collected from. The questionnaire is standardized, which means that everyone get the same questions asked in the same way. A questionnaire is often used to find overall connections and tendencies by pinpointing special factors that are the cause of a given tendency \cite{tjora2012kvalitative}. 
+ 
+ \bigskip\noindent
+@@ -41,7 +41,7 @@ An advantage of using a questionnaire is that you can perform it on many student
+ \bigskip\noindent
+ One disadvantage is that there is no possibility for follow up questions. It might be possible to find connections and correlations between questions, but it is hard to understand why without any other methods as supplements.
+ 
+-\section{Experiment}
++\subsection{Experiment}
+ Experiment is the classical scientific design in science, but it is also used in medicine and in social science under different names. In our case we call it experiment, in other cases it is called trial or intervention \cite{ringdal2001enhet}. In an experiment the researcher controls the difference between two treatments, X and Y, by deciding when the experimental group should be exposed to X. Control of other factors are secured through randomization. This gives a good foundation for explaining cause and effect. In social science, experiments cannot be performed in such a controlled way. It is impossible to control all the factors that can influence a person or group. But some sorts of experiments can still give valuable knowledge which is difficult to attain through other methods.
+ 
+ \bigskip\noindent
+@@ -50,7 +50,7 @@ A disadvantage is the disturbance of the trial population. We intervene with the
+ An additional disadvantage is the introduction of new people and in some cases exciting tasks, both of which can make the participants alter their behaviour~\cite{fernandes2006using, miller2008robots}.
+ %Else wise, not only is the activity new, but new people are introduces to the students. This is not an option for us because a teachers understand of the technology is a crucial part in educational robotics \cite{fernandes2006using, miller2008robots}.
+ 
+-\section{Choice}
++\subsection{Choice}
+ In the end we ended up with a mix of qualitative and quantitative methods. This was due to our research questions and pratical considerations like time limitations. 
+ %The choice of methods are selected based on the research questions and different practical considerations. We chose a mix of quantitative and qualitative methods. The choice was influenced by our research questions, the prestudy, the teacher and time limitations. 
+ The quantitative methods was meant to aid in our attempt to answer the research question: is there a learning difference in students understanding of angles. The qualitative methods should aid in pinpointing strengths and weaknesses in the robot compared to a simulator as well as supplementing the quantitative data findings. 
+diff --git a/method/data_collection.tex b/method/data_collection.tex
+index e024753..cfc2fd8 100755
+--- a/method/data_collection.tex
++++ b/method/data_collection.tex
+@@ -1,8 +1,11 @@
+-\chapter{Data collection}
++\section{Data collection}
+ In order to assess the learning gains accomplished by the students in angle and turn measurement estimation, a pretest-posttest design was used. The pretest was administered one week before the first session, and the posttest was administered an hour after the second session. The tests were individual and the students were not allowed to cooperate. Both tests were administered by the teacher. The other advantages and disadvantages of robots identified in section \ref{sec:whatAdvantage} was measured based on qualitative observations and quantitative results obtained by means of a post activity questionnaire.
+ 
+-\section{Test}
+-Since we could not find a standardized test that measure angle skills with well defined reliability and internal consistency we had to make our own. We got inspiration from \citeauthor{clements2001logo}. They tested similar concepts, and the programming language they used was LOGO. In this research they have created several tests to measure geometry learning gains. These tests have been used in several projects before us. We looked at a subset of these that specifically target angles and turn measurement. We then expanded and improved these questions in a session with the teacher, with regards to what the students already knew and what they are supposed to learn next. 
++\subsection{Test}
++Since we could not find a standardized test that measure angle skills with well defined reliability and internal consistency we had to make our own. The test is also a part of our contribution. Creating a test that uncover what we are looking for is hard, especially when we are looking at a new area of investigation. Pedagogical insight is needed to plan a good pretest and posttest, and we cooperated with the teacher of the experiment class to create our test.
++
++\bigskip\noindent
++We got inspiration from \citeauthor{clements2001logo}\cite{clements2001logo}. They tested similar concepts, and the programming language they used was LOGO. In this research they have created several tests to measure geometry learning gains. These tests have been used in several projects before us. We looked at a subset of these that specifically target angles and turn measurement. We then expanded and improved these questions in a session with the teacher, with regards to what the students already knew and what they are supposed to learn next. 
+ %We also thought back to when we were elementary school students ourselves for help. 
+ The finished test consist of twenty questions, divided into six categories (table~\ref{table:testCategoriesDef}). The score range from zero to twentyfour and was designed to be completed in thirty minutes. We used the same tasks for both the pre and post test so we can look at differences. The test does not include questions specific to LOGO or the robots, but are general questions to measure angle understanding. 
+ Assessments of the tests were conducted after the experiment ended. Each correct answer were given one point, whereas incorrect answers gave zero points. Questions added to investigate the though process of the participants were not graded (e.g. question 1, "`how did you solve this?"' and question 11). 
+@@ -47,8 +50,8 @@ for this answer, it was meant as a supplement to draw conclusions on.
+ \bigskip\noindent
+ \textbf{Question 9 and 10} are also turn estimation tasks. The students must keep track of how much the robot has turned at every step and in which direction it is currently facing. In question 9 one point is given if the answer is 12. In question 10 one point is given if the amount of degrees are 50. 
+ 
+-\section{Observation}
++\subsection{Observation}
+ During the experiment we observed the students. We used hidden observation and acted as spectators. We had a focus on teamwork, motivation and problem solving approach during the observation. We got inspiration from \tcite{mitnik2009collaborative} and focused on the 4 factors that foster collaboration. Individual responsibility, mutual support, positive interdependence and social face-to-face interactions. To observe problem solving approach we had a focus on how the students used their protractors and if they discussed the problem before starting to program it.
+ 
+-\section{Questionnaire}
++\subsection{Questionnaire}
+ The questionnaire can be found at the end of the posttest (Appendix \ref{appendix:posttest}). It was created to test the difference between robots and simulators regarding the factors identified on section \ref{sec:whatAdvantage} Each of the questionnaire's questions had five possible answers; \texttt{--}, \texttt{-}, \texttt{0}, \texttt{+} and \texttt{++}; \texttt{--} meant ``very little'' while \texttt{++} meant ``very much''.
+\ No newline at end of file
+diff --git a/method/experimental_design.tex b/method/experimental_design.tex
+index 1d7897b..4cff961 100755
+--- a/method/experimental_design.tex
++++ b/method/experimental_design.tex
+@@ -1,4 +1,4 @@
+-\chapter{Experimental design}
++\section{Experimental design}
+ The selected students were divided into two groups by the teacher in advance. 
+ The teacher created the groups with two factors in mind, equality in terms of content knowledge level and by which participants she knew could work well together.
+ %The teacher had divided the group by trying to divide the skill level equally between groups, she also wanted to avoid any conflict that might arise between students. 
+diff --git a/method/method.tex b/method/method.tex
+index 3055896..97e9a0f 100755
+--- a/method/method.tex
++++ b/method/method.tex
+@@ -1,4 +1,3 @@
+-\chapter{Research Methodology}
+ The inspiration behind the study was a wish to test the robot as an educational tool in an experimental classroom setup. We wished to increase students' understanding of angles and their angle estimation skills. We also wished to increase the students' cooperation and motivation. As we mentioned in chapter~\ref{chap:constructionism}, the pedagogic theory we rely on is constructionism, which is quite different from the blackboard and task driven mathematics education, which according to \tcite{alseth2003endringer} happens in most of the classrooms in Norway. When we talked to the teacher at THIS, it seemed like this is the prevalent method there as well. 
+ \input{method/choice}
+ \input{method/participants}
+diff --git a/method/participants.tex b/method/participants.tex
+index 9e00b9d..53b8429 100755
+--- a/method/participants.tex
++++ b/method/participants.tex
+@@ -1,4 +1,4 @@
+-\chapter{Participants}
++\section{Participants}
+ To analyze our research questions, we tested the robots with a group of fifth-grade students from the international school in Trondheim(THIS). A group of fifteen students (four boys and eleven girls) was selected from a class of twenty to participate in the experiment. Three of the twenty students was on vacation during the experiment period. Two of the twenty did a full score on the pretest and their approach to the problems, as described in the depth questions, were perfect. We therefore concluded that our activities could not teach them anything new. The teacher also suggested that we don't include these two students. She meant that if they were in the group their ideas and help would dominate the learning gains of the students. Since we want to test the robot activity's ability to teach students the material, these students might interfere with the results. From these fifteen only eleven were able to participate on both sessions. 
+ %It turned out that if we included them, there would not be enough tablets for every group anyways, so these students were dropped from the study as well, leaving a total of 15 students. 
+ All the students were in the same class and either ten or eleven years old. They had been taught about angles one month prior to our experiment, using a traditional blackboard based teaching scheme. Thus every student had prior knowledge of angles and angle estimation. The next thing they were going to learn was about reflex angles and area of shapes. None of the students had worked in this experimental manner before or worked with this specific kind of technology before.
+diff --git a/method/procedure.tex b/method/procedure.tex
+index 0fbe0b2..abb8f85 100755
+--- a/method/procedure.tex
++++ b/method/procedure.tex
+@@ -1,4 +1,4 @@
+-\chapter{Procedure}
++\section{Procedure}
+ The study was divided into two sessions, one held on a Friday and one on the following Monday. The first session lasted forty minutes and the second session lasted fortyfive minutes. 
+ One of the groups had to use a phone instead of a tablet due to unavailability of one tablet. 
+ The only difference of our application when used on a phone compared to a tablet is a smaller screen, and it did not seem to make a difference, at least not on the robot group, as they don't use the simulator, which is the part requiring a larger screen. Each session consisted of a short review of what they were supposed to learn, followed by a set of 10 difficulty increasing robot exercises. In the first session there was also a short introduction of about four minutes explaining how the the software worked. During the exercise phase the students worked on their own, while we acted as tutors, solving doubts regarding software and the activity itself. If groups were stuck on a single task without making progress we provided subtle hints to help them along. 
+@@ -7,7 +7,7 @@ We never gave them the answers or any code, but explained that visualizing the p
+ %We never gave them the answers or any code, we merely said it might help if they go through the program block by block and think about what will happen to the robot, or asked them to show us which angle they were measuring and why they were measuring that angle. 
+ Other than this the students received no external help or instruction. The exercises of the first session were relatively easy, since their main purpose was for the students to familiarize with the technology. The exercises was designed so that everyone should be able to do something, but no one should be able to do everything. Only open polygons, or paths, where you don't end up where you started, were used in the first lecture exercises. This was done so that students would not get caught up in the precision of the robot or the length of movement. In the second session every exercise was a closed shape, and the students had be careful of how far the robot moved in forward or backward block.  
+ 
+-\section{First lecture}
++\subsection{First lecture}
+ The robotic activity was the first learning activity that the students in group 1 did on that day. 
+ %This may have a positive effect on their learning. 
+ Group 2 did other activities, not related to our work, with the teacher  while they waited for their turn.
+@@ -22,7 +22,7 @@ During the introduction we explained that they had to cooperate and let everyone
+ Next followed a thirtytwo minutes session where the students experimented with the robot / simulator and tried to solve some sample tasks. The tasks are included as appendix~\ref{appendix:experiment1}.
+ The tasks met our expectations, as everyone managed at least four tasks and the best group finished the last task right before the session ended. When solving these tasks, the students were allowed to use protractors and pens. 
+ 
+-\section{Second lecture}
++\subsection{Second lecture}
+ To keep things consistent with the first lecture we used one phone as substitute for the missing tablet.
+ 
+ \bigskip\noindent
+diff --git a/method/reliability_and_validity.tex b/method/reliability_and_validity.tex
+index b049945..3a8e2cd 100755
+--- a/method/reliability_and_validity.tex
++++ b/method/reliability_and_validity.tex
+@@ -1,4 +1,4 @@
+-\chapter{Reliability and validity}
++\section{Reliability and validity}
+ Reliability and validity are important topics within all types of research. 
+ These topics provide a basis for the discussion for whether we are measuring what we think we are measuring and whether these measures can be viewed as consistent and valid. 
+ Both within reliability and validity you can find several different concepts addressing different types of reliability and validity. 
+@@ -10,7 +10,7 @@ Though some factors relating to validity and reliability have already been menti
+ we will include a concluding section about here. 
+ This is because these concepts can in various ways been seen as the linchpin of any experiment.
+ 
+-\section{Reliability}
++\subsection{Reliability}
+ 	When talking about reliability we usually talk about the four key concepts, \textit{equivalence reliability}, \textit{stability reliability}, \textit{internal consistency} and  \textit{interrater reliability}. 
+ 	Each estimating different construcys regarding how reliable a study is. 
+ 	It is here important to mention that one can not measure reliability, but several strategies exist in order to attempt to estimate how reliable an experiment is.
+@@ -31,7 +31,7 @@ This is because these concepts can in various ways been seen as the linchpin of
+ 	\bigskip\noindent
+ 	Interrater reliability is the extent to which raters agree, and is used as a measure of the rating system. Normally this is established by using a Cohen's kappa if there is only two raters, and Fleiss' kappa (\cite{gwet2001handbook}, \cite{shrout1979intraclass}).
+ 	
+-\section{Validity}
++\subsection{Validity}
+ 	Validity assesses the degree of which an experiment and design measures the concept that the researchers intended to measure.
+ 	When talking about validity, we usually talk about \textit{internal validity} and \textit{external validity}, each with its own subcategories like \textit{face validity}, \textit{construct validity} and \textit{content validity}.
+ 	Internal validity refers to how the study was design, organized and conducted, and is important in order to say that an experiment
+@@ -39,7 +39,7 @@ This is because these concepts can in various ways been seen as the linchpin of
+ External validity, on the other hand, is important because the results of an experiment doesn't mean much if it is only applicable for the population that participated(e.g. we want the results to be generalised and transferrable).
+ 	We will not provide you with an exhaustive list of potensial threats to the validity of an experiment, but will here give a short overview over the most common ones.
+ 	
+-	\subsection{Internal validity}
++	\subsubsection{Internal validity}
+ 	Some of the threats that may threaten the internal validity of an experiment include \textit{testing effects}, \textit{selection bias}, \textit{experimental mortality} and \textit{diffusion between groups}.
+ 	
+ 	\bigskip\noindent
+@@ -57,7 +57,7 @@ External validity, on the other hand, is important because the results of an exp
+ 	Diffusion between group refers to an effect where one of the group was effected by the other group. In most cases we are interested in the control group, and wether or not they have been affected by the experimental group. The "`contamination"' of the control group may happen in several different ways depending on how the experiment is done. 
+ 	This effect can be seen as a umbrella-term for other threats involving cross-contamination between the groups (e.g. rivalry or demoralization).
+ 	
+-	\subsection{External validity}
++	\subsubsection{External validity}
+ 	Some threats to external validity have already been covered in the section about internal validity, \textit{selection bias} is one example of this. 
+ 	Some of the more unique threats to external validity include the \textit{"`real-world"' versus "`experimental world"'} and \textit{"`faulty constructs"'} threats, where the first refers to when participants are aware that they are part of a study and may therefore alter their behaviour because of this, or that the environment in which the study is conducted influences the participants. The latter can be a bit more subtle in how it manifests itself, but refers to how well construct have been narrowed down from concepts, and how these constructs are measured.
+ 	
+@@ -68,7 +68,7 @@ External validity, on the other hand, is important because the results of an exp
+ 	The \textit{experimenter effect} refers to the personal biases of the the reseacher influencing the participants and/or the experiment design in such a way that the results would not be valid outside of the experimental setting. This can be as simple as non-verbal cues while observing the participants, and thus giving them a sort of validation that what they were currently doing was correct. 
+ 	
+ 	
+-\section{Validity and Reliability in the experiment}
++\subsection{Validity and Reliability in the experiment}
+ 	Previously in this chapter we've provided an introduction to some common threats to reliability and validity. This section will try to tie these potensial threats to the experiment conducted during this project. 
+ 	
+ 	\bigskip\noindent
