@@ -29,8 +29,8 @@ The table shows a brief overview over the feedback from Amali, the full text can
 |	11	| Be very clear about the role the teacher had in designing the experiment.		|	:white_large_square:	|
 |	12	| Ch:observations:: include introductions to the different categories			|	:white_large_square:	|
 |	13	| Ch:observations:: analyze means of each category								|	:white_large_square:	|
-|	14	| Ch:observations:: clearify if partial marks were given						|	:white_large_square:	|
-|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_large_square:	|
+|	14	| Ch:observations:: clearify if partial marks were given						|	:white_check_mark:	|
+|	15	| Ch:observations:: Marking of explanations, analysis of explanations?			|	:white_chack_mark:	|
 
 
 # Comments to tasks
