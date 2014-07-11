@@ -127,8 +127,9 @@ The main responsibilities of each class is shown in table~\ref{table:technical}.
 \end{center}
 
 \bigskip\noindent
-As can be seen from the class diagram in figure~\ref{fig:class}, there is a lot of connected components within the application. 
-This architecture was chosen in order to make each component's  responsibility as small and concrete as possible, which prevents alot of ripples if one component should change and helps identify the location of bug. 
+%As can be seen from the class diagram in figure~\ref{fig:class}, 
+%there is a lot of connected components within the application. 
+This architecture and distribution of responsibility was chosen in order to make each component's  responsibility as small and concrete as possible, which prevents alot of ripples if one component should change and makes debugging the application easier. 
 
 \bigskip\noindent
 Most of the classes/files in the application are straight forward javascript "`classes"' with a minimal responsibility, which make them straightforward to understand and debug. The exception to this may be the application backbone responsible for translating our internal program representation into a program which can run on the robot and the simulator. Because of this, and all the other interactions between the components, we've included a short sequence diagram and explaination of how the application works when a user tries to start his or her program. 
