@@ -30,7 +30,7 @@ The forth assumption assumes that there should be no significant outliers in the
 
 \bigskip\noindent
 As seen in figure~\ref{fig:boxplot} an extreme outlier was found in our dataset within the robotics group(The asterix represents an extreme outlier in SPSS). 
-By reassessing the tests, and investigating the circumstances during the pretest and posttest it was determined that the outlier were must likely not caused by errors during assessment, data entry or the tests. 
+By reassessing the tests, and investigating the circumstances during the pretest and posttest it was determined that the outlier were most likely not caused by errors during assessment, data entry or the tests. 
 As a result of this, a comparison of the results with and without the outlier was conducted (see table~\ref{table:outliers}) to see how the outlier effected the analysis. 
 It should be noted that the results without the outliers failed Levene's test for equality of variances ($p = 0.033$) and results in the table are therefore produced by using the Welch t-test. 
 Both do however show that there was no statistically significant difference in the gains between the robotics and simulator group($p > 0.05$ for both results).
@@ -89,7 +89,9 @@ The analysis presented here have been using the gain from pretest to posttest di
 
 \smalltable{Results of independent t-test. * outlier removed}{table:fullIndependeny}{
 	\begin{tabular}{llllll}
-		Varable & t & df & Sig. & Mean diff & Std. Error Diff\\
+		Variable & t & df & Sig. & Mean diff & Std. Error Diff\\
+		Pretest & -2.274 & 9 & 0.049 & -5.23 ($-10.440..-0.026$) & 2.301\\
+		Pretest* & -2.166 & 8 & 0.062 & -5.58 ($-11.528..0.361$) & 2.578\\
 		Gain & 0.967 & 9 & 0.359 & 1.6 ($-2.143..5.343$) & 1.655\\
 		Gain* & 0.232 & 7.05 &  0.823 & 0.25 ($-2.296..2.796$) & 1.078\\
 		NormalizedGain & -0.117 & 9 & 0.910 & -0.03 ($-0.565..0.509$) & 0.238\\
@@ -97,14 +99,3 @@ The analysis presented here have been using the gain from pretest to posttest di
 		\hline
 	\end{tabular}
 }
-
-%\bigskip\noindent
-%\smalltable{Tests means for different groups}{table:means}{
-%	\begin{tabular}{lllll}
-%		Group & Pretest mean & Posttest Mean & Diff. Mean & Diff. SD\\\hline
-%		Robot & 18.40 & 18.80 & 0.40 & 2.37\\
-%		Simulator & 13.17 & 15.17 & 2.00 & 3.13\\
-%		All & 15.54 & 16.82 & 1.27 & 2.72\\\hline
-%		Robot, no outlier & 18.75 & 20.50 & 1.75 & 0.96\\\hline
-%	\end{tabular}
-%}

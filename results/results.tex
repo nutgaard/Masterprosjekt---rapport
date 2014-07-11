@@ -1,22 +1,26 @@
 %\chapter{Results}%Moved to main file
-In order to determine each students level of understanding and knowledge prior to the experiment, seven days before the first stession, a pretest was preformed using the test created in collaboration with the class' teacher~(Appendix~\ref{appendix:pretest}). 
-The same test, augmented by a short questionaire was used for the posttest~(Appendix~\ref{appendix:posttest}). The results (means) from these two tests can be seen in table~\ref{table:means} alongside with the standard deviation and p-values from running a paired-samples t-test between the pretest and posttest. For a complete writeup of this process we refer you to chapter~\ref{ch:pairedttest}.
-For the comparison between groups we used a independent-samples t-test in order to determine if there was any
-significant difference in the gains between the results of the robotics group and the simulator group (chapter~\ref{ch:independentttest}).
-In chapter~\ref{ch:additionalTests}, "`\nameref{ch:additionalTests}"', we have included a set of additonal test,
-where we further analyse the dataset to see if any significant connections can be found. 
+The analyses in this chapter is based on the pretest and posttest results from all the participants that participated in both sessions. 
+To see the questions in the pretest and posttest we refer you to appendix~\ref{appendix:pretest} and appendix~\ref{appendix:posttest}.
 
 \bigskip\noindent
-All the following chapters(chapter~\ref{ch:independentttest}, \ref{ch:pairedttest} and \ref{ch:additionalTests}) have utilized different analyses, but share a common structure in how they are presented.
+The distribution between groups and gender can be seen in table~\ref{table:general}, the raw scoring data for each participant can be seen in table~\ref{table:rawResults}, and the means for each group in table~\ref{table:means} and with categories in table~\ref{table:genQuestionMeans}. 
+
+%In order to determine each students level of understanding and knowledge prior to the experiment, seven days before the first session, a pretest was preformed using the test created in collaboration with the class' teacher~(Appendix~\ref{appendix:pretest}). 
+%The same test, augmented by a short questionaire was used for the posttest~(Appendix~\ref{appendix:posttest}). 
+%The results (means) from these two tests can be seen in table~\ref{table:means} alongside with the standard deviation and p-values from running a paired-samples t-test between the pretest and posttest. For a complete writeup of this process we refer you to chapter~\ref{ch:pairedttest}.
+\bigskip\noindent
+For the comparison between groups we used a independent-samples t-test in order to determine if there was any significant difference in the gains between the results of the robotics group and the simulator group (section~\ref{ch:independentttest}), while a paired-samples t-test between pretest and posttest scores were used to investigate differences between pretest and posttest scores(section~\ref{ch:pairedttest}).
+In section~\ref{ch:additionalTests}, "`\nameref{ch:additionalTests}"', we have included a set of additonal test, where we further analyse the dataset to see if any significant connections can be found. 
+
+\bigskip\noindent
+All the following section(chapter~\ref{ch:independentttest}, \ref{ch:pairedttest} and \ref{ch:additionalTests}) have utilized different analyses, but share a common structure in how they are presented.
 They start with the assumptions related to each analysis, if assumptions are violated, appropriate meaures are used to show that the violation itself does not affect the resulting outcome.
 At the very end they all end with a small summary of the analysis. 
-The very last chapter (chapter~\ref{ch:cronbach}) in this part of the report shows the Cronbach's alpha analysis for measuring the internal consistency reliability and test-retest analysis using Pearson's product-moment correlations between pretest and posttest scores to measure the stability reliability.
+The last analysis section (chapter~\ref{ch:cronbach}) in this chapter of the report shows the Cronbach's alpha analysis for measuring the internal consistency reliability and test-retest analysis using Pearson's product-moment correlations between pretest and posttest scores to measure the stability reliability.
 
-\bigskip\noindent
-For simplicity and readability we've included a small table with some of the statistics from the different analyses in table~\ref{table:general}. Note some of the datapoint calculation is not explicitly shown in their respective chapter, but all assumptions were checked before including the data.
-
-\smalltable{Statistics from the study}{table:statistics}{
-	\subfloat[General statistics\label{table:general}]{
+%\bigskip\noindent
+%For simplicity and readability we've included a small table with some of the statistics from the different analyses in table~\ref{table:general}. Note some of the datapoint calculation is not explicitly shown in their respective chapter, but all assumptions were checked before including the data.
+\smalltable{Participants overview}{table:general}{
 		\begin{tabular}{lll}
 			& Simulator & Robotics\\\hline
 			Participants & 6 & 5\\
@@ -25,32 +29,47 @@ For simplicity and readability we've included a small table with some of the sta
 			\hline
 		\end{tabular}
 	}
-	\subfloat[Comparisons between the groups calculated by independent t-test. * outlier removed\label{table:genComp}]{
-		\begin{tabular}{llll}
-			& t & df & Sig\\\hline
-			Pretest & -2.274 & 9 & 0.049\\
-			Pretest* & -2.166 & 8 & 0.062\\
-			Gains & 0.967 & 9 & 0.359\\
-			Gains* & 0.232 & 7.05 & 0.823\\
-			Normalized Gains & -0.117 & 9 & 0.910 \\
-			Normalized Gains* & -1.903 & 8 & 0.094\\
-			\hline
-		\end{tabular}
-	}\\
-	\subfloat[Means. SD in paranthesis. * outlier removed. Sig.Gain calculated by paired t-test\label{table:means}]{
-		\begin{tabular}{lllll}
-			& Simulator & Robotics & Robotics* & Total\\\hline
-			Pretest mean & 13.17(4.36) & 18.40(2.97) & 18.75(3.30) & 15.55(4.52)\\
-			Posttest mean & 15.17(3.43) & 18.80(4.97) & 20.50(3.69)& 18.82(4.40)\\
-			Gain & 2.00(2.37) & 0.40(3.13) & 1.75(0.96) & 1.27(2.72)\\
-			Normalized gain & 0.17(0.17) & 0.19(0.56) & 0.42(0.26) & 0.18(0.37)\\
-			Sig. Gain (p) & 0.09 & 0.79 & 0.03 & 0.152\\
-			\hline
-		\end{tabular}
-	}\\
-	
-	\subfloat[Means of question categories\label{table:genQuestionMeans}]{
-		\begin{tabular}{lllllll}
+}
+\smalltable{Results from pre and post test}{table:rawResults}{
+	\begin{tabular}{llll}
+		\textbf{Participant ID.} & \textbf{Raw scores}(\texttt{q1..q24}) & \textbf{Score (Gain)} & \textbf{Group}\\\hline
+		1 - pretest & \texttt{111110011111110000111101} & 17 & Simulator\\
+		1 - posttest & \texttt{111110011111110000111110} & 17(0) & \\\hline
+		2 - pretest & \texttt{111110011111110000110111} & 17 & Robotics\\
+		2 - posttest & \texttt{111110000011110000111000} & 12(-5) & \\\hline
+		3 - pretest & \texttt{111111111111111111000011} & 20 & Simulator\\
+		3 - posttest & \texttt{111111111111111111001011} & 21(1) & \\\hline
+		4 - pretest & \texttt{100000011111110000010011} & 11 & Simulator\\
+		4 - posttest & \texttt{111110001111110000111000} & 14(3) & \\\hline
+		5 - pretest & \texttt{110010001101000010100010} & 9 & Simulator\\
+		5 - posttest & \texttt{111111100011011101100000} & 14(5) & \\\hline
+		6 - pretest & \texttt{111111111111110011101111} & 21 & Robotics\\
+		6 - posttest & \texttt{111111111111111111111011} & 23(2) & \\\hline
+		7 - pretest & \texttt{111110011011000000110010} & 12 & Simulator\\
+		7 - posttest & \texttt{111110001011010000100010} & 11(-1) & \\\hline
+		8 - pretest & \texttt{111110011111100000111000} & 14 & Robotics\\
+		8 - posttest & \texttt{111110011111110000101100} & 15(1) & \\\hline
+		9 - pretest & \texttt{110001101011101000100000} & 10 & Simulator\\
+		9 - posttest & \texttt{111111100011111000101000} & 14(4) & \\\hline
+		10 - pretest & \texttt{111110101010111111101111} & 19 & Robotics\\
+		10 - posttest & \texttt{111111111111111111101110} & 22(3) & \\\hline
+		11 - pretest & \texttt{111110011111111011111111} & 21 & Robotics\\
+		11 - posttest & \texttt{111111111111111101101111} & 22(1) & \\\hline
+	\end{tabular}
+}
+\smalltable{Means}{table:means}{
+	\begin{tabular}{lllll}
+		& Simulator & Robotics & Robotics* & Total\\\hline
+		Pretest mean & 13.17(4.36) & 18.40(2.97) & 18.75(3.30) & 15.55(4.52)\\
+		Posttest mean & 15.17(3.43) & 18.80(4.97) & 20.50(3.69)& 18.82(4.40)\\
+		Gain & 2.00(2.37) & 0.40(3.13) & 1.75(0.96) & 1.27(2.72)\\
+		Normalized gain & 0.17(0.17) & 0.19(0.56) & 0.42(0.26) & 0.18(0.37)\\
+		Sig. Gain (p) & 0.09 & 0.79 & 0.03 & 0.152\\\hline
+		\multicolumn{5}{c}{SD in paranthesis. * outlier removed. Sig.Gain calculated by paired t-test}
+	\end{tabular}
+}
+\smalltable{Means of question categories}{table:genQuestionMeans}{
+	\begin{tabular}{lllllll}
 		\textbf{Group} & \textbf{Cat. 1}(2) & \textbf{Cat. 2}(7) & \textbf{Cat. 3}(6) & \textbf{Cat. 4}(3) & \textbf{Cat. 5}(4) & \textbf{Cat. 6}(2)\\\hline
 		Robot-pre & 2.00(0.00) & 6.60(0.55) & 2.40(2.30) & 2.60(0.89) & 3.20(0.45) & 1.60(0.89) \\
 		Robot-post & 2.00(0.00) & 7.00(0.00) & 3.40(3.13) & 2.40(1.34) & 3.00(0.00) & 1.00(1.00) \\
@@ -59,8 +78,7 @@ For simplicity and readability we've included a small table with some of the sta
 		Sim.-pre & 1.83(0.41) & 4.67(2.07) & 1.67(2.42) & 2.33(0.82) & 1.50(1.38) & 1.17(0.75) \\
 		Sim.-post & 2.00(0.00) & 6.67(0.52) & 2.33(2.73) & 1.50(1.38) & 2.00(1.26) & 0.67(0.82) \\\hline
 		\multicolumn{7}{c}{In parenthesis; header: max score, body: standard deviation. * outlier removed}
-		\end{tabular}
-	}
+	\end{tabular}
 }
 \input{results/independentTTest}
 \input{results/pairedTTest}
